@@ -1,6 +1,9 @@
+import { useState } from "react";
 import "./Header.css";
 
 const Header = () => {
+  const [searchField, setSearchField] = useState("");
+
   return (
     <div className="header">
       <div className="header__link-container">
@@ -12,6 +15,19 @@ const Header = () => {
       </div>
       <div className="header__main-container">
         <div className="header__title">What's going on in the world?</div>
+        <p className="header__paragraph">
+          Find the latest news on any topic and save them in your personal
+          account.
+        </p>
+        <input
+          className="header__input"
+          name="search-field"
+          placeholder="Enter topic"
+          type="search"
+          id="searchField"
+          value={searchField}
+          onChange={(e) => setSearchField(e)}
+        />
       </div>
     </div>
   );
