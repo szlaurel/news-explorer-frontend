@@ -1,0 +1,75 @@
+.header {
+  background-image: url("../../images/backgroundimage.svg");
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.header__link-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: baseline;
+  border: 0px;
+  border-bottom-width: 1px;
+  border-color: white;
+  border-style: solid;
+  padding-bottom: 13px;
+}
+
+.header__button-container {
+}
+
+.header__logo {
+  margin: 0;
+  color: white;
+  font-family: "roboto-slab-700", arial, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 30px;
+  margin-left: 104px;
+}
+
+.header__home-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-family: "roboto-500", arial, sans-serif;
+  cursor: pointer;
+  margin-right: 54px;
+  /* margin-top: 30px; */
+}
+
+.header__signin-button {
+  padding: 0;
+  border-radius: 40px;
+  border-style: solid;
+  width: 176px;
+  height: 48px;
+  border-color: white;
+  background: transparent;
+  color: white;
+  font-family: "roboto-500", arial, sans-serif;
+  cursor: pointer;
+  margin-right: 116px;
+  /* margin-top: 30px; */
+}
+
+.header__main-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.header__title {
+  color: white;
+  font-family: "roboto-slab-400", arial, sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 64px;
+  width: 608px;
+  height: 128px;
+}
