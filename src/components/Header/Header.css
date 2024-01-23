@@ -85,6 +85,41 @@
   margin: 0;
 }
 
+/* need to take the header search container, the header input and the header search submit
+and put them in there own component and connect them to the header
+so that it looks cleaner 
+VVVVVVVVVVV
+*/
+
+.header__search-container {
+  position: relative;
+}
+
 .header__input {
   margin-top: 88px;
+  border-radius: 55px;
+  width: 608px;
+  height: 64px;
+  padding: 0;
+  border-color: white;
+  border-style: solid;
+  font-family: "roboto-400", arial, sans-serif;
+  padding-left: 24px;
+}
+
+.header__search-submit-button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-radius: 55px;
+  border-style: solid;
+  border-color: rgba(47, 113, 229, 1);
+  width: 168px;
+  height: 64px;
+  color: white;
+  font-family: "roboto-500", arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  background-color: rgba(47, 113, 229, 1);
 }

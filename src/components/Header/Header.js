@@ -19,15 +19,18 @@ const Header = () => {
           Find the latest news on any topic and save them in your personal
           account.
         </p>
-        <input
-          className="header__input"
-          name="search-field"
-          placeholder="Enter topic"
-          type="search"
-          id="searchField"
-          value={searchField}
-          onChange={(e) => setSearchField(e)}
-        />
+        <div className="header__search-container">
+          <input
+            className="header__input"
+            name="search-field"
+            placeholder="Enter topic"
+            type="search"
+            id="searchField"
+            value={searchField}
+            onChange={(e) => setSearchField(e.target.value)}
+          />
+          <button className="header__search-submit-button">Search</button>
+        </div>
       </div>
     </div>
   );
