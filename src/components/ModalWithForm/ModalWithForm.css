@@ -1,0 +1,114 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__container {
+  background: white;
+  max-width: 358px;
+  width: 100%;
+  border-radius: 20px;
+  padding: 34px 36px;
+  font-family: "roboto-900", arial, sans-serif;
+  position: relative;
+}
+
+.modal__close {
+  position: absolute;
+  background: url("../../images/closebutton.svg");
+  background-color: transparent;
+  background-size: contain;
+  bottom: calc(95% + 5%);
+  left: calc(95% + 5%);
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__input {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  padding-left: 0px;
+  border-color: rgba(0, 0, 0, 1);
+  margin-bottom: 24px;
+  font-family: "inter-400", arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 1);
+  width: 358px;
+}
+
+.modal__span {
+  color: rgba(47, 113, 229, 1);
+  font-family: "inter-400", arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.modal__button-submit {
+  font-family: "roboto-500", arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  width: 358px;
+  height: 64px;
+  border-radius: 32px;
+  border-style: solid;
+  border-color: rgba(47, 113, 229, 1);
+  color: rgba(255, 255, 255, 1);
+  transition: ease-in-out 0.5s;
+  background-color: rgba(47, 113, 229, 1);
+  margin-bottom: 16px;
+  opacity: 1;
+}
+
+.modal__button-submit:hover {
+  background-color: rgba(52, 126, 255, 1);
+  cursor: pointer;
+}
+
+.modal__button-submit:disabled {
+  color: rgba(182, 188, 191, 1);
+  opacity: 0.3;
+}
+
+.modal__button-container {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.modal__alternate-span-text {
+  font-family: "inter-400", arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.modal__button-alternate {
+  font-family: "inter-400", arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  transition: ease-in-out 0.5s;
+  color: rgba(47, 113, 229, 1);
+  cursor: pointer;
+}

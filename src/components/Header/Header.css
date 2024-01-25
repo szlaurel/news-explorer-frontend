@@ -17,12 +17,13 @@
   align-items: baseline;
   border: 0px;
   border-bottom-width: 1px;
-  border-color: white;
+  border-color: rgba(255, 255, 255, 0.2);
   border-style: solid;
   padding-bottom: 13px;
 }
 
 .header__button-container {
+  display: flex;
 }
 
 .header__logo {
@@ -44,6 +45,14 @@
   cursor: pointer;
   margin-right: 54px;
   /* margin-top: 30px; */
+  margin-top: 15px;
+}
+
+.header__home-button_active {
+  padding: 0;
+  border: 0;
+  text-underline-offset: 29px;
+  text-decoration-thickness: 3px;
 }
 
 .header__signin-button {

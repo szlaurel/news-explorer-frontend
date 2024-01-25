@@ -54,6 +54,7 @@
   display: flex;
   gap: 40px;
   margin-right: 108px;
+  align-items: center;
 }
 
 .footer__link {
@@ -63,8 +64,16 @@
   line-height: 24px;
 }
 
+.footer__link_active {
+  text-decoration: none;
+}
+
+.footer__link_active:visited {
+  color: black;
+  text-decoration: none;
+}
+
 .footer__social-icons {
   width: 24px;
   height: 24px;
-  margin-top: 18px;
 }

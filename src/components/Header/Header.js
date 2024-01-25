@@ -1,8 +1,9 @@
 import { useState } from "react";
 import "./Header.css";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+// import { Link, NavLink } from "react-router-dom/cjs/react-router-dom.min";
+import { NavLink, Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ onLoginModal }) => {
   const [searchField, setSearchField] = useState("");
 
   return (
@@ -10,8 +11,16 @@ const Header = () => {
       <div className="header__link-container">
         <h1 className="header__logo">NewsExplorer</h1>
         <div className="header__button-container">
-          <button className="header__home-button">Home</button>
-          <button className="header__signin-button">Sign in</button>
+          <NavLink
+            to="/"
+            activeClassName="header__home-button_active"
+            className="header__home-button"
+          >
+            Home
+          </NavLink>
+          <button className="header__signin-button" onClick={onLoginModal}>
+            Sign in
+          </button>
         </div>
       </div>
     </div>
