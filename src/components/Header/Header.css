@@ -1,13 +1,14 @@
 .header {
+  background-color: transparent;
+  width: 100%;
+  /* margin-bottom: 80px; */
   /* background-image: url("../../images/backgroundimage.svg");
   background-size: cover;
   background-repeat: no-repeat; */
-  background-color: transparent;
-  position: absolute;
-  height: 90vh;
-  width: 100%;
+  /* background-color: rgb(182, 62, 32); */
+  /* position: absolute; */
+  /* height: 90vh; */
   /* bottom: 0; */
-  margin-bottom: 80px;
 }
 
 .header__link-container {
@@ -44,6 +45,7 @@
   font-family: "roboto-500", arial, sans-serif;
   cursor: pointer;
   margin-right: 54px;
+  text-decoration-line: none;
   /* margin-top: 30px; */
   margin-top: 15px;
 }
@@ -52,9 +54,31 @@
   padding: 0;
   border: 0;
   text-underline-offset: 29px;
+  text-decoration: underline;
   text-decoration-thickness: 3px;
 }
 
+.header__saved-articles_button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-family: "roboto-500", arial, sans-serif;
+  cursor: pointer;
+  margin-right: 54px;
+  /* margin-top: 30px; */
+  text-decoration: none;
+  border-style: none;
+  margin-top: 15px;
+}
+
+.header__saved-articles_button_active {
+  padding: 0;
+  border: 0;
+  text-underline-offset: 29px;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
 .header__signin-button {
   padding: 0;
   border-radius: 40px;

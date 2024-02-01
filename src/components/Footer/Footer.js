@@ -12,6 +12,7 @@ import { NavLink, Link, useHistory } from "react-router-dom";
 const Footer = () => {
   const gitHubLink = "https://github.com/szlaurel";
   const facebookLink = "https://www.facebook.com/tripleten.tech/";
+  const tripleTenLink = "https://tripleten.com/";
   const history = useHistory();
 
   return (
@@ -40,15 +41,22 @@ const Footer = () => {
             Home
           </NavLink>
           {/* <h3 className="footer__link">Home</h3> */}
-          <h3 className="footer__link">TripleTen</h3>
-          <a href={gitHubLink} target="_blank">
+          <a
+            href={tripleTenLink}
+            target="_blank"
+            rel="noreferrer"
+            className="footer__link"
+          >
+            <h3 className="footer__link">TripleTen</h3>
+          </a>
+          <a href={gitHubLink} target="_blank" rel="noreferrer">
             <img
               src={gitHubLogo}
               alt="github"
               className="footer__social-icons"
             />
           </a>
-          <a href={facebookLink} target="_blank">
+          <a href={facebookLink} target="_blank" rel="noreferrer">
             <img
               src={faceBookLogo}
               alt="facebook"

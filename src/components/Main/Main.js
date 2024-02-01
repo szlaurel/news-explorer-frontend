@@ -1,11 +1,13 @@
 import "./Main.css";
 import { useState } from "react";
+import Header from "../Header/Header";
 
 const Main = () => {
   const [searchField, setSearchField] = useState("");
 
   return (
     <div className="main">
+      <Header />
       <div className="main-container">
         <div className="main__title">What's going on in the world?</div>
         <p className="main__paragraph">

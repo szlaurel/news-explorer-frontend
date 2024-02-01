@@ -3,15 +3,18 @@ import "./Header.css";
 // import { Link, NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import { NavLink, Link } from "react-router-dom";
 
-const Header = ({ onLoginModal }) => {
+const Header = ({ onLoginModal, isLoggedIn }) => {
   const [searchField, setSearchField] = useState("");
+
+  const username = "Elise";
+  const isActive = true;
 
   return (
     <div className="header">
       <div className="header__link-container">
         <h1 className="header__logo">NewsExplorer</h1>
         <div className="header__button-container">
-          <NavLink
+          {/* <NavLink
             to="/"
             activeClassName="header__home-button_active"
             className="header__home-button"
@@ -20,7 +23,42 @@ const Header = ({ onLoginModal }) => {
           </NavLink>
           <button className="header__signin-button" onClick={onLoginModal}>
             Sign in
-          </button>
+          </button> */}
+          {true ? (
+            <>
+              <NavLink
+                exact
+                to="/"
+                className="header__home-button"
+                activeClassName="header__home-button_active"
+              >
+                Home
+              </NavLink>
+              <NavLink
+                to="/saved-news"
+                className="header__saved-articles_button"
+                activeClassName="header__saved-articles_button_active"
+              >
+                Saved Articles
+              </NavLink>
+              <button className="header__signin-button" onClick={onLoginModal}>
+                {username}
+              </button>
+            </>
+          ) : (
+            <>
+              <NavLink
+                to="/"
+                activeClassName="header__home-button_active"
+                className="header__home-button"
+              >
+                Home
+              </NavLink>
+              <button className="header__signin-button" onClick={onLoginModal}>
+                Sign in
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>

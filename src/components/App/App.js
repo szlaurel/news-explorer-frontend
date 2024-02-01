@@ -8,6 +8,7 @@ import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
+import SavedNews from "../SavedNews/SavedNews";
 
 function App() {
   /* -------------------------------------------------------------------------- */
@@ -39,13 +40,14 @@ function App() {
 
   return (
     <div>
-      <Header onLoginModal={handleLoginModal} />
       <Switch>
         <Route exact path="/">
           <Main />
         </Route>
         <Route path="/profile">test to see if Profile</Route>
-        <Route path="/saved-news">test to see if saved-news works</Route>
+        <Route path="/saved-news">
+          <SavedNews />
+        </Route>
       </Switch>
       <Footer />
       {activeModal === "login" && (
