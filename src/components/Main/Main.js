@@ -1,13 +1,18 @@
 import "./Main.css";
 import { useState } from "react";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
-const Main = () => {
+const Main = ({ onLoginModal }) => {
   const [searchField, setSearchField] = useState("");
+
+  const doesWork = (e) => {
+    console.log("button works");
+  };
 
   return (
     <div className="main">
-      <Header />
+      <Header onLoginModal={onLoginModal} />
       <div className="main-container">
         <div className="main__title">What's going on in the world?</div>
         <p className="main__paragraph">
@@ -24,8 +29,18 @@ const Main = () => {
             value={searchField}
             onChange={(e) => setSearchField(e.target.value)}
           />
-          <button className="main__search-submit-button">Search</button>
+          <button
+            className="main__search-submit-button"
+            onMouseDown={(e) => {
+              console.log("click works");
+            }}
+          >
+            Search
+          </button>
         </div>
+      </div>
+      <div className="main__footer">
+        <Footer />
       </div>
     </div>
   );

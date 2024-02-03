@@ -11,6 +11,10 @@
   /* bottom: 0; */
 }
 
+.header[id="saved-news_header"] {
+  background-color: transparent;
+}
+
 .header__link-container {
   display: flex;
   justify-content: space-between;
@@ -21,6 +25,10 @@
   border-color: rgba(255, 255, 255, 0.2);
   border-style: solid;
   padding-bottom: 13px;
+}
+
+.header__link-container[id="saved-news_header"] {
+  border-color: rgba(209, 210, 214, 1);
 }
 
 .header__button-container {
@@ -37,6 +45,10 @@
   margin-left: 104px;
 }
 
+.header__logo[id="saved-news_header"] {
+  color: black;
+}
+
 .header__home-button {
   padding: 0;
   border: 0;
@@ -48,6 +60,10 @@
   text-decoration-line: none;
   /* margin-top: 30px; */
   margin-top: 15px;
+}
+
+.header__home-button[id="saved-news_header"] {
+  color: black;
 }
 
 .header__home-button_active {
@@ -72,6 +88,10 @@
   margin-top: 15px;
 }
 
+.header__saved-articles_button[id="saved-news_header"] {
+  color: black;
+}
+
 .header__saved-articles_button_active {
   padding: 0;
   border: 0;
@@ -94,6 +114,10 @@
   /* margin-top: 30px; */
 }
 
+.header__signin-button[id="saved-news_header"] {
+  color: black;
+  border-color: black;
+}
 /* starting from here is where i copy and pasted to the main and main.css */
 /* VVVVVVV */
 

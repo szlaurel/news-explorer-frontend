@@ -42,14 +42,14 @@ function App() {
     <div>
       <Switch>
         <Route exact path="/">
-          <Main />
+          <Main onLoginModal={handleLoginModal} />
         </Route>
         <Route path="/profile">test to see if Profile</Route>
-        <Route path="/saved-news">
+        <Route exact path="/saved-news">
           <SavedNews />
         </Route>
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
       {activeModal === "login" && (
         <LoginModal
           handleCloseModal={handleCloseModal}

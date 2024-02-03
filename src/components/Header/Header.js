@@ -3,17 +3,19 @@ import "./Header.css";
 // import { Link, NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import { NavLink, Link } from "react-router-dom";
 
-const Header = ({ onLoginModal, isLoggedIn }) => {
+const Header = ({ onLoginModal, isLoggedIn, id }) => {
   const [searchField, setSearchField] = useState("");
 
   const username = "Elise";
   const isActive = true;
 
   return (
-    <div className="header">
-      <div className="header__link-container">
-        <h1 className="header__logo">NewsExplorer</h1>
-        <div className="header__button-container">
+    <div className="header" id={id}>
+      <div className="header__link-container" id={id}>
+        <h1 className="header__logo" id={id}>
+          NewsExplorer
+        </h1>
+        <div className="header__button-container" id={id}>
           {/* <NavLink
             to="/"
             activeClassName="header__home-button_active"
@@ -31,6 +33,7 @@ const Header = ({ onLoginModal, isLoggedIn }) => {
                 to="/"
                 className="header__home-button"
                 activeClassName="header__home-button_active"
+                id={id}
               >
                 Home
               </NavLink>
@@ -38,10 +41,15 @@ const Header = ({ onLoginModal, isLoggedIn }) => {
                 to="/saved-news"
                 className="header__saved-articles_button"
                 activeClassName="header__saved-articles_button_active"
+                id={id}
               >
                 Saved Articles
               </NavLink>
-              <button className="header__signin-button" onClick={onLoginModal}>
+              <button
+                className="header__signin-button"
+                onClick={onLoginModal}
+                id={id}
+              >
                 {username}
               </button>
             </>

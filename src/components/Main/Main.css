@@ -74,3 +74,7 @@
   background-color: rgba(47, 113, 229, 1);
   cursor: pointer;
 }
+
+.main__footer {
+  margin-top: 180px;
+}
