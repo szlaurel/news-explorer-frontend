@@ -15,14 +15,23 @@
   color: rgba(26, 27, 34, 0.5);
 }
 
-.saved-news_paragraph {
+.saved-news_paragraph-container {
   font-family: "roboto-slab-400", arial, sans-serif;
   font-size: 40px;
   font-weight: 400;
   line-height: 46px;
   letter-spacing: 0px;
   text-align: left;
+  width: 530px;
 }
+/* 
+.saved-news_paragraph-username {
+  display: inline-block;
+  width: 40%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+} */
 
 .saved-news_keywords__container {
   display: flex;

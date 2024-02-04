@@ -1,6 +1,7 @@
 import React from "react";
 import "./SavedNewsHeader.css";
 import Header from "../Header/Header";
+import savedNewsLogOutButton from "../../images/savednewslogout.svg";
 
 const SavedNewsHeader = () => {
   /* -------------------------------------------------------------------------- */
@@ -16,11 +17,11 @@ const SavedNewsHeader = () => {
   return (
     <div className="saved-news_header">
       <div>
-        <Header id={"saved-news_header"} />
+        <Header id={"saved-news_header"} logOutButton={savedNewsLogOutButton} />
       </div>
       <div className="saved-news_container">
         <div className="saved-news_title">Saved Articles</div>
-        <div className="saved-news_paragraph">
+        <div className="saved-news_paragraph-container">
           {`${username}, you have ${articles} saved articles`}
         </div>
         <div className="saved-news_keywords__container">
@@ -35,3 +36,23 @@ const SavedNewsHeader = () => {
 };
 
 export default SavedNewsHeader;
+
+// return (
+//   <div className="saved-news_header">
+//     <div>
+//       <Header id={"saved-news_header"} />
+//     </div>
+//     <div className="saved-news_container">
+//       <div className="saved-news_title">Saved Articles</div>
+//       <div className="saved-news_paragraph-container">
+//         {`${username}, you have ${articles} saved articles`}
+//       </div>
+//       <div className="saved-news_keywords__container">
+//         <div className="saved-news_keywords__title">By keywords: </div>
+//         <div className="saved-news_keywords">
+//           {`${keyWords1}, ${keyWords2}, ${otherKeywords} other`}
+//         </div>
+//       </div>
+//     </div>
+//   </div>
+// );

@@ -2,8 +2,10 @@ import { useState } from "react";
 import "./Header.css";
 // import { Link, NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import { NavLink, Link } from "react-router-dom";
+import homeLogOut from "../../images/homelogout.svg";
+import savedNewsLogOut from "../../images/savednewslogout.svg";
 
-const Header = ({ onLoginModal, isLoggedIn, id }) => {
+const Header = ({ onLoginModal, isLoggedIn, id, logOutButton }) => {
   const [searchField, setSearchField] = useState("");
 
   const username = "Elise";
@@ -51,6 +53,7 @@ const Header = ({ onLoginModal, isLoggedIn, id }) => {
                 id={id}
               >
                 {username}
+                <img src={logOutButton} alt="logout" />
               </button>
             </>
           ) : (
