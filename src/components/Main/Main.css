@@ -75,6 +75,14 @@
   cursor: pointer;
 }
 
+.main__newscards-list-container {
+  margin-top: 80px;
+}
+
+.main__newscards-list-title {
+  margin-left: 102px;
+}
+
 .main__footer {
   margin-top: 180px;
 }

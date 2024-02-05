@@ -1,0 +1,22 @@
+.news-card-list {
+  /* display: flex; */
+  /* margin-left: 102px; */
+}
+
+.news-card-list[id="saved-news-cards"] {
+  margin-left: 102px;
+}
+
+.news-card-list[id="main"] {
+  margin-left: 102px;
+}
+.news-card-list__container {
+  display: flex;
+  gap: 16px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: rgba(245, 246, 247, 1);
+}
+
+.news-card-list__container[id="main"] {
+}

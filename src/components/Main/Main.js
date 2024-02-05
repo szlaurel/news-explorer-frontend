@@ -4,6 +4,8 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import homeLogOutButton from "../../images/homelogout.svg";
 import SearchForm from "../SearchForm/SearchForm";
+import NewsCardList from "../NewsCardList/NewsCardList";
+import SearchResults from "../SearchResults/SearchResults";
 
 const Main = ({ onLoginModal }) => {
   const [searchField, setSearchField] = useState("");
@@ -23,7 +25,9 @@ const Main = ({ onLoginModal }) => {
         </p>
         <SearchForm />
       </div>
-      <div className="main__newscards-list-container"></div>
+      <div className="main__newscards-list-container">
+        <SearchResults />
+      </div>
       <div className="main__footer">
         <Footer />
       </div>

@@ -1,6 +1,6 @@
 .news-card__container {
   max-width: 400px;
-  max-height: 576px;
+  /* max-height: 576px; */
   border-bottom-left-radius: 20px;
 }
 .news-card-image__container {
@@ -58,10 +58,12 @@
   position: relative;
   bottom: 30px;
   background-color: bisque;
-  width: 400px;
+  background-color: rgba(255, 255, 255, 1);
+  max-width: 400px;
+  padding: 24px;
   bottom: 50px;
-  /* border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px; */
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .news-card__date {
@@ -76,6 +78,8 @@
   font-size: 26px;
   font-weight: 400;
   line-height: 30px;
+  margin-bottom: 16px;
+  margin-top: 15px;
 }
 .news-card__paragraph {
   width: 352px;
@@ -94,4 +98,5 @@
   font-weight: 700;
   line-height: 20px;
   color: rgba(182, 188, 191, 1);
+  margin-top: 18px;
 }

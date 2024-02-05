@@ -2,6 +2,8 @@ import React from "react";
 import "./SavedNews.css";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 import NewsCard from "../NewsCard/NewsCard";
+import NewsCardList from "../NewsCardList/NewsCardList";
+import Footer from "../Footer/Footer";
 
 const SavedNews = () => {
   console.log("savednews works");
@@ -15,11 +17,10 @@ const SavedNews = () => {
         <SavedNewsHeader />
       </div>
       <div className="saved-news-cards__container">
-        <NewsCard />
-        <NewsCard />
-        <NewsCard />
-        <NewsCard />
-        <NewsCard />
+        <NewsCardList id={"saved-news-cards"} />
+      </div>
+      <div>
+        <Footer savedNewsPage={true} id={"saved-news__footer"} />
       </div>
     </div>
   );

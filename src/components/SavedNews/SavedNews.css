@@ -7,10 +7,5 @@
 }
 
 .saved-news-cards__container {
-  /* margin-left: 104px; */
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 16px;
   background-color: rgba(245, 246, 247, 1);
 }
