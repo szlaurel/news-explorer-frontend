@@ -8,6 +8,8 @@ import savedNewsLogOut from "../../images/savednewslogout.svg";
 const Header = ({ onLoginModal, isLoggedIn, id, logOutButton }) => {
   const [searchField, setSearchField] = useState("");
 
+  // const [tempSwitchUser, setTempSwitchUser] = useState(false);
+
   const username = "Elise";
   const isActive = true;
 
@@ -28,7 +30,7 @@ const Header = ({ onLoginModal, isLoggedIn, id, logOutButton }) => {
           <button className="header__signin-button" onClick={onLoginModal}>
             Sign in
           </button> */}
-          {false ? (
+          {true ? (
             <>
               <NavLink
                 exact

@@ -2,6 +2,7 @@ import React from "react";
 import "./NewsCard.css";
 import tempImage from "../../images/tempcardimage.svg";
 import trashDelete from "../../images/activetrash.svg";
+import { useState } from "react";
 
 const NewsCard = ({ isSaved }) => {
   const tempDate = "09/07/2024";
@@ -10,10 +11,18 @@ const NewsCard = ({ isSaved }) => {
   const tempParagraph = `Ever since I read Richard Louv's influential book, "Last Child in the Woods," the idea of having a special "sit spot" has stuck with me. This advice, which Louv attributes to nature educator Jon Young, is for both adults and children to find...`;
   const tempCategory = "Nature";
 
+  const [isLike, setLike] = useState(false);
+
   const handleLikeClick = () => {
     // code for handling the like button functionality
     // goes here
     console.log("click");
+    if (isLike === false) {
+      setLike(true);
+    } else if (isLike === true) {
+      setLike(false);
+    }
+    return;
   };
 
   return (
@@ -30,7 +39,7 @@ const NewsCard = ({ isSaved }) => {
             <div className="news-card-image__category-container">
               <button
                 className={
-                  false
+                  isLike
                     ? "news-card-image__save-button"
                     : "news-card-image__unsave-button"
                 }

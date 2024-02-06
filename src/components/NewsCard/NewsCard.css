@@ -67,6 +67,7 @@
   top: -265px;
   left: 345px;
   cursor: pointer;
+  transition: ease-in-out 0.4s;
 }
 
 .news-card-image__save-button {
@@ -81,6 +82,7 @@
   top: -265px;
   left: 345px;
   cursor: pointer;
+  transition: ease-in-out 0.4s;
 }
 
 .news-card-info__container {
