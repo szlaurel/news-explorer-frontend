@@ -12,8 +12,8 @@ const Header = ({ onLoginModal, isLoggedIn, id, logOutButton }) => {
   const isActive = true;
 
   return (
-    <div className="header" id={id}>
-      <div className="header__link-container" id={id}>
+    <header className="header" id={id}>
+      <section className="header__link-container" id={id}>
         <h1 className="header__logo" id={id}>
           NewsExplorer
         </h1>
@@ -28,7 +28,7 @@ const Header = ({ onLoginModal, isLoggedIn, id, logOutButton }) => {
           <button className="header__signin-button" onClick={onLoginModal}>
             Sign in
           </button> */}
-          {true ? (
+          {false ? (
             <>
               <NavLink
                 exact
@@ -48,7 +48,7 @@ const Header = ({ onLoginModal, isLoggedIn, id, logOutButton }) => {
                 Saved Articles
               </NavLink>
               <button
-                className="header__signin-button"
+                className="header__logout-button"
                 onClick={onLoginModal}
                 id={id}
               >
@@ -71,8 +71,8 @@ const Header = ({ onLoginModal, isLoggedIn, id, logOutButton }) => {
             </>
           )}
         </div>
-      </div>
-    </div>
+      </section>
+    </header>
   );
 };
 export default Header;

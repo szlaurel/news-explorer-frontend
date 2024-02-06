@@ -119,6 +119,31 @@
   /* margin-top: 30px; */
 }
 
+.header__logout-button {
+  padding: 0;
+  border-radius: 40px;
+  border-style: solid;
+  width: 176px;
+  height: 48px;
+  border-color: white;
+  background: transparent;
+  color: white;
+  font-family: "roboto-500", arial, sans-serif;
+  cursor: pointer;
+  margin-right: 116px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  /* margin-top: 30px; */
+}
+
+.header__logout-button[id="saved-news_header"] {
+  color: black;
+  border-color: black;
+}
+
 .header__signin-button[id="saved-news_header"] {
   color: black;
   border-color: black;

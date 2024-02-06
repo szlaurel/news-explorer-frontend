@@ -15,23 +15,23 @@ const Main = ({ onLoginModal }) => {
   };
 
   return (
-    <div className="main">
+    <main className="main">
       <Header onLoginModal={onLoginModal} logOutButton={homeLogOutButton} />
-      <div className="main-container">
+      <section className="main-container">
         <div className="main__title">What's going on in the world?</div>
         <p className="main__paragraph">
           Find the latest news on any topic and save them in your personal
           account.
         </p>
         <SearchForm />
-      </div>
-      <div className="main__newscards-list-container">
+      </section>
+      <section className="main__newscards-list-container">
         <SearchResults />
-      </div>
-      <div className="main__footer">
+      </section>
+      <footer className="main__footer">
         <Footer />
-      </div>
-    </div>
+      </footer>
+    </main>
   );
 };
 

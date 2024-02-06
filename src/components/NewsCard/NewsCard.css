@@ -52,6 +52,35 @@
   position: relative;
   top: -290px;
   left: 325px;
+  cursor: pointer;
+}
+
+.news-card-image__unsave-button {
+  background-image: url("../../images/unsavedicon.svg");
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 0;
+  border-radius: 8px;
+  position: relative;
+  top: -265px;
+  left: 345px;
+  cursor: pointer;
+}
+
+.news-card-image__save-button {
+  background-image: url("../../images/savedicon.svg");
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 0;
+  border-radius: 8px;
+  position: relative;
+  top: -265px;
+  left: 345px;
+  cursor: pointer;
 }
 
 .news-card-info__container {

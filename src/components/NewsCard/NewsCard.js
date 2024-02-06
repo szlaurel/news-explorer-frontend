@@ -3,22 +3,41 @@ import "./NewsCard.css";
 import tempImage from "../../images/tempcardimage.svg";
 import trashDelete from "../../images/activetrash.svg";
 
-const NewsCard = () => {
+const NewsCard = ({ isSaved }) => {
   const tempDate = "09/07/2024";
   const tempTitle = "Everyone Needs a Special 'Sit Spot' in Nature";
   const tempSite = "National Graphic";
   const tempParagraph = `Ever since I read Richard Louv's influential book, "Last Child in the Woods," the idea of having a special "sit spot" has stuck with me. This advice, which Louv attributes to nature educator Jon Young, is for both adults and children to find...`;
   const tempCategory = "Nature";
 
+  const handleLikeClick = () => {
+    // code for handling the like button functionality
+    // goes here
+    console.log("click");
+  };
+
   return (
     <div className="news-card__container">
       <div className="news-card-image__container">
         <div className="news-card-image__info">
           <img src={tempImage} alt="image" className="news-card__image" />
-          <div className="news-card-image__category-container">
-            <div className="news-card-image__category">{tempCategory}</div>
-            <button className="news-card-image__remove-button"></button>
-          </div>
+          {isSaved ? (
+            <div className="news-card-image__category-container">
+              <div className="news-card-image__category">{tempCategory}</div>
+              <button className="news-card-image__remove-button"></button>
+            </div>
+          ) : (
+            <div className="news-card-image__category-container">
+              <button
+                className={
+                  false
+                    ? "news-card-image__save-button"
+                    : "news-card-image__unsave-button"
+                }
+                onClick={handleLikeClick}
+              ></button>
+            </div>
+          )}
         </div>
       </div>
       <div className="news-card-info__container">

@@ -33,4 +33,11 @@
   border-color: white;
   padding: 20px 98px;
   cursor: pointer;
+  transition: ease-in-out 0.5s;
+  opacity: 1;
+}
+
+.search-results__button:hover {
+  background-color: rgba(232, 232, 232, 1);
+  border-color: rgba(232, 232, 232, 1);
 }

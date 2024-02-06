@@ -1,5 +1,7 @@
 import "./ModalWithForm.css";
 import React from "react";
+import { useRef } from "react";
+import { useEffect } from "react";
 
 const ModalWithForm = ({
   children,
@@ -12,9 +14,35 @@ const ModalWithForm = ({
   alternateModalOpen,
   idForEachCloseButton,
 }) => {
+  const ref = useRef();
+
+  /* -------------------------------------------------------------------------- */
+  /*              click outside modal and escape button modal code              */
+  /* -------------------------------------------------------------------------- */
+
+  useEffect(() => {
+    const checkIfOutsideClick = (e) => {
+      if (ref.current && !ref.current.contains(e.target)) {
+        onClose();
+      }
+    };
+
+    const checkIfEscPress = (e) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+    document.addEventListener("mousedown", checkIfOutsideClick);
+    document.addEventListener("keyup", checkIfEscPress);
+    return () => {
+      document.removeEventListener("mousedown", checkIfOutsideClick);
+      document.removeEventListener("keyup", checkIfEscPress);
+    };
+  }, [onClose]);
+
   return (
     <div className={`modal modal__type${name}`}>
-      <div className="modal__container">
+      <div className="modal__container" ref={ref}>
         <button
           type="button"
           onClick={onClose}

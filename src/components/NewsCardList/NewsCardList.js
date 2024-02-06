@@ -2,15 +2,16 @@ import React from "react";
 import "./NewsCardList.css";
 import NewsCard from "../NewsCard/NewsCard";
 
-const NewsCardList = ({ id }) => {
+const NewsCardList = ({ id, isSaved }) => {
   return (
     <div className="news-card-list" id={id}>
-      <div className="news-card-list__container">
-        <NewsCard />
-        <NewsCard />
-        <NewsCard />
-        <NewsCard />
-      </div>
+      <section className="news-card-list__container">
+        <NewsCard isSaved={isSaved} />
+        <NewsCard isSaved={isSaved} />
+        <NewsCard isSaved={isSaved} />
+        <NewsCard isSaved={isSaved} />
+        <NewsCard isSaved={isSaved} />
+      </section>
     </div>
   );
 };
