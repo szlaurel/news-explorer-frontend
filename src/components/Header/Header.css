@@ -15,7 +15,7 @@
   background-color: transparent;
 }
 
-.header__link-container {
+.header__navbar-container {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -27,12 +27,27 @@
   padding-bottom: 13px;
 }
 
-.header__link-container[id="saved-news_header"] {
+.header__navbar-container_active {
+  display: none;
+}
+
+.header__navbar-container[id="saved-news_header"] {
   border-color: rgba(209, 210, 214, 1);
+}
+
+.header__hamburger-button {
+  display: none;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
 }
 
 .header__button-container {
   display: flex;
+}
+
+.header__button-container_active {
+  display: none;
 }
 
 .header__logo {
@@ -148,6 +163,292 @@
   color: black;
   border-color: black;
 }
+
+/* menu styles aka hamburger menu style */
+/* just change the respective styles in the max-width for easier access */
+
+.header__menu-alternate {
+}
+
+.header__menu-home-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-family: "roboto-500", arial, sans-serif;
+  cursor: pointer;
+  margin-right: 54px;
+  text-decoration-line: none;
+  /* margin-top: 30px; */
+  margin-top: 15px;
+}
+
+.header__menu-home-button[id="saved-news_header"] {
+  color: black;
+}
+
+.header__menu-home-button_active {
+  padding: 0;
+  border: 0;
+  text-underline-offset: 29px;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
+
+.header__menu-home-button[id="saved-news_header"] {
+  color: black;
+}
+
+.header__menu-home-button_active {
+  padding: 0;
+  border: 0;
+  text-underline-offset: 29px;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
+
+.header__saved-articles_button__menu {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-family: "roboto-500", arial, sans-serif;
+  cursor: pointer;
+  margin-right: 54px;
+  /* margin-top: 30px; */
+  text-decoration: none;
+  border-style: none;
+  margin-top: 15px;
+}
+
+.header__saved-articles_button__menu[id="saved-news_header"] {
+  color: black;
+}
+
+.header__saved-articles_button__menu_active {
+  padding: 0;
+  border: 0;
+  text-underline-offset: 29px;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
+
+.header__signin-button__menu {
+  padding: 0;
+  border-radius: 40px;
+  border-style: solid;
+  width: 176px;
+  height: 48px;
+  border-color: white;
+  background: transparent;
+  color: white;
+  font-family: "roboto-500", arial, sans-serif;
+  cursor: pointer;
+  margin-right: 116px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  /* margin-top: 30px; */
+}
+
+.header__logout-button__menu {
+  padding: 0;
+  border-radius: 40px;
+  border-style: solid;
+  width: 176px;
+  height: 48px;
+  border-color: white;
+  background: transparent;
+  color: white;
+  font-family: "roboto-500", arial, sans-serif;
+  cursor: pointer;
+  margin-right: 116px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  /* margin-top: 30px; */
+}
+
+.header__logout-button__menu[id="saved-news_header"] {
+  color: black;
+  border-color: black;
+}
+
+.header__signin-button__menu[id="saved-news_header"] {
+  color: black;
+  border-color: black;
+}
+
+@media screen and (max-width: 826px) {
+  .header__logo {
+    width: 200px;
+    height: 24.8px;
+    margin-left: 40px;
+  }
+
+  .header__signin-button {
+    margin-right: 40px;
+  }
+
+  .header__logout-button {
+    margin-right: 40px;
+  }
+}
+
+/* this used to be max-width 694px VVV */
+
+@media screen and (max-width: 700px) {
+  .header__navbar-container {
+    display: flex;
+    transition: ease-in-out 0.5s;
+  }
+
+  .header__border-bottom {
+    border: 0px;
+    border-bottom-width: 1px;
+    width: 100vw;
+    border-style: solid;
+    color: rgba(255, 255, 255, 0.2);
+    position: relative;
+    top: 14px;
+  }
+
+  .header__navbar-container_active {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: baseline;
+    border: 0px;
+    border-bottom-width: 0px;
+    border-color: rgba(255, 255, 255, 0.2);
+    border-style: solid;
+    padding-bottom: 30px;
+    opacity: 1;
+    transition: ease-in-out 0.5s;
+    background-color: rgba(26, 27, 34, 1);
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+  }
+
+  .header__navbar-container_active:active {
+    opacity: 0;
+  }
+
+  .header__logout-button {
+    margin-right: 20px;
+  }
+  .header__hamburger-button {
+    display: block;
+    margin-right: 16px;
+    width: 35px;
+    height: 5px;
+    /* margin: 6px 0px; */
+    position: absolute;
+    right: 0;
+    top: 15px;
+  }
+
+  .header__bar-one,
+  .header__bar-two {
+    width: 16px;
+    height: 2px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  .header__bar-one[id="saved-news_header"] {
+    background-color: black;
+  }
+  .header__bar-two[id="saved-news_header"] {
+    background-color: black;
+  }
+
+  .header__button-container {
+    display: none;
+    flex-direction: column;
+    transition: ease-in-out 0.5s;
+  }
+
+  .header__button-container_active {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 22px;
+    top: 16px;
+    padding: 16px;
+    /* transition: ease-in-out 0.s; */
+  }
+
+  .header__signin-button {
+    /* width: 95vw; */
+    width: calc(95vw - 5%);
+    height: 48px;
+    margin-right: 0px;
+  }
+  .header__logout-button {
+    width: calc(95vw - 5%);
+  }
+
+  .header__logout-image[id="saved-news_header"] {
+    fill: #ffffff;
+  }
+
+  .header__saved-articles_button_active {
+    text-decoration: none;
+  }
+
+  .header__home-button[id="saved-news_header"] {
+    color: white;
+  }
+
+  .header__saved-articles_button_active[id="saved-news_header"] {
+    color: white;
+  }
+  .header__logout-button[id="saved-news_header"] {
+    color: white;
+    border-color: white;
+  }
+
+  .header__menu-bar {
+  }
+  .header__home-button_active {
+    text-decoration: none;
+  }
+
+  .header__logo {
+    margin-top: 16px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .header__logo {
+    width: 117px;
+    height: 24.8px;
+    margin-left: 16px;
+  }
+
+  .header__hamburger-button {
+    display: block;
+    margin-right: 16px;
+  }
+  .header__signin-button {
+    margin-right: 0;
+    width: calc(95vw - 15%);
+  }
+
+  .header__button-container {
+    display: none;
+  }
+  .header__logout-button {
+    width: 21em;
+  }
+}
+
 /* starting from here is where i copy and pasted to the main and main.css */
 /* VVVVVVV */
 

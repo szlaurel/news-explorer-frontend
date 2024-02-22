@@ -2,6 +2,7 @@ import React from "react";
 import "./SavedNewsHeader.css";
 import Header from "../Header/Header";
 import savedNewsLogOutButton from "../../images/savednewslogout.svg";
+import alternateHamburgerButton from "../../images/hamburger-button-black.svg";
 
 const SavedNewsHeader = () => {
   /* -------------------------------------------------------------------------- */
@@ -17,7 +18,11 @@ const SavedNewsHeader = () => {
   return (
     <div className="saved-news_header">
       <div>
-        <Header id={"saved-news_header"} logOutButton={savedNewsLogOutButton} />
+        <Header
+          id={"saved-news_header"}
+          logOutButton={savedNewsLogOutButton}
+          menuButton={alternateHamburgerButton}
+        />
       </div>
       <div className="saved-news_container">
         <div className="saved-news_title">Saved Articles</div>

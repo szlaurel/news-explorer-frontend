@@ -31,3 +31,19 @@
   background-color: rgba(47, 113, 229, 1);
   cursor: pointer;
 }
+
+@media screen and (max-width: 826px) {
+  .search-form__input {
+    max-width: 448px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .search-form__input {
+    max-width: 288px;
+  }
+  .search-form__submit-button {
+    bottom: -80px;
+    width: 288px;
+  }
+}

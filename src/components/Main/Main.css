@@ -1,6 +1,6 @@
 .main {
   background-image: url("../../images/backgroundimage.svg");
-  height: 70vh;
+  height: 80vh;
   background-size: cover;
   background-repeat: no-repeat;
   padding: 0;
@@ -76,7 +76,7 @@
 }
 
 .main__newscards-list-container {
-  margin-top: 80px;
+  margin-top: 70px;
 }
 
 .main__newscards-list-title {
@@ -85,4 +85,84 @@
 
 .main__footer {
   margin-top: 180px;
+}
+
+@media screen and (max-width: 826px) {
+  .main {
+    height: 100vh;
+  }
+
+  .main__title {
+    max-width: 75%;
+  }
+
+  .main__paragraph {
+    max-width: 70%;
+    max-height: 48px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 694px) {
+  .main-container {
+  }
+  .main {
+    height: 100vh;
+  }
+
+  .main__title {
+    max-width: 75%;
+  }
+
+  .main__paragraph {
+    max-width: 70%;
+    max-height: 48px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .main-container {
+  }
+  .main {
+    height: 100vh;
+  }
+
+  .main__title {
+    max-width: 75%;
+  }
+
+  .main__paragraph {
+    max-width: 70%;
+    max-height: 48px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .main-container {
+  }
+  .main {
+    height: 90vh;
+    background-position: center;
+  }
+
+  .main__title {
+    max-width: 285px;
+    max-height: 80px;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 30px;
+  }
+
+  .main__paragraph {
+    max-width: 70%;
+    max-height: 48px;
+    font-size: 18px;
+  }
+
+  .main__newscards-list-container {
+    margin-top: 96px;
+  }
 }

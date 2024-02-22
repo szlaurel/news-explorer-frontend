@@ -6,6 +6,7 @@ import homeLogOutButton from "../../images/homelogout.svg";
 import SearchForm from "../SearchForm/SearchForm";
 import NewsCardList from "../NewsCardList/NewsCardList";
 import SearchResults from "../SearchResults/SearchResults";
+import hamburgerButton from "../../images/hamburger-button.svg";
 
 const Main = ({ onLoginModal }) => {
   const [searchField, setSearchField] = useState("");
@@ -16,7 +17,11 @@ const Main = ({ onLoginModal }) => {
 
   return (
     <main className="main">
-      <Header onLoginModal={onLoginModal} logOutButton={homeLogOutButton} />
+      <Header
+        onLoginModal={onLoginModal}
+        logOutButton={homeLogOutButton}
+        menuButton={hamburgerButton}
+      />
       <section className="main-container">
         <div className="main__title">What's going on in the world?</div>
         <p className="main__paragraph">

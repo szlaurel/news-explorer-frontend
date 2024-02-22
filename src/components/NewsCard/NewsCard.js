@@ -26,34 +26,36 @@ const NewsCard = ({ isSaved }) => {
   };
 
   return (
-    <div className="news-card__container">
-      <div className="news-card-image__container">
-        <div className="news-card-image__info">
-          <img src={tempImage} alt="image" className="news-card__image" />
-          {isSaved ? (
-            <div className="news-card-image__category-container">
-              <div className="news-card-image__category">{tempCategory}</div>
-              <button className="news-card-image__remove-button"></button>
-            </div>
-          ) : (
-            <div className="news-card-image__category-container">
-              <button
-                className={
-                  isLike
-                    ? "news-card-image__save-button"
-                    : "news-card-image__unsave-button"
-                }
-                onClick={handleLikeClick}
-              ></button>
-            </div>
-          )}
+    <div className="news-card__first-container">
+      <div className="news-card__container">
+        <div className="news-card-image__container">
+          <div className="news-card-image__info">
+            <img src={tempImage} alt="image" className="news-card__image" />
+            {isSaved ? (
+              <div className="news-card-image__category-container">
+                <div className="news-card-image__category">{tempCategory}</div>
+                <button className="news-card-image__remove-button"></button>
+              </div>
+            ) : (
+              <div className="news-card-image__category-container">
+                <button
+                  className={
+                    isLike
+                      ? "news-card-image__save-button"
+                      : "news-card-image__unsave-button"
+                  }
+                  onClick={handleLikeClick}
+                ></button>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-      <div className="news-card-info__container">
-        <div className="news-card__date">{tempDate}</div>
-        <div className="news-card__title">{tempTitle}</div>
-        <div className="news-card__paragraph">{tempParagraph}</div>
-        <div className="news-card__site">{tempSite}</div>
+        <div className="news-card-info__container">
+          <div className="news-card__date">{tempDate}</div>
+          <div className="news-card__title">{tempTitle}</div>
+          <div className="news-card__paragraph">{tempParagraph}</div>
+          <div className="news-card__site">{tempSite}</div>
+        </div>
       </div>
     </div>
   );

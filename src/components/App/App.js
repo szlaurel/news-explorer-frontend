@@ -9,6 +9,7 @@ import Main from "../Main/Main";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import SavedNews from "../SavedNews/SavedNews";
+import { tempNewsCardData } from "../../utils/constants";
 
 function App() {
   /* -------------------------------------------------------------------------- */
@@ -16,6 +17,10 @@ function App() {
   /* -------------------------------------------------------------------------- */
 
   const [activeModal, setActiveModal] = useState("");
+
+  // This is needed in order to paste the search results in the field
+  // this will also be needed later
+  const [results, setResults] = useState([]);
 
   /* -------------------------------------------------------------------------- */
   /*                             handle open modals                             */

@@ -4,32 +4,72 @@ import "./Header.css";
 import { NavLink, Link } from "react-router-dom";
 import homeLogOut from "../../images/homelogout.svg";
 import savedNewsLogOut from "../../images/savednewslogout.svg";
+import hamburgerButton from "../../images/hamburger-button.svg";
 
-const Header = ({ onLoginModal, isLoggedIn, id, logOutButton }) => {
+const Header = ({ onLoginModal, isLoggedIn, id, logOutButton, menuButton }) => {
   const [searchField, setSearchField] = useState("");
+  const [open, setOpen] = useState("");
+  const [isActive, setIsActive] = useState(false);
 
   // const [tempSwitchUser, setTempSwitchUser] = useState(false);
 
   const username = "Elise";
-  const isActive = true;
+
+  const handleOpenAndCloseMenu = () => {
+    if (open === "open") {
+      setOpen("");
+      setIsActive(false);
+      console.log("its closed now");
+    } else if (open === "") {
+      setOpen("open");
+      setIsActive(true);
+      console.log("its open now");
+    } else return;
+  };
+  {
+    /* <section className="header__navbar-container" id={id}></section> */
+  }
 
   return (
     <header className="header" id={id}>
-      <section className="header__link-container" id={id}>
-        <h1 className="header__logo" id={id}>
-          NewsExplorer
-        </h1>
-        <div className="header__button-container" id={id}>
-          {/* <NavLink
-            to="/"
-            activeClassName="header__home-button_active"
-            className="header__home-button"
-          >
-            Home
-          </NavLink>
-          <button className="header__signin-button" onClick={onLoginModal}>
-            Sign in
-          </button> */}
+      <button
+        className="header__hamburger-button"
+        onClick={handleOpenAndCloseMenu}
+      >
+        <div className="header__bar-one" id={id}></div>
+        <div className="header__bar-two" id={id}></div>
+      </button>
+      <section
+        className={
+          !isActive
+            ? "header__navbar-container"
+            : "header__navbar-container_active"
+        }
+        id={id}
+      >
+        <div className="header__menu-container">
+          <h1 className="header__logo" id={id}>
+            NewsExplorer
+          </h1>
+          <div className="header__border-bottom"></div>
+        </div>
+
+        {/* <button
+          className="header__hamburger-button"
+          onClick={handleOpenAndCloseMenu}
+        >
+          <div className="header__bar-one"></div>
+          <div className="header__bar-two"></div>
+        </button> */}
+        {/* <div className="header__menu-bar"></div> */}
+        <div
+          className={
+            !isActive
+              ? "header__button-container"
+              : "header__button-container_active"
+          }
+          id={id}
+        >
           {true ? (
             <>
               <NavLink
@@ -55,7 +95,12 @@ const Header = ({ onLoginModal, isLoggedIn, id, logOutButton }) => {
                 id={id}
               >
                 {username}
-                <img src={logOutButton} alt="logout" />
+                <img
+                  src={logOutButton}
+                  alt="logout"
+                  className="header__logout-image"
+                  id={id}
+                />
               </button>
             </>
           ) : (

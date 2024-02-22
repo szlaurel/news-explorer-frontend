@@ -18,6 +18,7 @@
   display: flex;
   gap: 16px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .search-results__button-container {
@@ -40,4 +41,27 @@
 .search-results__button:hover {
   background-color: rgba(232, 232, 232, 1);
   border-color: rgba(232, 232, 232, 1);
+}
+
+@media screen and (max-width: 826px) {
+  .search-results__button {
+    margin-top: 32px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .search-results {
+    /* margin-top: 120px; */
+  }
+
+  .search-results__title-container {
+    margin-left: 16px;
+  }
+
+  .search-results__title {
+    font-family: "roboto-slab-400", arial, sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    padding-bottom: 0;
+  }
 }

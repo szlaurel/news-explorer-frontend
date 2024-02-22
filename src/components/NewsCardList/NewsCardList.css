@@ -20,3 +20,13 @@
 
 .news-card-list__container[id="main"] {
 }
+
+@media screen and (max-width: 320px) {
+  .news-card-list[id="saved-news-cards"] {
+    margin-left: 0;
+  }
+
+  .news-card-list__container {
+    justify-content: center;
+  }
+}
