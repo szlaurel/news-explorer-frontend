@@ -70,7 +70,7 @@ const Header = ({ onLoginModal, isLoggedIn, id, logOutButton, menuButton }) => {
           }
           id={id}
         >
-          {true ? (
+          {false ? (
             <>
               <NavLink
                 exact
