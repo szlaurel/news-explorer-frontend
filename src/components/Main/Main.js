@@ -8,7 +8,7 @@ import NewsCardList from "../NewsCardList/NewsCardList";
 import SearchResults from "../SearchResults/SearchResults";
 import hamburgerButton from "../../images/hamburger-button.svg";
 
-const Main = ({ onLoginModal }) => {
+const Main = ({ onLoginModal, handleSearchResult, searchResults }) => {
   const [searchField, setSearchField] = useState("");
 
   const doesWork = (e) => {
@@ -28,10 +28,10 @@ const Main = ({ onLoginModal }) => {
           Find the latest news on any topic and save them in your personal
           account.
         </p>
-        <SearchForm />
+        <SearchForm handleSearchResult={handleSearchResult} />
       </section>
       <section className="main__newscards-list-container">
-        <SearchResults />
+        <SearchResults searchResults={searchResults} />
       </section>
       <footer className="main__footer">
         <Footer />

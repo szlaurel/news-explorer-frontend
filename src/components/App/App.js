@@ -10,6 +10,9 @@ import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import SavedNews from "../SavedNews/SavedNews";
 import { tempNewsCardData } from "../../utils/constants";
+import { baseUrl } from "../../utils/newsApi";
+import { api } from "../../utils/newsApi";
+import { newsAPIkey } from "../../utils/constants";
 
 function App() {
   /* -------------------------------------------------------------------------- */
@@ -20,7 +23,30 @@ function App() {
 
   // This is needed in order to paste the search results in the field
   // this will also be needed later
-  const [results, setResults] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
+  const [articles, setArticles] = useState([]);
+
+  const handleSearchResult = (values) => {
+    const searchResult = values.q;
+
+    api
+      .getItems({ q: searchResult, apiKey: newsAPIkey })
+      .then((res) => {
+        setSearchResults(res.articles);
+        // we pushed the res to set results and console.log it down below
+      })
+      .catch((err) => {
+        console.log(`${err} an error occured`);
+      });
+  };
+
+  // console.log(searchResults);
+
+  // and then once i get the results from the search bar
+  // i need to pass the info from the set results to the cards
+
+  // console.log(searchResults.articles);
+  // console.log(searchResults.articles[0].author);
 
   /* -------------------------------------------------------------------------- */
   /*                             handle open modals                             */
@@ -51,13 +77,19 @@ function App() {
     setActiveModal("");
   };
 
+  // need to protect the saved-news route
+
   return (
     <div>
       <Switch>
         <Route exact path="/">
-          <Main onLoginModal={handleLoginModal} />
+          <Main
+            onLoginModal={handleLoginModal}
+            handleSearchResult={handleSearchResult}
+            searchResults={searchResults}
+          />
         </Route>
-        <Route path="/profile">test to see if Profile</Route>
+        {/* <Route path="/profile">test to see if Profile</Route> */}
         <Route exact path="/saved-news">
           <SavedNews />
         </Route>
