@@ -17,9 +17,6 @@ const LoginModal = ({
   /*            To test if the inputs are getting values to sent them           */
   /* -------------------------------------------------------------------------- */
 
-  console.log(email);
-  console.log(password);
-
   return (
     <ModalWithForm
       name="login"

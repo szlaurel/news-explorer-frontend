@@ -8,7 +8,7 @@
   border-bottom-left-radius: 20px;
 }
 .news-card-image__container {
-  position: relative;
+  /* position: relative; */
   bottom: -45px;
 }
 
@@ -55,8 +55,8 @@
   padding: 24px;
   width: 24px;
   height: 24px;
-  position: relative;
-  top: -290px;
+  position: absolute;
+  top: 1em;
   left: 325px;
   cursor: pointer;
 }
@@ -69,8 +69,8 @@
   background-size: contain;
   border: 0;
   border-radius: 8px;
-  position: relative;
-  top: -265px;
+  position: absolute;
+  top: 1em;
   left: 345px;
   cursor: pointer;
   transition: ease-in-out 0.4s;

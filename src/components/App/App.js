@@ -27,6 +27,7 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [searchTrue, setSearchTrue] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [cardsToShow, setCardsToShow] = useState(3);
 
   const handleSearchResult = (values) => {
     const searchResult = values.q;
@@ -50,6 +51,7 @@ function App() {
       })
       .finally(() => {
         setLoading(false);
+        setCardsToShow(3);
       });
   };
 
@@ -59,17 +61,8 @@ function App() {
   // i need to pass the info from the set results to the cards
 
   /* -------------------------------------------------------------------------- */
-  /*                             handle open modals                             */
+  /*                        handle open and close modals                        */
   /* -------------------------------------------------------------------------- */
-
-  /* -------------------------------------------------------------------------- */
-  /*                            useEffect and useRef                            */
-  /* -------------------------------------------------------------------------- */
-
-  /* -------------------------------------------------------------------------- */
-  /*                                   modals                                   */
-  /* -------------------------------------------------------------------------- */
-
   const handleCreateModal = () => {
     setActiveModal("create");
   };
@@ -87,6 +80,14 @@ function App() {
     setActiveModal("");
   };
 
+  /* -------------------------------------------------------------------------- */
+  /*                            useEffect and useRef                            */
+  /* -------------------------------------------------------------------------- */
+
+  /* -------------------------------------------------------------------------- */
+  /*                                   modals                                   */
+  /* -------------------------------------------------------------------------- */
+
   // need to protect the saved-news route
 
   return (
@@ -102,13 +103,11 @@ function App() {
               searchResults={searchResults}
               searchTrue={searchTrue}
               setLoading={setLoading}
+              cardsToShow={cardsToShow}
+              setCardsToShow={setCardsToShow}
             />
           )}
         </Route>
-        <Route exact-path="/preloader">
-          <Preloader />
-        </Route>
-        {/* <Route path="/profile">test to see if Profile</Route> */}
         <Route exact path="/saved-news">
           <SavedNews />
         </Route>
@@ -133,42 +132,3 @@ function App() {
 }
 
 export default App;
-
-// old return code just in case
-
-// return (
-//   <div>
-//     <Switch>
-//       <Route exact path="/">
-//         <Main
-//           onLoginModal={handleLoginModal}
-//           handleSearchResult={handleSearchResult}
-//           searchResults={searchResults}
-//           searchTrue={searchTrue}
-//         />
-//       </Route>
-//       <Route exact-path="/preloader">
-//         <Preloader />
-//       </Route>
-//       {/* <Route path="/profile">test to see if Profile</Route> */}
-//       <Route exact path="/saved-news">
-//         <SavedNews />
-//       </Route>
-//     </Switch>
-//     {/* <Footer /> */}
-//     {activeModal === "login" && (
-//       <LoginModal
-//         handleCloseModal={handleCloseModal}
-//         isOpen={activeModal === "login"}
-//         alternateModalOpen={handleRegisterModal}
-//       ></LoginModal>
-//     )}
-//     {activeModal === "register" && (
-//       <RegisterModal
-//         handleCloseModal={handleCloseModal}
-//         isOpen={activeModal === "register"}
-//         alternateModalOpen={handleLoginModal}
-//       ></RegisterModal>
-//     )}
-//   </div>
-// );

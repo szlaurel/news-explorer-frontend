@@ -3,28 +3,39 @@ import "./SearchResults.css";
 import NewsCard from "../NewsCard/NewsCard";
 import { useState } from "react";
 
-const SearchResults = ({ searchResults, searchTrue }) => {
+const SearchResults = ({
+  searchResults,
+  searchTrue,
+  cardsToShow,
+  setCardsToShow,
+  setLoading,
+}) => {
   // this is where it still shows up as an array
   // the second we pass it to newscard when mapping it
   // it becomes an object
 
-  console.log(searchResults);
+  // console.log(searchResults);
 
-  const cardsToShow = 3;
+  const [showMoreButton, setShowMoreButton] = useState(true);
 
   const filterCardInformation = searchResults.filter((searchResult) => {
     return searchResult.urlToImage !== null && searchResult.source.id !== null;
   });
 
-  console.log(filterCardInformation);
+  // console.log(filterCardInformation);
 
   const showSearchResults = searchTrue
     ? "search-results"
     : "search-results__inactive";
 
-  console.log(searchTrue);
+  // console.log(searchTrue);
 
-  const handleShowMore = () => {};
+  const handleShowMore = (e) => {
+    e.preventDefault();
+    // setLoading(true);
+    setCardsToShow(6);
+    setShowMoreButton(false);
+  };
 
   // console.log(searchTrue);
 
@@ -43,7 +54,14 @@ const SearchResults = ({ searchResults, searchTrue }) => {
           })}
       </section>
       <section className="search-results__button-container">
-        <button className="search-results__button" onClick={handleShowMore}>
+        <button
+          className={
+            showMoreButton
+              ? "search-results__button"
+              : "search-results__button_inactive"
+          }
+          onClick={handleShowMore}
+        >
           Show More
         </button>
       </section>

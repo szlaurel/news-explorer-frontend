@@ -14,6 +14,8 @@ const Main = ({
   searchResults,
   searchTrue,
   setLoading,
+  cardsToShow,
+  setCardsToShow,
 }) => {
   const [searchField, setSearchField] = useState("");
 
@@ -36,7 +38,13 @@ const Main = ({
         />
       </section>
       <section className="main__newscards-list-container">
-        <SearchResults searchResults={searchResults} searchTrue={searchTrue} />
+        <SearchResults
+          searchResults={searchResults}
+          searchTrue={searchTrue}
+          cardsToShow={cardsToShow}
+          setCardsToShow={setCardsToShow}
+          setLoading={setLoading}
+        />
       </section>
       <footer className="main__footer">
         <Footer />
