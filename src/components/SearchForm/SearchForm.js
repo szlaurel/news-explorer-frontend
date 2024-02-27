@@ -2,10 +2,12 @@ import React from "react";
 import { useState } from "react";
 import "./SearchForm.css";
 
-const SearchForm = ({ handleSearchResult }) => {
+const SearchForm = ({ handleSearchResult, setLoading }) => {
   const [searchField, setSearchField] = useState("");
 
   const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
     handleSearchResult({ q: searchField });
   };
 

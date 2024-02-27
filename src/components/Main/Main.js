@@ -8,12 +8,14 @@ import NewsCardList from "../NewsCardList/NewsCardList";
 import SearchResults from "../SearchResults/SearchResults";
 import hamburgerButton from "../../images/hamburger-button.svg";
 
-const Main = ({ onLoginModal, handleSearchResult, searchResults }) => {
+const Main = ({
+  onLoginModal,
+  handleSearchResult,
+  searchResults,
+  searchTrue,
+  setLoading,
+}) => {
   const [searchField, setSearchField] = useState("");
-
-  const doesWork = (e) => {
-    console.log("button works");
-  };
 
   return (
     <main className="main">
@@ -28,10 +30,13 @@ const Main = ({ onLoginModal, handleSearchResult, searchResults }) => {
           Find the latest news on any topic and save them in your personal
           account.
         </p>
-        <SearchForm handleSearchResult={handleSearchResult} />
+        <SearchForm
+          handleSearchResult={handleSearchResult}
+          setLoading={setLoading}
+        />
       </section>
       <section className="main__newscards-list-container">
-        <SearchResults searchResults={searchResults} />
+        <SearchResults searchResults={searchResults} searchTrue={searchTrue} />
       </section>
       <footer className="main__footer">
         <Footer />

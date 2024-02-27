@@ -84,7 +84,8 @@
 }
 
 .main__footer {
-  margin-top: 180px;
+  /* margin-top: 180px; */
+  margin-top: 15em;
 }
 
 @media screen and (max-width: 826px) {

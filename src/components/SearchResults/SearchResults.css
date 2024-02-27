@@ -1,6 +1,14 @@
 .search-results {
   background-color: rgba(245, 246, 247, 1);
+  /* display: none; */
+  /* i have a feeling to make the search results disappear
+  and appear were going to have to edit the display none here */
 }
+
+.search-results__inactive {
+  display: none;
+}
+
 .search-results__title {
   padding-top: 70px;
   padding-bottom: 64px;

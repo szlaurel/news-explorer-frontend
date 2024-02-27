@@ -17,9 +17,9 @@ class Api {
   //   q is from the search form when the user types
   //   in the search bar
 
-  getItems({ q, apiKey, from, to, pageSize }) {
+  getItems({ q, from, to, pageSize }) {
     return fetch(
-      `https://nomoreparties.co/news/v2/everything?q=${q}&apiKey=${apiKey}&from=${from}&to={to}&pageSize=${pageSize}`,
+      `https://nomoreparties.co/news/v2/everything?q=${q}&apiKey=${newsAPIkey}&from=${from}&to=${to}&pageSize=${pageSize}`,
       {
         method: "GET",
         headers: this._headers,
@@ -44,7 +44,7 @@ export const api = new Api({
   },
 });
 
-console.log(baseUrl);
+// console.log(baseUrl);
 
 // old get method VVV
 

@@ -19,62 +19,26 @@ const NewsCard = ({ isSaved, searchResults, onCardLike }) => {
   /*                               filter results                               */
   /* -------------------------------------------------------------------------- */
 
-  console.log(searchResults);
+  const options = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
 
-  const filterSearchDescriptions = searchResults.map(
-    (searchResult) => searchResult.description
-  );
+  // to see if the information is being passed properly to the newscard component
+  // console.log(searchResults);
 
-  // console.log(filterSearchDescriptions)
+  const formattedDates = () => {
+    const dates = new Date(searchResults.publishedAt);
+    const month = dates.toLocaleString("en-US", { month: "long" });
+    const date = dates.getDate();
+    const year = dates.getFullYear();
 
-  const filterImagesAndMap = searchResults
-    .filter(
-      (searchResult) =>
-        searchResult.urlToImage !== null &&
-        searchResult.urlToImage !== undefined
-    )
-    .map((searchResult) => {
-      return searchResult.urlToImage;
-    });
+    const formatDates = `${month} ${date}, ${year}`;
 
-  // console.log(filterImagesAndMap);
-
-  const filterSourceName = searchResults
-    .filter(
-      (searchResult) =>
-        searchResult.source?.name !== null &&
-        searchResult.source?.name !== undefined
-    )
-    .map((searchResult) => {
-      return searchResult.source?.name;
-    });
-
-  // console.log(filterSourceName);
-
-  const filterTitles = searchResults
-    .filter(
-      (searchResult) =>
-        searchResult.title !== null && searchResult.title !== undefined
-    )
-    .map((searchResult) => {
-      return searchResult.title;
-    });
-
-  console.log(filterTitles);
-
-  // ill need to change the publication date to match the way it looks on figma
-
-  const filterPublishDates = searchResults
-    .filter(
-      (searchResult) =>
-        searchResult.publishedAt !== null &&
-        searchResult.publishedAt !== undefined
-    )
-    .map((searchResult) => {
-      return searchResult.publishedAt;
-    });
-
-  console.log(filterPublishDates);
+    return formatDates;
+  };
+  // console.log(formattedDates());
 
   /* -------------------------------------------------------------------------- */
   /*                                  useStates                                 */
@@ -103,7 +67,11 @@ const NewsCard = ({ isSaved, searchResults, onCardLike }) => {
       <div className="news-card__container">
         <div className="news-card-image__container">
           <div className="news-card-image__info">
-            <img src={tempImage} alt="image" className="news-card__image" />
+            <img
+              src={searchResults.urlToImage}
+              alt="image"
+              className="news-card__image"
+            />
             {isSaved ? (
               <div className="news-card-image__category-container">
                 <div className="news-card-image__category">{tempCategory}</div>
@@ -124,10 +92,12 @@ const NewsCard = ({ isSaved, searchResults, onCardLike }) => {
           </div>
         </div>
         <div className="news-card-info__container">
-          <div className="news-card__date">{tempDate}</div>
-          <div className="news-card__title">{tempTitle}</div>
-          <div className="news-card__paragraph">{tempParagraph}</div>
-          <div className="news-card__site">{tempSite}</div>
+          <div className="news-card__date">{formattedDates()}</div>
+          <div className="news-card__title">{searchResults.title}</div>
+          <div className="news-card__paragraph">
+            {searchResults.description}
+          </div>
+          <div className="news-card__site">{searchResults.source?.name}</div>
         </div>
       </div>
     </div>

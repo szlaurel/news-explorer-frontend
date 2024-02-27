@@ -1,28 +1,51 @@
 import React from "react";
 import "./SearchResults.css";
 import NewsCard from "../NewsCard/NewsCard";
+import { useState } from "react";
 
-const SearchResults = ({ searchResults }) => {
-  //   console.log(searchResults);
+const SearchResults = ({ searchResults, searchTrue }) => {
+  // this is where it still shows up as an array
+  // the second we pass it to newscard when mapping it
+  // it becomes an object
 
-  const filterSearchDescriptions = searchResults.map(
-    (searchResult) => searchResult.description
-  );
+  console.log(searchResults);
 
-  //   console.log(filterSearchDescriptions);
+  const cardsToShow = 3;
+
+  const filterCardInformation = searchResults.filter((searchResult) => {
+    return searchResult.urlToImage !== null && searchResult.source.id !== null;
+  });
+
+  console.log(filterCardInformation);
+
+  const showSearchResults = searchTrue
+    ? "search-results"
+    : "search-results__inactive";
+
+  console.log(searchTrue);
+
+  const handleShowMore = () => {};
+
+  // console.log(searchTrue);
+
+  // console.log(filterCardInformation);
 
   return (
-    <div className="search-results">
+    <div className={showSearchResults}>
       <section className="search-results__title-container">
         <div className="search-results__title">Search Results</div>
       </section>
       <section className="search-results__container">
-        {/* this is where the filter and map array methods have to go for the newscard */}
-        {/* also this is where i need to pass searchResults as a child component to the newscard and map through it */}
-        <NewsCard searchResults={searchResults} />
+        {filterCardInformation
+          .slice(0, cardsToShow)
+          .map((searchResult, index) => {
+            return <NewsCard key={index} searchResults={searchResult} />;
+          })}
       </section>
       <section className="search-results__button-container">
-        <button className="search-results__button">Show More</button>
+        <button className="search-results__button" onClick={handleShowMore}>
+          Show More
+        </button>
       </section>
     </div>
   );
