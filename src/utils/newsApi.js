@@ -19,7 +19,7 @@ class Api {
 
   getItems({ q, from, to, pageSize }) {
     return fetch(
-      `https://nomoreparties.co/news/v2/everything?q=${q}&apiKey=${newsAPIkey}&from=${from}&to=${to}&pageSize=${pageSize}`,
+      `${this._baseURL}/everything?q=${q}&apiKey=${newsAPIkey}&from=${from}&to=${to}&pageSize=${pageSize}`,
       {
         method: "GET",
         headers: this._headers,
@@ -28,35 +28,43 @@ class Api {
       .then(this._checkResponse)
       .then((data) => data);
   }
+
+  addCardLike() {
+    return fetch("https://nomoreparties.co/articles", {
+      method: "POST",
+      headers: this._headers,
+    })
+      .then(this._checkResponse)
+      .then((data) => data);
+  }
+
+  removeCardLike() {
+    return fetch("https://nomoreparties.co/articles", {
+      method: "DELETE",
+      headers: this._headers,
+    })
+      .then(this._checkResponse)
+      .then((data) => data);
+  }
 }
+
+/* -------------------------------------------------------------------------- */
+/*                             some basic comments                            */
+/* -------------------------------------------------------------------------- */
 
 // needed to remove the brackets [] for the request to get sent VVV
 
-// export const baseUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsAPIkey}`;
+/* -------------------------------------------------------------------------- */
+/*                                   exports                                  */
+/* -------------------------------------------------------------------------- */
 
-export const baseUrl = "https://localhost:3001/everything/";
+export const baseUrl = "https://nomoreparties.co/news/v2";
 
 export const api = new Api({
   baseUrl: baseUrl,
   headers: {
+    Accept: "application/json",
     "Content-Type": "application/json",
-    Authorization: `${newsAPIkey}`,
+    Authorization: `Bearer ${newsAPIkey}`,
   },
 });
-
-// console.log(baseUrl);
-
-// old get method VVV
-
-// getItems({ q, apiKey, from, to, pageSize }) {
-//     return fetch(
-//       `https://newsapi.org/v2/everything?q=${q}&apiKey=${apiKey}&from=${from}&to=${to}&pageSize=${pageSize}`,
-//       {
-//         method: "GET",
-//         headers: this._headers,
-//       }
-//     )
-//       .then(this._checkResponse)
-//       .then((data) => data);
-//   }
-// }

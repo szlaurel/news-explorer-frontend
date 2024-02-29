@@ -5,7 +5,7 @@ import NewsCard from "../NewsCard/NewsCard";
 import NewsCardList from "../NewsCardList/NewsCardList";
 import Footer from "../Footer/Footer";
 
-const SavedNews = () => {
+const SavedNews = ({ onSelectedCard }) => {
   console.log("savednews works");
 
   // for the saved news i need to be able to filter and i think map
@@ -17,7 +17,7 @@ const SavedNews = () => {
         <SavedNewsHeader />
       </div>
       <div className="saved-news-cards__container">
-        <NewsCardList id={"saved-news-cards"} isSaved={true} />
+        {/* <NewsCardList id={"saved-news-cards"} isSaved={true} /> */}
       </div>
       <div>
         <Footer savedNewsPage={true} id={"saved-news__footer"} />

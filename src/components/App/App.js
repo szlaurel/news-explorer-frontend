@@ -1,6 +1,5 @@
 import "./App.css";
 import "normalize.css/normalize.css";
-import Header from "../../components/Header/Header";
 // import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
 import { Route, Switch } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -9,11 +8,9 @@ import Main from "../Main/Main";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import SavedNews from "../SavedNews/SavedNews";
-import { tempNewsCardData } from "../../utils/constants";
-import { baseUrl } from "../../utils/newsApi";
 import { api } from "../../utils/newsApi";
-import { newsAPIkey } from "../../utils/constants";
 import Preloader from "../Preloader/Preloader";
+import SearchResults from "../SearchResults/SearchResults";
 
 function App() {
   /* -------------------------------------------------------------------------- */
@@ -28,6 +25,16 @@ function App() {
   const [searchTrue, setSearchTrue] = useState(false);
   const [loading, setLoading] = useState(false);
   const [cardsToShow, setCardsToShow] = useState(3);
+  const [selectedCard, setSelectedCard] = useState({});
+  // have to change the usestate value for show message to be false
+  // but to test the error message for the search results container just switch
+  // the value to be false and search for something
+  const [showFailureMessage, setShowFailureMessage] = useState(false);
+  const [showNothingFound, setShowNothingFound] = useState(false);
+
+  /* -------------------------------------------------------------------------- */
+  /*                            handle search results                           */
+  /* -------------------------------------------------------------------------- */
 
   const handleSearchResult = (values) => {
     const searchResult = values.q;
@@ -42,23 +49,57 @@ function App() {
         to: todaysDate,
       })
       .then((res) => {
+        // im guessing if the results are true then you push the information
+        // to local storage here when the request is sucessful
+        // still need to ask on about this
         setSearchResults(res.articles);
         setSearchTrue(true);
+        setCardsToShow(3);
         // we pushed the res to set results and console.log it down below
       })
       .catch((err) => {
+        setSearchTrue(true);
+        setShowFailureMessage(true);
+        setShowNothingFound(true);
         console.log(`${err} an error occured`);
       })
       .finally(() => {
         setLoading(false);
-        setCardsToShow(3);
+        // setShowNothingFound(false);
+        // setCardsToShow(3);
       });
   };
 
   // console.log(searchResults);
 
-  // and then once i get the results from the search bar
-  // i need to pass the info from the set results to the cards
+  /* -------------------------------------------------------------------------- */
+  /*             handle like card and remove like card functionality            */
+  /* -------------------------------------------------------------------------- */
+
+  const handleLikeClick = ({ isLiked }) => {
+    // if there was a token it would get the token here from localstorage
+    // and then you console.log it here
+
+    // we just need to write code so that when the card save button gets clicked
+    // it sends the post request through
+    // but if the card is liked and you click on it, it removes the like filled icon
+    // and replaces it with the unfilled icon and sends
+    // a delete request through
+
+    isLiked
+      ? api
+          .removeCardLike()
+          .then((updatedCard) => {
+            console.log(updatedCard);
+          })
+          .catch((err) => console.log(err, "an error occurred"))
+      : api
+          .addCardLike()
+          .then((updatedCard) => {
+            console.log(updatedCard);
+          })
+          .catch((err) => console.log(err, "an error occurred"));
+  };
 
   /* -------------------------------------------------------------------------- */
   /*                        handle open and close modals                        */
@@ -88,31 +129,43 @@ function App() {
   /*                                   modals                                   */
   /* -------------------------------------------------------------------------- */
 
-  // need to protect the saved-news route
+  // console.log(selectedCard);
+  // console.log(searchResults);
 
   return (
     <div>
       <Switch>
         <Route exact path="/">
           {loading ? (
-            <Preloader />
+            <Preloader showNothingFound={showNothingFound} />
           ) : (
             <Main
               onLoginModal={handleLoginModal}
               handleSearchResult={handleSearchResult}
-              searchResults={searchResults}
-              searchTrue={searchTrue}
               setLoading={setLoading}
-              cardsToShow={cardsToShow}
-              setCardsToShow={setCardsToShow}
             />
           )}
+          {loading ? (
+            <></>
+          ) : (
+            <SearchResults
+              searchResults={searchResults}
+              searchTrue={searchTrue}
+              cardsToShow={cardsToShow}
+              setCardsToShow={setCardsToShow}
+              setLoading={setLoading}
+              showFailMessage={showFailureMessage}
+              onSelectedCard={setSelectedCard}
+              onCardLike={handleLikeClick}
+            />
+          )}
+          {loading ? <></> : <Footer />}
+          {/* still need to make a protected route for saved-news */}
         </Route>
         <Route exact path="/saved-news">
-          <SavedNews />
+          <SavedNews onSelectedCard={setSelectedCard} />
         </Route>
       </Switch>
-      {/* <Footer /> */}
       {activeModal === "login" && (
         <LoginModal
           handleCloseModal={handleCloseModal}

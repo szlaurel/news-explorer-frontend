@@ -32,13 +32,26 @@
   cursor: pointer;
 }
 
+.search-form__error {
+  display: flex;
+  color: white;
+  opacity: 1;
+  transition: ease-in 0.5s;
+  opacity: 1;
+  justify-content: center;
+}
+
+.search-form__error_inactive {
+  display: none;
+}
+
 @media screen and (max-width: 826px) {
   .search-form__input {
     max-width: 448px;
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 525px) {
   .search-form__input {
     max-width: 288px;
   }

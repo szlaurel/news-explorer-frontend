@@ -27,6 +27,12 @@
   gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
+  font-family: "roboto", arial, sans-serif;
+}
+
+.search-results__error {
+  font-family: "roboto", arial, sans-serif;
+  margin-bottom: 5em;
 }
 
 .search-results__button-container {
@@ -45,6 +51,9 @@
   cursor: pointer;
   transition: ease-in-out 0.5s;
   opacity: 1;
+  font-family: "roboto", arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .search-results__button_inactive {
