@@ -60,6 +60,11 @@ class Api {
 
 export const baseUrl = "https://nomoreparties.co/news/v2";
 
+// the token that also gets passed to the authorization
+// is the apikey i think along with
+// the jwt that we get and make from the backend
+// and that we send here
+
 export const api = new Api({
   baseUrl: baseUrl,
   headers: {
