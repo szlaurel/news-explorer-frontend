@@ -24,14 +24,16 @@ const SavedNewsHeader = () => {
           menuButton={alternateHamburgerButton}
         />
       </div>
-      <div className="saved-news_container">
-        <div className="saved-news_title">Saved Articles</div>
-        <div className="saved-news_paragraph-container">
+      <div className="saved-news_header_container">
+        <div className="saved-news_header_title">Saved Articles</div>
+        <div className="saved-news_header_paragraph-container">
           {`${username}, you have ${articles} saved articles`}
         </div>
-        <div className="saved-news_keywords__container">
-          <div className="saved-news_keywords__title">By keywords: </div>
-          <div className="saved-news_keywords">
+        <div className="saved-news_header_keywords__container">
+          <div className="saved-news_header_keywords">
+            <span className="saved-news_header_keywords__title">
+              By keywords:{" "}
+            </span>
             {`${keyWords1}, ${keyWords2}, ${otherKeywords} other`}
           </div>
         </div>

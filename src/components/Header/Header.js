@@ -19,11 +19,11 @@ const Header = ({ onLoginModal, isLoggedIn, id, logOutButton, menuButton }) => {
     if (open === "open") {
       setOpen("");
       setIsActive(false);
-      console.log("its closed now");
+      // console.log("its closed now");
     } else if (open === "") {
       setOpen("open");
       setIsActive(true);
-      console.log("its open now");
+      // console.log("its open now");
     } else return;
   };
   {
@@ -36,8 +36,17 @@ const Header = ({ onLoginModal, isLoggedIn, id, logOutButton, menuButton }) => {
         className="header__hamburger-button"
         onClick={handleOpenAndCloseMenu}
       >
-        <div className="header__bar-one" id={id}></div>
-        <div className="header__bar-two" id={id}></div>
+        {!isActive ? (
+          <>
+            <div className="header__bar-one" id={id}></div>
+            <div className="header__bar-two" id={id}></div>
+          </>
+        ) : (
+          <>
+            <div className="header__bar-one"></div>
+            <div className="header__bar-two"></div>
+          </>
+        )}
       </button>
       <section
         className={
@@ -48,9 +57,14 @@ const Header = ({ onLoginModal, isLoggedIn, id, logOutButton, menuButton }) => {
         id={id}
       >
         <div className="header__menu-container">
-          <h1 className="header__logo" id={id}>
-            NewsExplorer
-          </h1>
+          {!isActive ? (
+            <h1 className="header__logo" id={id}>
+              NewsExplorer
+            </h1>
+          ) : (
+            <h1 className="header__logo">NewsExplorer</h1>
+          )}
+
           <div className="header__border-bottom"></div>
         </div>
 
@@ -123,6 +137,107 @@ const Header = ({ onLoginModal, isLoggedIn, id, logOutButton, menuButton }) => {
   );
 };
 export default Header;
+
+/* -------------------------------------------------------------------------- */
+/*                           recently commented out                           */
+/* -------------------------------------------------------------------------- */
+
+// return (
+//   <header className="header" id={id}>
+//     <button
+//       className="header__hamburger-button"
+//       onClick={handleOpenAndCloseMenu}
+//     >
+//       <div className="header__bar-one" id={id}></div>
+//       <div className="header__bar-two" id={id}></div>
+//     </button>
+//     <section
+//       className={
+//         !isActive
+//           ? "header__navbar-container"
+//           : "header__navbar-container_active"
+//       }
+//       id={id}
+//     >
+//       <div className="header__menu-container">
+//         <h1 className="header__logo" id={id}>
+//           NewsExplorer
+//         </h1>
+//         <div className="header__border-bottom"></div>
+//       </div>
+// comment start
+//        <button
+//         className="header__hamburger-button"
+//         onClick={handleOpenAndCloseMenu}
+//       >
+//         <div className="header__bar-one"></div>
+//         <div className="header__bar-two"></div>
+//       </button>
+//       <div className="header__menu-bar"></div>
+// comment end
+//       <div
+//         className={
+//           !isActive
+//             ? "header__button-container"
+//             : "header__button-container_active"
+//         }
+//         id={id}
+//       >
+//         {false ? (
+//           <>
+//             <NavLink
+//               exact
+//               to="/"
+//               className="header__home-button"
+//               activeClassName="header__home-button_active"
+//               id={id}
+//             >
+//               Home
+//             </NavLink>
+//             <NavLink
+//               to="/saved-news"
+//               className="header__saved-articles_button"
+//               activeClassName="header__saved-articles_button_active"
+//               id={id}
+//             >
+//               Saved Articles
+//             </NavLink>
+//             <button
+//               className="header__logout-button"
+//               onClick={onLoginModal}
+//               id={id}
+//             >
+//               {username}
+//               <img
+//                 src={logOutButton}
+//                 alt="logout"
+//                 className="header__logout-image"
+//                 id={id}
+//               />
+//             </button>
+//           </>
+//         ) : (
+//           <>
+//             <NavLink
+//               to="/"
+//               activeClassName="header__home-button_active"
+//               className="header__home-button"
+//             >
+//               Home
+//             </NavLink>
+//             <button className="header__signin-button" onClick={onLoginModal}>
+//               Sign in
+//             </button>
+//           </>
+//         )}
+//       </div>
+//     </section>
+//   </header>
+// );
+
+/* -------------------------------------------------------------------------- */
+/*                              old code comment                              */
+/* -------------------------------------------------------------------------- */
 
 // This is the old code regarding the header before
 // i changed the main container to the Main
