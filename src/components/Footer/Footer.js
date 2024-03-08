@@ -16,13 +16,13 @@ const Footer = ({ savedNewsPage, id }) => {
   const history = useHistory();
 
   return (
-    <div className="footer">
+    <footer className="footer">
       {savedNewsPage ? (
         <div className="footer__credits-container" id={id}>
           <h3 className="footer__credits-title">
             © 2023 Supersite, Powered by News API
           </h3>
-          <div className="footer__links-container">
+          <nav className="footer__links-container">
             <NavLink
               to="/"
               activeClassName="footer__link_active"
@@ -53,7 +53,7 @@ const Footer = ({ savedNewsPage, id }) => {
                 className="footer__social-icons"
               />
             </a>
-          </div>
+          </nav>
         </div>
       ) : (
         <>
@@ -77,7 +77,7 @@ const Footer = ({ savedNewsPage, id }) => {
             <h3 className="footer__credits-title">
               © 2023 Supersite, Powered by News API
             </h3>
-            <div className="footer__links-container">
+            <nav className="footer__links-container">
               <NavLink
                 to="/"
                 activeClassName="footer__link_active"
@@ -108,11 +108,11 @@ const Footer = ({ savedNewsPage, id }) => {
                   className="footer__social-icons"
                 />
               </a>
-            </div>
+            </nav>
           </div>
         </>
       )}
-    </div>
+    </footer>
   );
 };
 

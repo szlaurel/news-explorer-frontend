@@ -49,6 +49,10 @@ function App() {
         to: todaysDate,
       })
       .then((res) => {
+        if (res.totalResults === 0) {
+          console.log("oopsie daises");
+          throw new Error("data was not found");
+        }
         // im guessing if the results are true then you push the information
         // to local storage here when the request is sucessful
         // still need to ask on about this
@@ -57,14 +61,18 @@ function App() {
         setCardsToShow(3);
         // we pushed the res to set results and console.log it down below
       })
+      .then((res) => {
+        setLoading(false);
+      })
       .catch((err) => {
         setSearchTrue(true);
-        setShowFailureMessage(true);
+        // setShowFailureMessage(true);
         setShowNothingFound(true);
+        setSearchResults([]);
         console.log(`${err} an error occured`);
       })
       .finally(() => {
-        setLoading(false);
+        // setLoading(false);
         // setShowNothingFound(false);
         // setCardsToShow(3);
       });
@@ -136,30 +144,30 @@ function App() {
     <div>
       <Switch>
         <Route exact path="/">
+          <Main
+            onLoginModal={handleLoginModal}
+            handleSearchResult={handleSearchResult}
+            setLoading={setLoading}
+            setShowNothingFound={setShowNothingFound}
+          />
           {loading ? (
             <Preloader showNothingFound={showNothingFound} />
           ) : (
-            <Main
-              onLoginModal={handleLoginModal}
-              handleSearchResult={handleSearchResult}
-              setLoading={setLoading}
-            />
-          )}
-          {loading ? (
-            <></>
-          ) : (
             <SearchResults
               searchResults={searchResults}
+              showNothingFound={showNothingFound}
               searchTrue={searchTrue}
               cardsToShow={cardsToShow}
               setCardsToShow={setCardsToShow}
               setLoading={setLoading}
-              showFailMessage={showFailureMessage}
+              loading={loading}
+              // showFailMessage={showFailureMessage}
               onSelectedCard={setSelectedCard}
               onCardLike={handleLikeClick}
             />
           )}
-          {loading ? <></> : <Footer />}
+
+          <Footer />
           {/* still need to make a protected route for saved-news */}
         </Route>
         <Route exact path="/saved-news">
@@ -185,3 +193,58 @@ function App() {
 }
 
 export default App;
+
+/* -------------------------------------------------------------------------- */
+/*                be sure to get rid of this code if not needed               */
+/* -------------------------------------------------------------------------- */
+
+// return (
+//   <div>
+//     <Switch>
+//       <Route exact path="/">
+//         {loading ? (
+//           <Preloader showNothingFound={showNothingFound} />
+//         ) : (
+//           <Main
+//             onLoginModal={handleLoginModal}
+//             handleSearchResult={handleSearchResult}
+//             setLoading={setLoading}
+//           />
+//         )}
+//         {loading ? (
+//           <></>
+//         ) : (
+//           <SearchResults
+//             searchResults={searchResults}
+//             searchTrue={searchTrue}
+//             cardsToShow={cardsToShow}
+//             setCardsToShow={setCardsToShow}
+//             setLoading={setLoading}
+//             showFailMessage={showFailureMessage}
+//             onSelectedCard={setSelectedCard}
+//             onCardLike={handleLikeClick}
+//           />
+//         )}
+//         {loading ? <></> : <Footer />}
+//         {/* still need to make a protected route for saved-news */}
+//       </Route>
+//       <Route exact path="/saved-news">
+//         <SavedNews onSelectedCard={setSelectedCard} />
+//       </Route>
+//     </Switch>
+//     {activeModal === "login" && (
+//       <LoginModal
+//         handleCloseModal={handleCloseModal}
+//         isOpen={activeModal === "login"}
+//         alternateModalOpen={handleRegisterModal}
+//       ></LoginModal>
+//     )}
+//     {activeModal === "register" && (
+//       <RegisterModal
+//         handleCloseModal={handleCloseModal}
+//         isOpen={activeModal === "register"}
+//         alternateModalOpen={handleLoginModal}
+//       ></RegisterModal>
+//     )}
+//   </div>
+// );

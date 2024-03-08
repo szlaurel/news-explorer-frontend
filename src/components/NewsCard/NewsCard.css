@@ -128,14 +128,14 @@
 }
 
 .news-card__date {
-  font-family: "roboto", arial, sans-serif;
+  font-family: "roboto-400-regular", arial, sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
   color: rgba(182, 188, 191, 1);
 }
 .news-card__title {
-  font-family: "roboto-slab-400", arial, sans-serif;
+  font-family: "roboto-slab-400-regular", arial, sans-serif;
   font-size: 26px;
   font-weight: 400;
   line-height: 30px;
@@ -145,7 +145,7 @@
 .news-card__paragraph {
   width: 352px;
   height: 110px;
-  font-family: "roboto", arial, sans-serif;
+  font-family: "roboto-400-regular", arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 22px;
@@ -154,7 +154,7 @@
   overflow: hidden;
 }
 .news-card__site {
-  font-family: "roboto-slab-700", arial, sans-serif;
+  font-family: "roboto-slab-700-regular", arial, sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;

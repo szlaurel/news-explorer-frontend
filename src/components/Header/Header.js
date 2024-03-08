@@ -26,6 +26,15 @@ const Header = ({ onLoginModal, isLoggedIn, id, logOutButton, menuButton }) => {
       // console.log("its open now");
     } else return;
   };
+
+  const headerBarOneClass = !isActive
+    ? "header__bar-one"
+    : "header__bar-one_active";
+
+  const headerBarTwoClass = !isActive
+    ? "header__bar-two"
+    : "header__bar-two_active";
+
   {
     /* <section className="header__navbar-container" id={id}></section> */
   }
@@ -38,13 +47,13 @@ const Header = ({ onLoginModal, isLoggedIn, id, logOutButton, menuButton }) => {
       >
         {!isActive ? (
           <>
-            <div className="header__bar-one" id={id}></div>
-            <div className="header__bar-two" id={id}></div>
+            <div className={headerBarOneClass} id={id}></div>
+            <div className={headerBarTwoClass} id={id}></div>
           </>
         ) : (
           <>
-            <div className="header__bar-one"></div>
-            <div className="header__bar-two"></div>
+            <div className={headerBarOneClass}></div>
+            <div className={headerBarTwoClass}></div>
           </>
         )}
       </button>

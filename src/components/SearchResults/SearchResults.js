@@ -2,6 +2,7 @@ import React from "react";
 import "./SearchResults.css";
 import NewsCard from "../NewsCard/NewsCard";
 import { useState } from "react";
+// import Preloader from "../Preloader/Preloader";
 
 const SearchResults = ({
   searchResults,
@@ -10,6 +11,8 @@ const SearchResults = ({
   setCardsToShow,
   showFailMessage,
   setLoading,
+  showNothingFound,
+  loading,
   onSelectedCard,
   onCardLike,
 }) => {
@@ -78,7 +81,7 @@ const SearchResults = ({
     "Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later.";
 
   return (
-    <div className={showSearchResults}>
+    <article className={showSearchResults}>
       <section className="search-results__title-container">
         <div className="search-results__title">Search Results</div>
       </section>
@@ -91,12 +94,12 @@ const SearchResults = ({
           showCardResults
         )}
       </section>
-      <section className="search-results__button-container">
+      <div className="search-results__button-container">
         <button className={hideButton} onClick={handleShowMore}>
           Show More
         </button>
-      </section>
-    </div>
+      </div>
+    </article>
   );
 };
 
@@ -105,6 +108,7 @@ export default SearchResults;
 /* -------------------------------------------------------------------------- */
 /*                        old return code just in case                        */
 /* -------------------------------------------------------------------------- */
+// before implementation of the preloader
 
 // return (
 //   <div className={showSearchResults}>
@@ -112,11 +116,13 @@ export default SearchResults;
 //       <div className="search-results__title">Search Results</div>
 //     </section>
 //     <section className="search-results__container">
-//       {filterCardInformation
-//         .slice(0, cardsToShow)
-//         .map((searchResult, index) => {
-//           return <NewsCard key={index} searchResults={searchResult} />;
-//         })}
+//       {showFailMessage ? (
+//         <span className="search-results__error">
+//           {searchResultFailMessage}
+//         </span>
+//       ) : (
+//         showCardResults
+//       )}
 //     </section>
 //     <section className="search-results__button-container">
 //       <button className={hideButton} onClick={handleShowMore}>

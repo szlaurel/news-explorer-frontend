@@ -16,6 +16,7 @@ const Main = ({
   setLoading,
   cardsToShow,
   setCardsToShow,
+  setShowNothingFound,
 }) => {
   const [searchField, setSearchField] = useState("");
 
@@ -35,6 +36,7 @@ const Main = ({
         <SearchForm
           handleSearchResult={handleSearchResult}
           setLoading={setLoading}
+          setShowNothingFound={setShowNothingFound}
         />
       </section>
     </main>

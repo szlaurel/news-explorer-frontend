@@ -2,7 +2,11 @@ import React from "react";
 import { useState } from "react";
 import "./SearchForm.css";
 
-const SearchForm = ({ handleSearchResult, setLoading }) => {
+const SearchForm = ({
+  handleSearchResult,
+  setLoading,
+  setShowNothingFound,
+}) => {
   const [searchField, setSearchField] = useState("");
   const [inputError, setInputError] = useState(false);
 
@@ -12,6 +16,7 @@ const SearchForm = ({ handleSearchResult, setLoading }) => {
       setInputError(true);
       return;
     } else {
+      setShowNothingFound(false);
       setLoading(true);
       handleSearchResult({ q: searchField });
       return;
