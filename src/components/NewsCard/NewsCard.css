@@ -186,6 +186,7 @@
     margin-bottom: 20px;
     overflow: hidden;
     text-overflow: ellipsis;
+    line-height: 24px;
   }
 
   .news-card__paragraph {

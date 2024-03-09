@@ -10,7 +10,7 @@ const NewsCard = ({ isSaved, searchResults, onCardLike, onSelectedCard }) => {
   // change the signedIn state value here to check for certain
   // functionalties that only work when signed in
   // VVVVVV
-  let userId = true;
+  let userId = false;
   const [signedIn, setSignedIn] = useState(true);
   const [changeHoverValue, setChangeHoverValue] = useState(
     "news-card-signin__popup_inactive"
@@ -85,6 +85,7 @@ const NewsCard = ({ isSaved, searchResults, onCardLike, onSelectedCard }) => {
     if (userId !== true) {
       setChangeHoverValue("news-card-signin__popup");
       setIsDisabled(true);
+      console.log("hello from the other side");
       return;
       // return console.log("this works again");
     } else return;

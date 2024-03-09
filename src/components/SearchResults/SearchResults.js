@@ -26,15 +26,19 @@ const SearchResults = ({
 
   // temporary failure
 
+  // need to defensively code against this either through making the filter card results not return
+  // anything if the final filterCard information array is 0 or something else?
+  // type "cnc machining" and search it up and you'll see what i mean
+
   const filterCardInformation = searchResults.filter((searchResult) => {
     return (
       searchResult.urlToImage !== null &&
-      searchResult.source.id !== null &&
+      // searchResult.source.id !== null &&
       searchResult.urlToImage !== ""
     );
   });
 
-  // console.log(filterCardInformation);
+  console.log(filterCardInformation);
 
   const showSearchResults = searchTrue
     ? "search-results"
@@ -59,6 +63,8 @@ const SearchResults = ({
 
   // console.log(searchTrue);
 
+  // need to find a way to show the information even
+  // if the information returns "type cnc machining"
   // console.log(filterCardInformation);
 
   // still need to make the button disappear when there are less than
@@ -79,6 +85,8 @@ const SearchResults = ({
 
   let searchResultFailMessage =
     "Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later.";
+
+  console.log(showCardResults);
 
   return (
     <article className={showSearchResults}>

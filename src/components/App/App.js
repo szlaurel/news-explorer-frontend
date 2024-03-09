@@ -70,15 +70,10 @@ function App() {
         setShowNothingFound(true);
         setSearchResults([]);
         console.log(`${err} an error occured`);
-      })
-      .finally(() => {
-        // setLoading(false);
-        // setShowNothingFound(false);
-        // setCardsToShow(3);
       });
   };
 
-  // console.log(searchResults);
+  console.log(searchResults);
 
   /* -------------------------------------------------------------------------- */
   /*             handle like card and remove like card functionality            */
