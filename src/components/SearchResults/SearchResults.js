@@ -91,7 +91,7 @@ const SearchResults = ({
   return (
     <article className={showSearchResults}>
       <section className="search-results__title-container">
-        <h3 className="search-results__title">Search Results</h3>
+        <h3 className="search-results__title">Search results</h3>
       </section>
       <section className="search-results__container">
         {showFailMessage ? (
@@ -104,7 +104,7 @@ const SearchResults = ({
       </section>
       <div className="search-results__button-container">
         <button className={hideButton} onClick={handleShowMore}>
-          Show More
+          Show more
         </button>
       </div>
     </article>
