@@ -91,8 +91,7 @@
 
 @media screen and (max-width: 826px) {
   .main {
-    /* height: 100vh; */
-    height: 65vh;
+    height: 100vh;
   }
 
   .main__title {

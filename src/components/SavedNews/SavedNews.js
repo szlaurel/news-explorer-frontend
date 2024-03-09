@@ -12,7 +12,7 @@ const SavedNews = ({ onSelectedCard }) => {
   // through all the saved articles
 
   return (
-    <div className="saved-news-container">
+    <div className="saved-news__main">
       <div className="saved-news__header">
         <SavedNewsHeader />
       </div>
