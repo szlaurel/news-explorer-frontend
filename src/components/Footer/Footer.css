@@ -188,3 +188,20 @@
     /* flex-wrap: wrap; */
   }
 }
+
+@media screen and (max-width: 320px) {
+  .footer__image {
+    position: relative;
+    margin-bottom: -55px;
+    top: -50px;
+    left: 8px;
+  }
+
+  .footer__title {
+    margin-top: 28px;
+  }
+
+  .footer__paragraph {
+    margin-top: -18px;
+  }
+}

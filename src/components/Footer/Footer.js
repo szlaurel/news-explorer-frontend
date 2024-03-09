@@ -64,7 +64,7 @@ const Footer = ({ savedNewsPage, id }) => {
               alt="authorimage"
             />
             <div className="footer__text-info">
-              <h3 className="footer__title">About the Author</h3>
+              <h3 className="footer__title">About the author</h3>
               <p className="footer__paragraph">
                 Hi! I'm Seane, and yup that's how you spell my name! In this
                 project i’m here to display a culmination of all that I learned
