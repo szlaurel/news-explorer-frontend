@@ -5,13 +5,23 @@ import { NavLink, Link } from "react-router-dom";
 import homeLogOut from "../../images/homelogout.svg";
 import savedNewsLogOut from "../../images/savednewslogout.svg";
 import hamburgerButton from "../../images/hamburger-button.svg";
+import newsExplorerLogo from "../../images/NewsExplorer.svg";
+import altNewsExplorerLogo from "../../images/altNewsExplorerlogo.svg";
 
-const Header = ({ onLoginModal, isLoggedIn, id, logOutButton, menuButton }) => {
+const Header = ({
+  onLoginModal,
+  isLoggedIn,
+  id,
+  logOutButton,
+  menuButton,
+  tempUserLoggedIn,
+}) => {
+  // the temp user state comes from the saved header component to show the
+  // styles for the logged in user
+
   const [searchField, setSearchField] = useState("");
   const [open, setOpen] = useState("");
   const [isActive, setIsActive] = useState(false);
-
-  // const [tempSwitchUser, setTempSwitchUser] = useState(false);
 
   const username = "Elise";
 
@@ -66,12 +76,10 @@ const Header = ({ onLoginModal, isLoggedIn, id, logOutButton, menuButton }) => {
         id={id}
       >
         <div className="header__menu-container">
-          {!isActive ? (
-            <h1 className="header__logo" id={id}>
-              NewsExplorer
-            </h1>
+          {isActive ? (
+            <img className="header__logo" src={altNewsExplorerLogo} id={id} />
           ) : (
-            <h1 className="header__logo">NewsExplorer</h1>
+            <img className="header__logo" src={newsExplorerLogo} />
           )}
 
           <div className="header__border-bottom"></div>
@@ -93,7 +101,7 @@ const Header = ({ onLoginModal, isLoggedIn, id, logOutButton, menuButton }) => {
           }
           id={id}
         >
-          {false ? (
+          {tempUserLoggedIn ? (
             <>
               <NavLink
                 exact

@@ -4,8 +4,15 @@ import tempImage from "../../images/tempcardimage.svg";
 import trashDelete from "../../images/activetrash.svg";
 import { useState } from "react";
 import { isDisabled } from "@testing-library/user-event/dist/utils";
+import tempDogPhoto from "../../images/tempcardimage.svg";
 
-const NewsCard = ({ isSaved, searchResults, onCardLike, onSelectedCard }) => {
+const NewsCard = ({
+  isSaved,
+  searchResults,
+  onCardLike,
+  onSelectedCard,
+  tempSavedCard,
+}) => {
   // temporary user usestate to see if certain things work
   // change the signedIn state value here to check for certain
   // functionalties that only work when signed in
@@ -41,6 +48,16 @@ const NewsCard = ({ isSaved, searchResults, onCardLike, onSelectedCard }) => {
   // to see if the information is being passed properly to the newscard component
   // console.log(searchResults);
 
+  // const tempFormattedDate = () => {
+  //   let date = 4;
+  //   let year = 2020;
+  //   let month = "November";
+
+  //   const tempFormatDate = `${month} ${date}, ${year}`;
+
+  //   return tempFormatDate;
+  // };
+
   const formattedDates = () => {
     const dates = new Date(searchResults?.publishedAt);
     const month = dates.toLocaleString("en-US", { month: "long" });
@@ -51,6 +68,7 @@ const NewsCard = ({ isSaved, searchResults, onCardLike, onSelectedCard }) => {
 
     return formatDates;
   };
+
   // console.log(formattedDates());
 
   /* -------------------------------------------------------------------------- */
@@ -128,17 +146,17 @@ const NewsCard = ({ isSaved, searchResults, onCardLike, onSelectedCard }) => {
   } `;
 
   return (
-    <div className="news-card__first-container">
+    <div className="news-card__main">
       <div className="news-card__container">
         <div className="news-card-image__container">
           <div className="news-card-image__info">
             <img
-              src={searchResults?.urlToImage}
+              src={searchResults?.urlToImage || tempDogPhoto}
               alt="image"
               className="news-card__image"
               onClick={() => onSelectedCard(searchResults)}
             />
-            {isSaved ? (
+            {isSaved || tempSavedCard ? (
               <div className="news-card-image__category-container">
                 <div
                   className="news-card-image__category"
@@ -175,7 +193,9 @@ const NewsCard = ({ isSaved, searchResults, onCardLike, onSelectedCard }) => {
           <div className="news-card__paragraph">
             {searchResults?.description}
           </div>
-          <div className="news-card__site">{searchResults?.source?.name}</div>
+          <div className="news-card__site">
+            {searchResults?.source?.name || "Treehugger"}
+          </div>
         </div>
       </div>
     </div>

@@ -34,7 +34,8 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 24px;
-  top: -250px;
+  /* top: -250px; */
+  top: -260px;
   left: 20px;
   background-color: white;
   border-radius: 10px;

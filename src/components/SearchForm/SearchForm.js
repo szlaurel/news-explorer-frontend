@@ -29,7 +29,7 @@ const SearchForm = ({
 
   return (
     <div>
-      <div className="search-form__container">
+      <div className="search-form__main">
         <input
           className="search-form__input"
           name="search-field"

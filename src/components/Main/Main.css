@@ -1,8 +1,11 @@
 .main {
   background-image: url("../../images/backgroundimage.svg");
-  height: 80vh;
+  height: 76vh;
+  /* height: 80vh; */
+
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   padding: 0;
 }
 
@@ -22,8 +25,8 @@
   line-height: 64px;
   width: 608px;
   height: 128px;
-  /* margin-top: 160px; */
-  margin-top: 4em;
+  margin-top: 80px;
+  /* margin-top: 4em; */
   margin-bottom: 32px;
 }
 
@@ -34,6 +37,7 @@
   line-height: 24px;
   font-weight: 400;
   margin: 0;
+  margin-right: 20px;
 }
 
 /* need to take the header search container, the header input and the header search submit
@@ -87,6 +91,12 @@
 .main__footer {
   /* margin-top: 180px; */
   margin-top: 15em;
+}
+
+@media screen and (max-width: 1220px) {
+  .main {
+    height: 80vh;
+  }
 }
 
 @media screen and (max-width: 826px) {

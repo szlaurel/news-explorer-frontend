@@ -17,7 +17,7 @@ const SavedNews = ({ onSelectedCard }) => {
         <SavedNewsHeader />
       </div>
       <div className="saved-news-cards__container">
-        {/* <NewsCardList id={"saved-news-cards"} isSaved={true} /> */}
+        <NewsCardList id={"saved-news-cards"} isSaved={true} />
       </div>
       <div>
         <Footer savedNewsPage={true} id={"saved-news__footer"} />

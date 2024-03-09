@@ -1,6 +1,9 @@
-.main {
+.app__main {
   padding: 0 20px;
   font-family: "inter-400-regular", arial, sans-serif;
   font-weight: 700;
+  margin: auto;
+  max-width: 1440px;
+
   /* font-size: 20px; */
 }

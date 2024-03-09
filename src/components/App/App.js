@@ -136,7 +136,7 @@ function App() {
   // console.log(searchResults);
 
   return (
-    <div>
+    <div className="app__main">
       <Switch>
         <Route exact path="/">
           <Main

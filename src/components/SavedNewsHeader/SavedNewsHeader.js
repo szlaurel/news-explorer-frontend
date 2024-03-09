@@ -3,6 +3,7 @@ import "./SavedNewsHeader.css";
 import Header from "../Header/Header";
 import savedNewsLogOutButton from "../../images/savednewslogout.svg";
 import alternateHamburgerButton from "../../images/hamburger-button-black.svg";
+import { useState } from "react";
 
 const SavedNewsHeader = () => {
   /* -------------------------------------------------------------------------- */
@@ -15,13 +16,16 @@ const SavedNewsHeader = () => {
   const keyWords2 = "Yellowstone";
   const otherKeywords = 2;
 
+  const [tempUserLoggedIn, setTempUserLoggedIn] = useState(true);
+
   return (
-    <div className="saved-news_header">
+    <div className="saved-news-header__main">
       <div>
         <Header
           id={"saved-news_header"}
           logOutButton={savedNewsLogOutButton}
           menuButton={alternateHamburgerButton}
+          tempUserLoggedIn={tempUserLoggedIn}
         />
       </div>
       <div className="saved-news_header_container">

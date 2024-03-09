@@ -91,7 +91,7 @@ const SearchResults = ({
   return (
     <article className={showSearchResults}>
       <section className="search-results__title-container">
-        <div className="search-results__title">Search Results</div>
+        <h3 className="search-results__title">Search Results</h3>
       </section>
       <section className="search-results__container">
         {showFailMessage ? (
