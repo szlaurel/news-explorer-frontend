@@ -22,7 +22,7 @@ const Footer = ({ savedNewsPage, id }) => {
           <h3 className="footer__credits-title">
             © 2023 Supersite, Powered by News API
           </h3>
-          <nav className="footer__links-container">
+          <nav className="footer__links-container" id={id}>
             <NavLink
               to="/"
               activeClassName="footer__link_active"

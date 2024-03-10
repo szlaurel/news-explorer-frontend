@@ -29,7 +29,7 @@ const SavedNewsHeader = () => {
         />
       </div>
       <div className="saved-news_header_container">
-        <div className="saved-news_header_title">Saved Articles</div>
+        <div className="saved-news_header_title">Saved articles</div>
         <div className="saved-news_header_paragraph-container">
           {`${username}, you have ${articles} saved articles`}
         </div>
@@ -38,7 +38,7 @@ const SavedNewsHeader = () => {
             <span className="saved-news_header_keywords__title">
               By keywords:{" "}
             </span>
-            {`${keyWords1}, ${keyWords2}, ${otherKeywords} other`}
+            {`${keyWords1}, ${keyWords2}, and ${otherKeywords} other`}
           </div>
         </div>
       </div>

@@ -16,9 +16,20 @@
   flex-direction: row;
   flex-wrap: wrap;
   background-color: rgba(245, 246, 247, 1);
+  padding-top: 62px;
+  padding-bottom: 62px;
 }
 
-.news-card-list__container[id="main"] {
+@media screen and (max-width: 768px) {
+  .news-card-list[id="saved-news-cards"] {
+    margin-left: 40px;
+  }
+
+  .news-card-list__container {
+    padding-top: 31px;
+    gap: 9px;
+    padding-bottom: 32px;
+  }
 }
 
 @media screen and (max-width: 320px) {

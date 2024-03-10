@@ -6,6 +6,9 @@ import { useState } from "react";
 import { isDisabled } from "@testing-library/user-event/dist/utils";
 import tempDogPhoto from "../../images/tempcardimage.svg";
 
+// need to remove all the temp values when we pass this stage and go on to authorization
+// and authentication
+
 const NewsCard = ({
   isSaved,
   searchResults,
@@ -22,6 +25,12 @@ const NewsCard = ({
   const [changeHoverValue, setChangeHoverValue] = useState(
     "news-card-signin__popup_inactive"
   );
+
+  const [changeRemoveHover, setChangeRemoveHover] = useState(
+    "news-card-image__remove-button_inactive" || false
+  );
+
+  const [popUpValue, setPopUpValue] = useState(false);
 
   const [isDisabled, setIsDisabled] = useState(false);
 
@@ -95,6 +104,12 @@ const NewsCard = ({
   //   return;
   // };
 
+  // this might need to be in the app.js
+
+  // function handleDeleteCard () {
+
+  // }
+
   // const signedInClassChange = !signedIn
   //   ? "news-card-signin__popup_inactive"
   //   : "news-card-signin__popup";
@@ -103,7 +118,6 @@ const NewsCard = ({
     if (userId !== true) {
       setChangeHoverValue("news-card-signin__popup");
       setIsDisabled(true);
-      console.log("hello from the other side");
       return;
       // return console.log("this works again");
     } else return;
@@ -112,9 +126,19 @@ const NewsCard = ({
   function leaveHover() {
     setChangeHoverValue("news-card-signin__popup_inactive");
   }
-  // function signInHover() {
-  //   return console.log("this works hello from the otherside");
-  // }
+
+  function removeButtonHover() {
+    if (userId !== true) {
+      setChangeRemoveHover("news-card-image__remove-button_active");
+      setPopUpValue(true);
+      return;
+    } else return;
+  }
+
+  function leaveRemoveHover() {
+    setChangeRemoveHover("news-card-image__remove-button_inactive");
+    setPopUpValue(false);
+  }
 
   // onMouseOver needs to check if the user is signed in
   // if the user is signed in the sign in to save hover doesn't appear and the class gets switched to inactive
@@ -164,7 +188,20 @@ const NewsCard = ({
                 >
                   {tempCategory}
                 </div>
-                <button className="news-card-image__remove-button"></button>
+                <div
+                  className={
+                    popUpValue
+                      ? "news-card-remove__popup"
+                      : "news-card-remove__popup_inactive"
+                  }
+                >
+                  Remove from saved
+                </div>
+                <button
+                  className={changeRemoveHover}
+                  onMouseOver={removeButtonHover}
+                  onMouseLeave={leaveRemoveHover}
+                ></button>
               </div>
             ) : (
               <div className="news-card-image__category-container">

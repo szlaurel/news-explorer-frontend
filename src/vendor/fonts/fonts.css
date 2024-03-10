@@ -74,8 +74,8 @@
 /* roboto slab 700 regular */
 
 @font-face {
-  font-family: "roboto-slab-700-regular";
-  src: url("./roboto-700.woff") format("woff"),
+  font-family: "roboto-slab-700";
+  src: url("./roboto-slab-700.woff") format("woff"),
     url("./roboto-slab-700.woff2") format("woff2");
   font-weight: 400;
   /* font-display: swap; */

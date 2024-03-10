@@ -76,10 +76,14 @@ const Header = ({
         id={id}
       >
         <div className="header__menu-container">
-          {isActive ? (
-            <img className="header__logo" src={altNewsExplorerLogo} id={id} />
+          {!isActive ? (
+            <div className="header__logo" id={id}>
+              NewsExplorer
+            </div>
           ) : (
-            <img className="header__logo" src={newsExplorerLogo} />
+            // <img className="header__logo" src={altNewsExplorerLogo} id={id} />
+            // <img className="header__logo" src={newsExplorerLogo} />
+            <div className="header__logo">NewsExplorer</div>
           )}
 
           <div className="header__border-bottom"></div>
@@ -118,7 +122,7 @@ const Header = ({
                 activeClassName="header__saved-articles_button_active"
                 id={id}
               >
-                Saved Articles
+                Saved articles
               </NavLink>
               <button
                 className="header__logout-button"

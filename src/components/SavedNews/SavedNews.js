@@ -11,6 +11,14 @@ const SavedNews = ({ onSelectedCard }) => {
   // for the saved news i need to be able to filter and i think map
   // through all the saved articles
 
+  /* -------------------------------------------------------------------------- */
+  /*                               what to do now?                              */
+  /* -------------------------------------------------------------------------- */
+
+  // this is where we left off at need to
+  // fix the the styles for this to be pixel perfect
+  // with the design
+
   return (
     <div className="saved-news__main">
       <div className="saved-news__header">

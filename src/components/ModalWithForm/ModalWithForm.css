@@ -90,8 +90,8 @@
 }
 
 .modal__button-submit:disabled {
-  color: rgba(182, 188, 191, 1);
-  opacity: 0.3;
+  background-color: rgba(230, 232, 235, 1);
+  border-color: rgba(230, 232, 235, 1);
 }
 
 .modal__button-container {
