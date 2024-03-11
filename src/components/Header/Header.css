@@ -2,13 +2,10 @@
   background-color: transparent;
   width: 100%;
   /* margin-bottom: 80px; */
-  /* background-image: url("../../images/backgroundimage.svg");
-  background-size: cover;
-  background-repeat: no-repeat; */
-  /* background-color: rgb(182, 62, 32); */
+  /* 
+  this position absolute was commented out for a reason
+  but im uncommenting it for the time being */
   /* position: absolute; */
-  /* height: 90vh; */
-  /* bottom: 0; */
 }
 
 .header[id="saved-news_header"] {
@@ -317,11 +314,38 @@
   .header__logout-button {
     margin-right: 40px;
   }
+
+  .header__logo[id="saved-news_header"] {
+    margin-left: 40px;
+  }
+
+  .header__button-container[id="saved-news_header"] {
+    margin-right: 0px;
+  }
 }
 
 /* this used to be max-width 694px VVV */
 
 @media screen and (max-width: 768px) {
+  .header__logo {
+    width: 200px;
+    height: 24.8px;
+    margin-top: 24px;
+    margin-left: 39px;
+    font-size: 20px;
+  }
+  .header__navbar-container {
+    padding-bottom: 12px;
+  }
+
+  .header__signin-button {
+    width: 152px;
+    height: 40px;
+    margin-top: 14px;
+  }
+
+  /* saved news header styles */
+
   .header__navbar-container[id="saved-news_header"] {
     padding-bottom: 11px;
   }
@@ -358,7 +382,12 @@
   .header__home-button {
     margin-right: 16px;
     font-size: 16px;
+    margin-top: 25px;
+    margin-right: 28px;
     /* line-height: 24px; */
+  }
+  .header__home-button_active {
+    text-underline-offset: 24px;
   }
 
   .header__saved-articles_button_active {
@@ -462,8 +491,7 @@
     position: relative;
     gap: 22px;
     top: 16px;
-    padding: 16px;
-    /* transition: ease-in-out 0.s; */
+    transition: ease-in-out 0.5s;
   }
 
   .header__signin-button {
@@ -486,14 +514,17 @@
 
   .header__home-button[id="saved-news_header"] {
     color: white;
+    margin-left: 16px;
   }
 
   .header__saved-articles_button_active[id="saved-news_header"] {
     color: white;
+    margin-left: 16px;
   }
   .header__logout-button[id="saved-news_header"] {
     color: white;
     border-color: white;
+    width: 100vw;
   }
 
   .header__menu-bar {
@@ -531,6 +562,28 @@
   }
 }
 
+@media screen and (max-width: 320px) {
+  .header__logo {
+    max-width: 117px;
+    height: 24px;
+    font-size: 16px;
+  }
+
+  .header__logo[id="saved-news_header"] {
+    margin-top: 16px;
+    margin-left: 16px;
+  }
+  .header__button-container_active {
+    padding: 0;
+    padding-left: 16px;
+  }
+  .header__logout-button[id="saved-news_header"] {
+    margin-top: 14px;
+    width: 90vw;
+    height: 40px;
+    margin-right: 40px;
+  }
+}
 /* starting from here is where i copy and pasted to the main and main.css */
 /* VVVVVVV */
 

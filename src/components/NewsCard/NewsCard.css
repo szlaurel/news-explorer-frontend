@@ -7,12 +7,12 @@
   max-height: 576px;
   border-bottom-left-radius: 20px;
 }
-.news-card-image__container {
+.news-card__image_container {
   /* position: relative; */
   bottom: -45px;
 }
 
-.news-card-image__info {
+.news-card__image_info {
   position: relative;
 }
 
@@ -24,7 +24,7 @@
   max-height: 272px;
 }
 
-.news-card-image__category-container {
+.news-card__image-category_container {
 }
 
 .news-card-image__category {
@@ -204,6 +204,10 @@
 
 @media screen and (max-width: 826px) {
   .news-card-list {
+  }
+  .news-card-image__remove-button_inactive {
+    top: 11px;
+    left: 168px;
   }
 
   .news-card-image__category {

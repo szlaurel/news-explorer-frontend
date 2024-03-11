@@ -1,7 +1,6 @@
 import React from "react";
 import "./SavedNews.css";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
-import NewsCard from "../NewsCard/NewsCard";
 import NewsCardList from "../NewsCardList/NewsCardList";
 import Footer from "../Footer/Footer";
 
@@ -20,11 +19,11 @@ const SavedNews = ({ onSelectedCard }) => {
   // with the design
 
   return (
-    <div className="saved-news__main">
+    <div className="saved-news">
       <div className="saved-news__header">
         <SavedNewsHeader />
       </div>
-      <div className="saved-news-cards__container">
+      <div className="saved-news__cards_container">
         <NewsCardList id={"saved-news-cards"} isSaved={true} />
       </div>
       <div>

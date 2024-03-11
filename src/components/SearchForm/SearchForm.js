@@ -18,6 +18,7 @@ const SearchForm = ({
     } else {
       setShowNothingFound(false);
       setLoading(true);
+      setInputError(false);
       handleSearchResult({ q: searchField });
       return;
     }
@@ -29,7 +30,7 @@ const SearchForm = ({
 
   return (
     <div>
-      <div className="search-form__main">
+      <main className="search-form__main">
         <input
           className="search-form__input"
           name="search-field"
@@ -46,8 +47,8 @@ const SearchForm = ({
         >
           Search
         </button>
-      </div>
-      <span className={handleSpanError}>Please enter a keyword</span>
+      </main>
+      <span className={handleSpanError}>Please enter a topic</span>
     </div>
   );
 };

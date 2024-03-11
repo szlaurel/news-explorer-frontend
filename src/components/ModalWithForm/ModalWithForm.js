@@ -41,7 +41,7 @@ const ModalWithForm = ({
   }, [onClose]);
 
   return (
-    <div className={`modal modal__type${name}`}>
+    <div className={`modal modal_type${name}`}>
       <div className="modal__container" ref={ref}>
         <button
           type="button"

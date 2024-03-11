@@ -89,7 +89,7 @@ const SearchResults = ({
   console.log(showCardResults);
 
   return (
-    <article className={showSearchResults}>
+    <main className={showSearchResults}>
       <section className="search-results__title-container">
         <h3 className="search-results__title">Search results</h3>
       </section>
@@ -107,7 +107,7 @@ const SearchResults = ({
           Show more
         </button>
       </div>
-    </article>
+    </main>
   );
 };
 

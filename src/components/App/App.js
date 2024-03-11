@@ -2,7 +2,7 @@ import "./App.css";
 import "normalize.css/normalize.css";
 // import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
 import { Route, Switch } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
 import LoginModal from "../LoginModal/LoginModal";
@@ -29,8 +29,9 @@ function App() {
   // have to change the usestate value for show message to be false
   // but to test the error message for the search results container just switch
   // the value to be false and search for something
-  const [showFailureMessage, setShowFailureMessage] = useState(false);
   const [showNothingFound, setShowNothingFound] = useState(false);
+
+  console.log(selectedCard);
 
   /* -------------------------------------------------------------------------- */
   /*                            handle search results                           */

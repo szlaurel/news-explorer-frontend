@@ -1,4 +1,4 @@
-.saved-news__main {
+.saved-news {
   /* margin-left: 104px; */
 }
 
@@ -6,6 +6,6 @@
   margin-bottom: 37px;
 }
 
-.saved-news-cards__container {
+.saved-news__cards_container {
   background-color: rgba(245, 246, 247, 1);
 }

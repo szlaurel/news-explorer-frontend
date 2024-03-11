@@ -3,7 +3,7 @@ import authorImage from "../../images/authorimage.png";
 import gitHubLogo from "../../images/github.svg";
 import faceBookLogo from "../../images/fb.svg";
 // import { Link, NavLink } from "react-router-dom/cjs/react-router-dom.min";
-import { NavLink, Link, useHistory } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 // import { NavLink } from "react-router-dom/cjs/react-router-dom";
 
 // note footer is causing side scrolling on the page so be weary
@@ -13,7 +13,6 @@ const Footer = ({ savedNewsPage, id }) => {
   const gitHubLink = "https://github.com/szlaurel";
   const facebookLink = "https://www.facebook.com/tripleten.tech/";
   const tripleTenLink = "https://tripleten.com/";
-  const history = useHistory();
 
   return (
     <footer className="footer">

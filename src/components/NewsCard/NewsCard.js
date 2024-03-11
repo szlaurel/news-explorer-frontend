@@ -1,9 +1,6 @@
 import React from "react";
 import "./NewsCard.css";
-import tempImage from "../../images/tempcardimage.svg";
-import trashDelete from "../../images/activetrash.svg";
 import { useState } from "react";
-import { isDisabled } from "@testing-library/user-event/dist/utils";
 import tempDogPhoto from "../../images/tempcardimage.svg";
 
 // need to remove all the temp values when we pass this stage and go on to authorization
@@ -21,7 +18,6 @@ const NewsCard = ({
   // functionalties that only work when signed in
   // VVVVVV
   let userId = false;
-  const [signedIn, setSignedIn] = useState(true);
   const [changeHoverValue, setChangeHoverValue] = useState(
     "news-card-signin__popup_inactive"
   );
@@ -38,21 +34,11 @@ const NewsCard = ({
   /*                              temp information                              */
   /* -------------------------------------------------------------------------- */
 
-  const tempDate = "09/07/2024";
-  const tempTitle = "Everyone Needs a Special 'Sit Spot' in Nature";
-  const tempSite = "National Graphic";
-  const tempParagraph = `Ever since I read Richard Louv's influential book, "Last Child in the Woods," the idea of having a special "sit spot" has stuck with me. This advice, which Louv attributes to nature educator Jon Young, is for both adults and children to find...`;
   const tempCategory = "Nature";
 
   /* -------------------------------------------------------------------------- */
   /*                               filter results                               */
   /* -------------------------------------------------------------------------- */
-
-  const options = {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
 
   // to see if the information is being passed properly to the newscard component
   // console.log(searchResults);
@@ -170,18 +156,18 @@ const NewsCard = ({
   } `;
 
   return (
-    <div className="news-card__main">
+    <div className="news-card">
       <div className="news-card__container">
-        <div className="news-card-image__container">
-          <div className="news-card-image__info">
+        <div className="news-card__image_container">
+          <div className="news-card__image_info">
             <img
               src={searchResults?.urlToImage || tempDogPhoto}
-              alt="image"
+              alt={searchResults?.urlToImage || "a picture of a dog"}
               className="news-card__image"
               onClick={() => onSelectedCard(searchResults)}
             />
             {isSaved || tempSavedCard ? (
-              <div className="news-card-image__category-container">
+              <div className="news-card__image-category_container">
                 <div
                   className="news-card-image__category"
                   onClick={() => onSelectedCard(searchResults)}
