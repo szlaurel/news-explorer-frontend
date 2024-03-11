@@ -1,12 +1,12 @@
-import React from "react";
-import "./NothingFound.css";
+import React from 'react';
+import './NothingFound.css';
 
-const NothingFound = () => {
+function NothingFound() {
   return (
     <div>
-      <div></div>
+      <div />
     </div>
   );
-};
+}
 
 export default NothingFound;

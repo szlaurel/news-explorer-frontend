@@ -1,10 +1,11 @@
-import "./Main.css";
-import Header from "../Header/Header";
-import homeLogOutButton from "../../images/homelogout.svg";
-import SearchForm from "../SearchForm/SearchForm";
-import hamburgerButton from "../../images/hamburger-button.svg";
+import React from 'react';
+import './Main.css';
+import Header from '../Header/Header';
+import homeLogOutButton from '../../images/homelogout.svg';
+import SearchForm from '../SearchForm/SearchForm';
+import hamburgerButton from '../../images/hamburger-button.svg';
 
-const Main = ({
+function Main({
   onLoginModal,
   handleSearchResult,
   searchResults,
@@ -13,7 +14,7 @@ const Main = ({
   cardsToShow,
   setCardsToShow,
   setShowNothingFound,
-}) => {
+}) {
   return (
     <main className="main">
       <Header
@@ -22,7 +23,7 @@ const Main = ({
         menuButton={hamburgerButton}
       />
       <section className="main__container">
-        <h1 className="main__title">What's going on in the world?</h1>
+        <h1 className="main__title">What&apos;s going on in the world?</h1>
         <p className="main__paragraph">
           Find the latest news on any topic and save them in your personal
           account.
@@ -35,6 +36,6 @@ const Main = ({
       </section>
     </main>
   );
-};
+}
 
 export default Main;

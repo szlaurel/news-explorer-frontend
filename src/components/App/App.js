@@ -1,23 +1,23 @@
-import "./App.css";
-import "normalize.css/normalize.css";
+import React, { useState } from 'react';
+import './App.css';
+import 'normalize.css/normalize.css';
 // import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
-import { Route, Switch } from "react-router-dom";
-import { useState } from "react";
-import Footer from "../Footer/Footer";
-import Main from "../Main/Main";
-import LoginModal from "../LoginModal/LoginModal";
-import RegisterModal from "../RegisterModal/RegisterModal";
-import SavedNews from "../SavedNews/SavedNews";
-import { api } from "../../utils/newsApi";
-import Preloader from "../Preloader/Preloader";
-import SearchResults from "../SearchResults/SearchResults";
+import { Route, Switch } from 'react-router-dom';
+import Footer from '../Footer/Footer';
+import Main from '../Main/Main';
+import LoginModal from '../LoginModal/LoginModal';
+import RegisterModal from '../RegisterModal/RegisterModal';
+import SavedNews from '../SavedNews/SavedNews';
+import { api } from '../../utils/newsApi';
+import Preloader from '../Preloader/Preloader';
+import SearchResults from '../SearchResults/SearchResults';
 
 function App() {
   /* -------------------------------------------------------------------------- */
   /*                           useState and useHistory                          */
   /* -------------------------------------------------------------------------- */
 
-  const [activeModal, setActiveModal] = useState("");
+  const [activeModal, setActiveModal] = useState('');
 
   // This is needed in order to paste the search results in the field
   // this will also be needed later
@@ -45,14 +45,14 @@ function App() {
     api
       .getItems({
         q: searchResult,
-        pageSize: pageSize,
+        pageSize,
         from: lastWeekDate,
         to: todaysDate,
       })
       .then((res) => {
         if (res.totalResults === 0) {
-          console.log("oopsie daises");
-          throw new Error("data was not found");
+          // console.log('oopsie daises');
+          throw new Error('data was not found');
         }
         // im guessing if the results are true then you push the information
         // to local storage here when the request is sucessful
@@ -62,7 +62,7 @@ function App() {
         setCardsToShow(3);
         // we pushed the res to set results and console.log it down below
       })
-      .then((res) => {
+      .then(() => {
         setLoading(false);
       })
       .catch((err) => {
@@ -74,7 +74,7 @@ function App() {
       });
   };
 
-  console.log(searchResults);
+  // console.log(searchResults);
 
   /* -------------------------------------------------------------------------- */
   /*             handle like card and remove like card functionality            */
@@ -96,33 +96,33 @@ function App() {
           .then((updatedCard) => {
             console.log(updatedCard);
           })
-          .catch((err) => console.log(err, "an error occurred"))
+          .catch((err) => console.log(err, 'an error occurred'))
       : api
           .addCardLike()
           .then((updatedCard) => {
             console.log(updatedCard);
           })
-          .catch((err) => console.log(err, "an error occurred"));
+          .catch((err) => console.log(err, 'an error occurred'));
   };
 
   /* -------------------------------------------------------------------------- */
   /*                        handle open and close modals                        */
   /* -------------------------------------------------------------------------- */
   const handleCreateModal = () => {
-    setActiveModal("create");
+    setActiveModal('create');
   };
 
   const handleLoginModal = () => {
-    setActiveModal("login");
+    setActiveModal('login');
   };
 
   const handleRegisterModal = () => {
-    setActiveModal("register");
-    console.log("the open register button works");
+    setActiveModal('register');
+    console.log('the open register button works');
   };
 
   const handleCloseModal = () => {
-    setActiveModal("");
+    setActiveModal('');
   };
 
   /* -------------------------------------------------------------------------- */
@@ -170,19 +170,19 @@ function App() {
           <SavedNews onSelectedCard={setSelectedCard} />
         </Route>
       </Switch>
-      {activeModal === "login" && (
+      {activeModal === 'login' && (
         <LoginModal
           handleCloseModal={handleCloseModal}
-          isOpen={activeModal === "login"}
+          isOpen={activeModal === 'login'}
           alternateModalOpen={handleRegisterModal}
-        ></LoginModal>
+        />
       )}
-      {activeModal === "register" && (
+      {activeModal === 'register' && (
         <RegisterModal
           handleCloseModal={handleCloseModal}
-          isOpen={activeModal === "register"}
+          isOpen={activeModal === 'register'}
           alternateModalOpen={handleLoginModal}
-        ></RegisterModal>
+        />
       )}
     </div>
   );

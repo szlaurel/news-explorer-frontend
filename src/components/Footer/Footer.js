@@ -1,18 +1,19 @@
-import "./Footer.css";
-import authorImage from "../../images/authorimage.png";
-import gitHubLogo from "../../images/github.svg";
-import faceBookLogo from "../../images/fb.svg";
+import React from 'react';
+import './Footer.css';
+import { NavLink } from 'react-router-dom';
+import authorImage from '../../images/authorimage.png';
+import gitHubLogo from '../../images/github.svg';
+import faceBookLogo from '../../images/fb.svg';
 // import { Link, NavLink } from "react-router-dom/cjs/react-router-dom.min";
-import { NavLink } from "react-router-dom";
 // import { NavLink } from "react-router-dom/cjs/react-router-dom";
 
 // note footer is causing side scrolling on the page so be weary
 // and fix that
 
-const Footer = ({ savedNewsPage, id }) => {
-  const gitHubLink = "https://github.com/szlaurel";
-  const facebookLink = "https://www.facebook.com/tripleten.tech/";
-  const tripleTenLink = "https://tripleten.com/";
+function Footer({ savedNewsPage, id }) {
+  const gitHubLink = 'https://github.com/szlaurel';
+  const facebookLink = 'https://www.facebook.com/tripleten.tech/';
+  const tripleTenLink = 'https://tripleten.com/';
 
   return (
     <footer className="footer">
@@ -65,10 +66,10 @@ const Footer = ({ savedNewsPage, id }) => {
             <div className="footer__text-info">
               <h3 className="footer__title">About the author</h3>
               <p className="footer__paragraph">
-                Hi! I'm Seane, and yup that's how you spell my name! In this
-                project i’m here to display a culmination of all that I learned
-                and put together during my time at TripleTen's Software
-                Engineering Course!
+                Hi! I&apos;m Seane, and yup that&apos;s how you spell my name!
+                In this project i&apos;m here to display a culmination of all
+                that I learned and put together during my time at
+                TripleTen&apos;s Software Engineering Course!
               </p>
             </div>
           </div>
@@ -113,7 +114,7 @@ const Footer = ({ savedNewsPage, id }) => {
       )}
     </footer>
   );
-};
+}
 
 export default Footer;
 

@@ -1,14 +1,12 @@
-import React from "react";
-import "./NewsCardList.css";
-import NewsCard from "../NewsCard/NewsCard";
-import { tempCardInfo } from "../../utils/constants";
+import React from 'react';
+import './NewsCardList.css';
+import NewsCard from '../NewsCard/NewsCard';
+import { tempCardInfo } from '../../utils/constants';
 
-const NewsCardList = ({ id, isSaved }) => {
-  const repeatSameCard = tempCardInfo.slice(0, 8).map((tempCard, index) => {
-    return (
-      <NewsCard key={index} searchResults={tempCard} tempSavedCard={true} />
-    );
-  });
+function NewsCardList({ id, isSaved }) {
+  const repeatSameCard = tempCardInfo.slice(0, 8).map((tempCard, index) => (
+    <NewsCard key={index} searchResults={tempCard} tempSavedCard />
+  ));
 
   // console.log(tempCardInfo);
 
@@ -20,6 +18,6 @@ const NewsCardList = ({ id, isSaved }) => {
       </section>
     </div>
   );
-};
+}
 
 export default NewsCardList;

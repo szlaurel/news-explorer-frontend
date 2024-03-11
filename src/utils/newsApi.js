@@ -1,4 +1,4 @@
-import { newsAPIkey } from "./constants";
+import { newsAPIkey } from './constants';
 
 class Api {
   constructor({ baseUrl, headers, newsApiKey }) {
@@ -21,7 +21,7 @@ class Api {
     return fetch(
       `${this._baseURL}/everything?q=${q}&apiKey=${newsAPIkey}&from=${from}&to=${to}&pageSize=${pageSize}`,
       {
-        method: "GET",
+        method: 'GET',
         headers: this._headers,
       }
     )
@@ -30,8 +30,8 @@ class Api {
   }
 
   addCardLike() {
-    return fetch("https://nomoreparties.co/articles", {
-      method: "POST",
+    return fetch('https://nomoreparties.co/articles', {
+      method: 'POST',
       headers: this._headers,
     })
       .then(this._checkResponse)
@@ -39,8 +39,8 @@ class Api {
   }
 
   removeCardLike() {
-    return fetch("https://nomoreparties.co/articles", {
-      method: "DELETE",
+    return fetch('https://nomoreparties.co/articles', {
+      method: 'DELETE',
       headers: this._headers,
     })
       .then(this._checkResponse)
@@ -58,7 +58,7 @@ class Api {
 /*                                   exports                                  */
 /* -------------------------------------------------------------------------- */
 
-export const baseUrl = "https://nomoreparties.co/news/v2";
+export const baseUrl = 'https://nomoreparties.co/news/v2';
 
 // the token that also gets passed to the authorization
 // is the apikey i think along with
@@ -66,10 +66,10 @@ export const baseUrl = "https://nomoreparties.co/news/v2";
 // and that we send here
 
 export const api = new Api({
-  baseUrl: baseUrl,
+  baseUrl,
   headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json",
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
     Authorization: `Bearer ${newsAPIkey}`,
   },
 });

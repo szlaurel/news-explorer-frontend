@@ -1,43 +1,45 @@
-import { useState } from "react";
-import "./Header.css";
-import { NavLink } from "react-router-dom";
-import altLogOutButton from "../../images/logoutWhite.svg";
+import React from 'react';
+import { useState } from 'react';
+import './Header.css';
+import { NavLink } from 'react-router-dom';
+import altLogOutButton from '../../images/logoutWhite.svg';
 
-const Header = ({
+function Header({
   onLoginModal,
-  isLoggedIn,
+  // isLoggedIn,
   id,
   logOutButton,
-  menuButton,
+  // menuButton,
   tempUserLoggedIn,
-}) => {
+}) {
   // the temp user state comes from the saved header component to show the
   // styles for the logged in user
 
-  const [open, setOpen] = useState("");
+  const [open, setOpen] = useState('');
   const [isActive, setIsActive] = useState(false);
 
-  const username = "Elise";
+  const username = 'Elise';
 
   const handleOpenAndCloseMenu = () => {
-    if (open === "open") {
-      setOpen("");
+    if (open === 'open') {
+      setOpen('');
       setIsActive(false);
       // console.log("its closed now");
-    } else if (open === "") {
-      setOpen("open");
+    } else if (open === '') {
+      setOpen('open');
       setIsActive(true);
       // console.log("its open now");
-    } else return;
+    }
+    // return;
   };
 
   const headerBarOneClass = !isActive
-    ? "header__bar-one"
-    : "header__bar-one_active";
+    ? 'header__bar-one'
+    : 'header__bar-one_active';
 
   const headerBarTwoClass = !isActive
-    ? "header__bar-two"
-    : "header__bar-two_active";
+    ? 'header__bar-two'
+    : 'header__bar-two_active';
 
   const logOutChangeImage = !isActive ? logOutButton : altLogOutButton;
 
@@ -49,25 +51,25 @@ const Header = ({
       >
         {!isActive ? (
           <>
-            <div className={headerBarOneClass} id={id}></div>
-            <div className={headerBarTwoClass} id={id}></div>
+            <div className={headerBarOneClass} id={id} />
+            <div className={headerBarTwoClass} id={id} />
           </>
         ) : (
           <>
-            <div className={headerBarOneClass}></div>
-            <div className={headerBarTwoClass}></div>
+            <div className={headerBarOneClass} />
+            <div className={headerBarTwoClass} />
           </>
         )}
       </button>
-      <main
+      <div
         className={
           !isActive
-            ? "header__navbar-container"
-            : "header__navbar-container_active"
+            ? 'header__navbar-container'
+            : 'header__navbar-container_active'
         }
         id={id}
       >
-        <section className="header__menu-container">
+        <div className="header__menu-container">
           {!isActive ? (
             <h1 className="header__logo" id={id}>
               NewsExplorer
@@ -78,8 +80,8 @@ const Header = ({
             <h1 className="header__logo">NewsExplorer</h1>
           )}
 
-          <span className="header__border-bottom"></span>
-        </section>
+          <span className="header__border-bottom" />
+        </div>
 
         {/* <button
           className="header__hamburger-button"
@@ -89,11 +91,11 @@ const Header = ({
           <div className="header__bar-two"></div>
         </button> */}
         {/* <div className="header__menu-bar"></div> */}
-        <section
+        <div
           className={
             !isActive
-              ? "header__button-container"
-              : "header__button-container_active"
+              ? 'header__button-container'
+              : 'header__button-container_active'
           }
           id={id}
         >
@@ -144,9 +146,9 @@ const Header = ({
               </button>
             </>
           )}
-        </section>
-      </main>
+        </div>
+      </div>
     </header>
   );
-};
+}
 export default Header;

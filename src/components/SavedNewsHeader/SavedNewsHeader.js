@@ -1,19 +1,19 @@
-import React from "react";
-import "./SavedNewsHeader.css";
-import Header from "../Header/Header";
-import savedNewsLogOutButton from "../../images/savednewslogout.svg";
-import alternateHamburgerButton from "../../images/hamburger-button-black.svg";
+import React from 'react';
+import './SavedNewsHeader.css';
+import Header from '../Header/Header';
+import savedNewsLogOutButton from '../../images/savednewslogout.svg';
+import alternateHamburgerButton from '../../images/hamburger-button-black.svg';
 // import { useState } from "react";
 
-const SavedNewsHeader = () => {
+function SavedNewsHeader() {
   /* -------------------------------------------------------------------------- */
   /*                                 temp values                                */
   /* -------------------------------------------------------------------------- */
 
-  const username = "Elise";
+  const username = 'Elise';
   const articles = 5;
-  const keyWords1 = "Nature";
-  const keyWords2 = "Yellowstone";
+  const keyWords1 = 'Nature';
+  const keyWords2 = 'Yellowstone';
   const otherKeywords = 2;
 
   const tempUserLoggedIn = true;
@@ -22,7 +22,7 @@ const SavedNewsHeader = () => {
     <div className="saved-news-header__main">
       <header>
         <Header
-          id={"saved-news_header"}
+          id="saved-news_header"
           logOutButton={savedNewsLogOutButton}
           menuButton={alternateHamburgerButton}
           tempUserLoggedIn={tempUserLoggedIn}
@@ -36,7 +36,8 @@ const SavedNewsHeader = () => {
         <div className="saved-news_header_keywords__container">
           <div className="saved-news_header_keywords">
             <span className="saved-news_header_keywords__title">
-              By keywords:{" "}
+              By keywords:
+              {' '}
             </span>
             {`${keyWords1}, ${keyWords2}, and ${otherKeywords} other`}
           </div>
@@ -44,7 +45,7 @@ const SavedNewsHeader = () => {
       </div>
     </div>
   );
-};
+}
 
 export default SavedNewsHeader;
 

@@ -1,7 +1,7 @@
-import React from "react";
-import "./NewsCard.css";
-import { useState } from "react";
-import tempDogPhoto from "../../images/tempcardimage.svg";
+import React from 'react';
+import './NewsCard.css';
+import { useState } from 'react';
+import tempDogPhoto from '../../images/tempcardimage.svg';
 
 // need to remove all the temp values when we pass this stage and go on to authorization
 // and authentication
@@ -17,13 +17,13 @@ const NewsCard = ({
   // change the signedIn state value here to check for certain
   // functionalties that only work when signed in
   // VVVVVV
-  let userId = false;
+  const userId = false;
   const [changeHoverValue, setChangeHoverValue] = useState(
-    "news-card-signin__popup_inactive"
+    'news-card-signin__popup_inactive'
   );
 
   const [changeRemoveHover, setChangeRemoveHover] = useState(
-    "news-card-image__remove-button_inactive" || false
+    'news-card-image__remove-button_inactive' || false
   );
 
   const [popUpValue, setPopUpValue] = useState(false);
@@ -34,7 +34,7 @@ const NewsCard = ({
   /*                              temp information                              */
   /* -------------------------------------------------------------------------- */
 
-  const tempCategory = "Nature";
+  const tempCategory = 'Nature';
 
   /* -------------------------------------------------------------------------- */
   /*                               filter results                               */
@@ -55,7 +55,7 @@ const NewsCard = ({
 
   const formattedDates = () => {
     const dates = new Date(searchResults?.publishedAt);
-    const month = dates.toLocaleString("en-US", { month: "long" });
+    const month = dates.toLocaleString('en-US', { month: 'long' });
     const date = dates.getDate();
     const year = dates.getFullYear();
 
@@ -102,7 +102,7 @@ const NewsCard = ({
 
   function signInHover() {
     if (userId !== true) {
-      setChangeHoverValue("news-card-signin__popup");
+      setChangeHoverValue('news-card-signin__popup');
       setIsDisabled(true);
       return;
       // return console.log("this works again");
@@ -110,19 +110,19 @@ const NewsCard = ({
   }
 
   function leaveHover() {
-    setChangeHoverValue("news-card-signin__popup_inactive");
+    setChangeHoverValue('news-card-signin__popup_inactive');
   }
 
   function removeButtonHover() {
     if (userId !== true) {
-      setChangeRemoveHover("news-card-image__remove-button_active");
+      setChangeRemoveHover('news-card-image__remove-button_active');
       setPopUpValue(true);
       return;
     } else return;
   }
 
   function leaveRemoveHover() {
-    setChangeRemoveHover("news-card-image__remove-button_inactive");
+    setChangeRemoveHover('news-card-image__remove-button_inactive');
     setPopUpValue(false);
   }
 
@@ -146,13 +146,13 @@ const NewsCard = ({
   };
 
   const newsCardLikeButtonClass = `news-card-image__unsave-button ${
-    isLike ? "news-card-image__save-button" : "news-card-image__unsave-button"
+    isLike ? 'news-card-image__save-button' : 'news-card-image__unsave-button'
   }`;
 
   const newsCardLikeButtonClassHidden = `news-card-image__unsave-button ${
     !userId
-      ? "news-card-image__unsave-button"
-      : "news-card-image__unsave-button_hidden"
+      ? 'news-card-image__unsave-button'
+      : 'news-card-image__unsave-button_hidden'
   } `;
 
   return (
@@ -162,7 +162,7 @@ const NewsCard = ({
           <div className="news-card__image_info">
             <img
               src={searchResults?.urlToImage || tempDogPhoto}
-              alt={searchResults?.urlToImage || "a picture of a dog"}
+              alt={searchResults?.urlToImage || 'a picture of a dog'}
               className="news-card__image"
               onClick={() => onSelectedCard(searchResults)}
             />
@@ -177,8 +177,8 @@ const NewsCard = ({
                 <div
                   className={
                     popUpValue
-                      ? "news-card-remove__popup"
-                      : "news-card-remove__popup_inactive"
+                      ? 'news-card-remove__popup'
+                      : 'news-card-remove__popup_inactive'
                   }
                 >
                   Remove from saved
@@ -215,7 +215,7 @@ const NewsCard = ({
           <h2 className="news-card__title">{searchResults?.title}</h2>
           <p className="news-card__paragraph">{searchResults?.description}</p>
           <cite className="news-card__site">
-            {searchResults?.source?.name || "Treehugger"}
+            {searchResults?.source?.name || 'Treehugger'}
           </cite>
         </div>
       </div>

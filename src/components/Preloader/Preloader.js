@@ -1,8 +1,8 @@
-import React from "react";
-import "./Preloader.css";
-import nothingFoundIcon from "../../images/notfoundicon.svg";
+import React from 'react';
+import './Preloader.css';
+import nothingFoundIcon from '../../images/notfoundicon.svg';
 
-const Preloader = ({ showNothingFound }) => {
+function Preloader({ showNothingFound }) {
   return showNothingFound ? (
     <div className="preloader-error_container">
       <img
@@ -17,10 +17,10 @@ const Preloader = ({ showNothingFound }) => {
     </div>
   ) : (
     <div className="circle-preloader_container">
-      <div className="circle-preloader"></div>
+      <div className="circle-preloader" />
       <h3 className="circle-preloader_title">Searching for news...</h3>
     </div>
   );
-};
+}
 
 export default Preloader;

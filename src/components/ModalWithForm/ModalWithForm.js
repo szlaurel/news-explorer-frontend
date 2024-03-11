@@ -1,9 +1,7 @@
-import "./ModalWithForm.css";
-import React from "react";
-import { useRef } from "react";
-import { useEffect } from "react";
+import './ModalWithForm.css';
+import React, { useRef, useEffect } from 'react';
 
-const ModalWithForm = ({
+function ModalWithForm({
   children,
   name,
   onClose,
@@ -13,7 +11,7 @@ const ModalWithForm = ({
   onSubmit,
   alternateModalOpen,
   idForEachCloseButton,
-}) => {
+}) {
   const ref = useRef();
 
   /* -------------------------------------------------------------------------- */
@@ -28,15 +26,15 @@ const ModalWithForm = ({
     };
 
     const checkIfEscPress = (e) => {
-      if (e.key === "Escape") {
+      if (e.key === 'Escape') {
         onClose();
       }
     };
-    document.addEventListener("mousedown", checkIfOutsideClick);
-    document.addEventListener("keyup", checkIfEscPress);
+    document.addEventListener('mousedown', checkIfOutsideClick);
+    document.addEventListener('keyup', checkIfEscPress);
     return () => {
-      document.removeEventListener("mousedown", checkIfOutsideClick);
-      document.removeEventListener("keyup", checkIfEscPress);
+      document.removeEventListener('mousedown', checkIfOutsideClick);
+      document.removeEventListener('keyup', checkIfEscPress);
     };
   }, [onClose]);
 
@@ -47,16 +45,13 @@ const ModalWithForm = ({
           type="button"
           onClick={onClose}
           className="modal__close"
+          label="closeButton"
           id={idForEachCloseButton}
-        ></button>
+        />
         <h3 className="modal__title">{title}</h3>
         <form className="modal__form" onSubmit={onSubmit}>
           {children}
-          <button
-            type="submit"
-            className="modal__button-submit"
-            disabled={true}
-          >
+          <button type="submit" className="modal__button-submit" disabled>
             {buttonText}
           </button>
           <div className="modal__button-container">
@@ -73,6 +68,6 @@ const ModalWithForm = ({
       </div>
     </div>
   );
-};
+}
 
 export default ModalWithForm;

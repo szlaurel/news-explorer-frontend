@@ -1,16 +1,15 @@
-import React from "react";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import { useState } from "react";
+import React, { useState } from 'react';
+import ModalWithForm from '../ModalWithForm/ModalWithForm';
 
-const RegisterModal = ({
+function RegisterModal({
   handleCloseModal,
   isOpen,
   handleRegister,
   alternateModalOpen,
-}) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [username, setUserName] = useState("");
+}) {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [username, setUserName] = useState('');
 
   return (
     <ModalWithForm
@@ -31,7 +30,7 @@ const RegisterModal = ({
         id="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-      ></input>
+      />
       <span className="modal__span">Password</span>
       <input
         className="modal__input"
@@ -41,7 +40,7 @@ const RegisterModal = ({
         id="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-      ></input>
+      />
       <span className="modal__span">Username</span>
       <input
         className="modal__input"
@@ -51,9 +50,9 @@ const RegisterModal = ({
         id="username"
         value={username}
         onChange={(e) => setUserName(e.target.value)}
-      ></input>
+      />
     </ModalWithForm>
   );
-};
+}
 
 export default RegisterModal;

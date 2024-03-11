@@ -398,6 +398,9 @@
 }
 
 @media screen and (max-width: 700px) {
+  .header__logo {
+    margin-left: 0px;
+  }
   .header__navbar-container {
     display: flex;
     transition: ease-in-out 0.5s;
@@ -426,6 +429,7 @@
     opacity: 1;
     transition: ease-in-out 0.5s;
     background-color: rgba(26, 27, 34, 1);
+    padding-left: 16px;
   }
 
   .header__navbar-container_active:active {
@@ -573,6 +577,10 @@
     margin-top: 16px;
     margin-left: 16px;
   }
+  .header__navbar-container_active {
+    padding-left: 0px;
+  }
+
   .header__button-container_active {
     padding: 0;
     padding-left: 16px;
@@ -584,6 +592,7 @@
     margin-right: 40px;
   }
 }
+
 /* starting from here is where i copy and pasted to the main and main.css */
 /* VVVVVVV */
 

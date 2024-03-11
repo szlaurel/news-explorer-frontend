@@ -1,21 +1,17 @@
-import React from "react";
-import "./SearchResults.css";
-import NewsCard from "../NewsCard/NewsCard";
-import { useState } from "react";
+import React, { useState } from 'react';
+import './SearchResults.css';
+import NewsCard from '../NewsCard/NewsCard';
 // import Preloader from "../Preloader/Preloader";
 
-const SearchResults = ({
+function SearchResults({
   searchResults,
   searchTrue,
   cardsToShow,
   setCardsToShow,
   showFailMessage,
-  setLoading,
-  showNothingFound,
-  loading,
   onSelectedCard,
   onCardLike,
-}) => {
+}) {
   // this is where it still shows up as an array
   // the second we pass it to newscard when mapping it
   // it becomes an object
@@ -30,19 +26,16 @@ const SearchResults = ({
   // anything if the final filterCard information array is 0 or something else?
   // type "cnc machining" and search it up and you'll see what i mean
 
-  const filterCardInformation = searchResults.filter((searchResult) => {
-    return (
-      searchResult.urlToImage !== null &&
-      // searchResult.source.id !== null &&
-      searchResult.urlToImage !== ""
-    );
-  });
+  const filterCardInformation = searchResults.filter(
+    (searchResult) =>
+      searchResult.urlToImage !== null && searchResult.urlToImage !== ''
+  );
 
   console.log(filterCardInformation);
 
   const showSearchResults = searchTrue
-    ? "search-results"
-    : "search-results__inactive";
+    ? 'search-results'
+    : 'search-results__inactive';
 
   // console.log(searchTrue);
 
@@ -58,8 +51,8 @@ const SearchResults = ({
   };
 
   const hideButton = showMoreButton
-    ? "search-results__button"
-    : "search-results__button_inactive";
+    ? 'search-results__button'
+    : 'search-results__button_inactive';
 
   // console.log(searchTrue);
 
@@ -72,24 +65,22 @@ const SearchResults = ({
 
   const showCardResults = filterCardInformation
     .slice(0, cardsToShow)
-    .map((searchResult, index) => {
-      return (
-        <NewsCard
-          key={index}
-          searchResults={searchResult}
-          onSelectedCard={onSelectedCard}
-          onCardLike={onCardLike}
-        />
-      );
-    });
+    .map((searchResult, index) => (
+      <NewsCard
+        key={index}
+        searchResults={searchResult}
+        onSelectedCard={onSelectedCard}
+        onCardLike={onCardLike}
+      />
+    ));
 
-  let searchResultFailMessage =
-    "Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later.";
+  const searchResultFailMessage =
+    'Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later.';
 
-  console.log(showCardResults);
+  // console.log(showCardResults);
 
   return (
-    <main className={showSearchResults}>
+    <div className={showSearchResults}>
       <section className="search-results__title-container">
         <h3 className="search-results__title">Search results</h3>
       </section>
@@ -103,13 +94,13 @@ const SearchResults = ({
         )}
       </section>
       <div className="search-results__button-container">
-        <button className={hideButton} onClick={handleShowMore}>
+        <button className={hideButton} onClick={handleShowMore} type="button">
           Show more
         </button>
       </div>
-    </main>
+    </div>
   );
-};
+}
 
 export default SearchResults;
 

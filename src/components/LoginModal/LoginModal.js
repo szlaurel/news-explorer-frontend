@@ -1,17 +1,16 @@
-import "./LoginModal.css";
-import React from "react";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import { useState } from "react";
+import './LoginModal.css';
+import React, { useState } from 'react';
+import ModalWithForm from '../ModalWithForm/ModalWithForm';
 
-const LoginModal = ({
+function LoginModal({
   handleCloseModal,
   isOpen,
   handleLogin,
   alternateModalOpen,
-}) => {
-  const [email, setEmail] = useState("");
+}) {
+  const [email, setEmail] = useState('');
 
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState('');
 
   /* -------------------------------------------------------------------------- */
   /*            To test if the inputs are getting values to sent them           */
@@ -36,7 +35,7 @@ const LoginModal = ({
         id="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-      ></input>
+      />
       <span className="modal__span">Password</span>
       <input
         className="modal__input"
@@ -46,9 +45,9 @@ const LoginModal = ({
         id="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-      ></input>
+      />
     </ModalWithForm>
   );
-};
+}
 
 export default LoginModal;

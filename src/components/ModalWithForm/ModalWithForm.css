@@ -120,6 +120,13 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 768px) {
+  .modal__title {
+    max-width: 79px;
+    max-height: 32px;
+  }
+}
+
 @media screen and (max-width: 520px) {
   .modal__close {
     bottom: calc(95% + 3%);
@@ -159,12 +166,17 @@
 
 @media screen and (max-width: 320px) {
   .modal__container {
-    max-width: 320px;
+    /* padding left and right just need to disappear because
+    it already fits the design constraints */
+    max-width: 245px;
     max-height: 560px;
-    padding-top: 16px;
-    padding-bottom: 15em;
-    padding-left: 16px;
-    padding-right: 16px;
+    /* padding-top: 16px; */
+    padding-bottom: 560px;
+    padding-right: 70px;
+    padding-left: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    bottom: -131px;
   }
 
   .modal__close {
@@ -177,6 +189,8 @@
   .modal__title {
     margin-left: 16px;
     margin-right: 16px;
+    max-width: 158px;
+    max-height: 28px;
   }
 
   .modal__span {
