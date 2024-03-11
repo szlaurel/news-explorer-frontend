@@ -19,17 +19,17 @@ const SavedNews = ({ onSelectedCard }) => {
   // with the design
 
   return (
-    <div className="saved-news">
-      <div className="saved-news__header">
+    <main className="saved-news">
+      <header className="saved-news__header">
         <SavedNewsHeader />
-      </div>
-      <div className="saved-news__cards_container">
+      </header>
+      <section className="saved-news__cards_container">
         <NewsCardList id={"saved-news-cards"} isSaved={true} />
-      </div>
-      <div>
+      </section>
+      <footer>
         <Footer savedNewsPage={true} id={"saved-news__footer"} />
-      </div>
-    </div>
+      </footer>
+    </main>
   );
 };
 

@@ -20,16 +20,16 @@ const SavedNewsHeader = () => {
 
   return (
     <div className="saved-news-header__main">
-      <div>
+      <header>
         <Header
           id={"saved-news_header"}
           logOutButton={savedNewsLogOutButton}
           menuButton={alternateHamburgerButton}
           tempUserLoggedIn={tempUserLoggedIn}
         />
-      </div>
+      </header>
       <div className="saved-news_header_container">
-        <div className="saved-news_header_title">Saved articles</div>
+        <h3 className="saved-news_header_title">Saved articles</h3>
         <div className="saved-news_header_paragraph-container">
           {`${username}, you have ${articles} saved articles`}
         </div>

@@ -211,14 +211,12 @@ const NewsCard = ({
           </div>
         </div>
         <div className="news-card-info__container">
-          <div className="news-card__date">{formattedDates()}</div>
-          <div className="news-card__title">{searchResults?.title}</div>
-          <div className="news-card__paragraph">
-            {searchResults?.description}
-          </div>
-          <div className="news-card__site">
+          <time className="news-card__date">{formattedDates()}</time>
+          <h2 className="news-card__title">{searchResults?.title}</h2>
+          <p className="news-card__paragraph">{searchResults?.description}</p>
+          <cite className="news-card__site">
             {searchResults?.source?.name || "Treehugger"}
-          </div>
+          </cite>
         </div>
       </div>
     </div>
@@ -226,3 +224,7 @@ const NewsCard = ({
 };
 
 export default NewsCard;
+
+/* -------------------------------------------------------------------------- */
+/*                        code before semantic changes                        */
+/* -------------------------------------------------------------------------- */

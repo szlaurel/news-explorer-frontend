@@ -12,6 +12,9 @@ const SearchForm = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (e.target) {
+      console.log("wow i've been clicked");
+    }
     if (searchField === "") {
       setInputError(true);
       return;
@@ -24,9 +27,9 @@ const SearchForm = ({
     }
   };
 
-  const handleSpanError = inputError
-    ? "search-form__error"
-    : "search-form__error_inactive";
+  // const handleSpanError = inputError
+  //   ? "search-form__error"
+  //   : "search-form__error_inactive";
 
   return (
     <div>
@@ -34,7 +37,7 @@ const SearchForm = ({
         <input
           className="search-form__input"
           name="search-field"
-          placeholder="Enter topic"
+          placeholder={inputError ? "Please enter a topic" : "Enter Topic"}
           type="search"
           id="searchField"
           value={searchField}
@@ -48,7 +51,6 @@ const SearchForm = ({
           Search
         </button>
       </main>
-      <span className={handleSpanError}>Please enter a topic</span>
     </div>
   );
 };

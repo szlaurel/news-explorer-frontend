@@ -116,7 +116,11 @@
   transition: ease-in-out 0.4s;
 }
 
-.news-card-image__unsave-button_hidden {
+/* for anything that needs to change in terms of the hover
+just do it in the css */
+
+.news-card-image__unsave-button:hover {
+  background-image: url("../../images/hoverbookmark.svg");
 }
 
 .news-card-image__save-button {
@@ -200,6 +204,7 @@
   line-height: 20px;
   color: rgba(182, 188, 191, 1);
   margin-top: 18px;
+  font-style: normal;
 }
 
 @media screen and (max-width: 826px) {
