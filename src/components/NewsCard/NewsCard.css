@@ -30,7 +30,7 @@
 .news-card-image__category {
   position: relative;
   color: black;
-  font-family: "roboto-500", arial, sans-serif;
+  font-family: 'roboto-500', arial, sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 24px;
@@ -48,7 +48,7 @@
 }
 
 .news-card-image__remove-button_inactive {
-  background-image: url("../../images/inactiveTrashLogo.svg");
+  background-image: url('../../images/inactiveTrashLogo.svg');
   background-repeat: no-repeat;
   background-size: contain;
   border: 0;
@@ -65,7 +65,7 @@
 }
 
 .news-card-image__remove-button_active {
-  background-image: url("../../images/activetrash.svg");
+  background-image: url('../../images/activetrash.svg');
   background-repeat: no-repeat;
   background-size: contain;
   border: 0;
@@ -91,7 +91,7 @@
   border: 0;
   border-radius: 8px;
   cursor: pointer;
-  font-family: "roboto-500", arial, sans-serif;
+  font-family: 'roboto-500', arial, sans-serif;
   font-size: 12px;
   display: block;
   padding: 11px 26px;
@@ -102,7 +102,7 @@
 }
 
 .news-card-image__unsave-button {
-  background-image: url("../../images/unsavedicon.svg");
+  background-image: url('../../images/unsavedicon.svg');
   width: 40px;
   height: 40px;
   background-repeat: no-repeat;
@@ -120,11 +120,11 @@
 just do it in the css */
 
 .news-card-image__unsave-button:hover {
-  background-image: url("../../images/hoverbookmark.svg");
+  background-image: url('../../images/hoverbookmark.svg');
 }
 
 .news-card-image__save-button {
-  background-image: url("../../images/savedicon.svg");
+  background-image: url('../../images/savedicon.svg');
   width: 40px;
   height: 40px;
   background-repeat: no-repeat;
@@ -150,7 +150,7 @@ just do it in the css */
   border: 0;
   border-radius: 8px;
   cursor: pointer;
-  font-family: "roboto-500", arial, sans-serif;
+  font-family: 'roboto-500', arial, sans-serif;
   font-size: 12px;
   display: block;
 }
@@ -172,14 +172,14 @@ just do it in the css */
 }
 
 .news-card__date {
-  font-family: "roboto-400-regular", arial, sans-serif;
+  font-family: 'roboto-400-regular', arial, sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
   color: rgba(182, 188, 191, 1);
 }
 .news-card__title {
-  font-family: "roboto-slab-400-regular", arial, sans-serif;
+  font-family: 'roboto-slab-400-regular', arial, sans-serif;
   font-size: 26px;
   font-weight: 400;
   line-height: 30px;
@@ -189,7 +189,7 @@ just do it in the css */
 .news-card__paragraph {
   width: 352px;
   height: 110px;
-  font-family: "roboto-400-regular", arial, sans-serif;
+  font-family: 'roboto-400-regular', arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 22px;
@@ -198,7 +198,7 @@ just do it in the css */
   overflow: hidden;
 }
 .news-card__site {
-  font-family: "roboto-slab-700", arial, sans-serif;
+  font-family: 'roboto-slab-700', arial, sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
@@ -220,6 +220,12 @@ just do it in the css */
   }
   .news-card__image {
     max-width: 224px;
+    height: 150px;
+  }
+
+  .news-card__image_info {
+    position: relative;
+    bottom: 45px;
   }
   .news-card-info__container {
     max-width: 224px;
@@ -267,6 +273,10 @@ just do it in the css */
 }
 
 @media screen and (max-width: 768px) {
+  .news-card-image__unsave-button {
+    left: 176px;
+    top: 6px;
+  }
   .news-card__container {
     max-width: 224px;
     max-height: 420px;
