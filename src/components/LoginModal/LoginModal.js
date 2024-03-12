@@ -8,12 +8,46 @@ function LoginModal({
   // handleLogin,
   alternateModalOpen,
 }) {
-  const [email, setEmail] = useState('');
+  /* -------------------------------------------------------------------------- */
+  /*                                  useStates                                 */
+  /* -------------------------------------------------------------------------- */
 
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  // const [isValid, setIsValid] = useState(true);
+  const [isEmailValid, setIsEmailValid] = useState(true);
+  const [isPasswordValid, setIsPasswordValid] = useState(true);
+
+  /* -------------------------------------------------------------------------- */
+  /*                        handle validation and change                        */
+  /* -------------------------------------------------------------------------- */
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const validateEmail = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    setIsEmailValid(emailRegex.test(email));
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const validatePassword = () => {
+    const passwordRegex = /^(?=.*[!@#$%^&*])(?=.*[a-zA-Z])(?=.*[0-9]).{8,}$/;
+    setIsPasswordValid(passwordRegex.test(password));
+  };
+
+  // might push the setter and the ability to pass
 
   /* -------------------------------------------------------------------------- */
   /*            To test if the inputs are getting values to sent them           */
+  /* -------------------------------------------------------------------------- */
+
+  /* -------------------------------------------------------------------------- */
+  /*                               component code                               */
   /* -------------------------------------------------------------------------- */
 
   return (
@@ -25,6 +59,8 @@ function LoginModal({
       alternateButtonText="Sign up"
       alternateModalOpen={alternateModalOpen}
       buttonText="Sign in"
+      isEmailValid={isEmailValid}
+      isPasswordValid={isPasswordValid}
     >
       <span className="modal__span">Email</span>
       <input
@@ -33,9 +69,17 @@ function LoginModal({
         type="email"
         placeholder="Enter email"
         id="email"
+        onBlur={validateEmail}
         value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={handleEmailChange}
       />
+      <span
+        className={
+          !isEmailValid ? 'modal__span_error' : 'modal__span_error-hidden'
+        }
+      >
+        Invalid email address
+      </span>
       <span className="modal__span">Password</span>
       <input
         className="modal__input"
@@ -44,8 +88,11 @@ function LoginModal({
         placeholder="Enter password"
         id="password"
         value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        onBlur={validatePassword}
+        onChange={handlePasswordChange}
       />
+      {/* this span isnt active yet until i connect it to authorization */}
+      <span className="modal__span_error-hidden">Invalid Password</span>
     </ModalWithForm>
   );
 }

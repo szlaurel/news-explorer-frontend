@@ -20,7 +20,7 @@
 }
 
 .footer__title {
-  font-family: "roboto-slab-400-regular", arial, sans-serif;
+  font-family: 'roboto-slab-400-regular', arial, sans-serif;
   font-weight: 400;
   font-size: 40px;
   line-height: 46px;
@@ -29,8 +29,8 @@
 }
 
 .footer__paragraph {
-  font-family: "roboto-400-regular", arial, sans-serif;
-  font-family: "roboto-400-regular";
+  font-family: 'roboto-400-regular', arial, sans-serif;
+  font-family: 'roboto-400-regular';
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
@@ -44,12 +44,12 @@
   justify-content: space-between;
 }
 
-.footer__credits-container[id="saved-news__footer"] {
+.footer__credits-container[id='saved-news__footer'] {
   margin-top: 14px;
 }
 .footer__credits-title {
   margin-left: 104px;
-  font-family: "roboto-400-regular", arial, sans-serif;
+  font-family: 'roboto-400-regular', arial, sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
@@ -63,11 +63,11 @@
   align-items: center;
 }
 
-.footer__links-container[id="saved-news__footer"] {
+.footer__links-container[id='saved-news__footer'] {
   margin-right: 96px;
 }
 .footer__link {
-  font-family: "roboto-400-regular", arial, sans-serif;
+  font-family: 'roboto-400-regular', arial, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
@@ -117,10 +117,42 @@
 }
 
 @media screen and (max-width: 768px) {
-  .footer__credits-container[id="saved-news__footer"] {
+  .footer__info-container {
+    margin-top: 90px;
+  }
+  .footer__image {
+    max-height: 232px;
+    max-width: 232px;
+    margin-left: 0px;
+    margin-top: -21px;
+    margin-right: -24px;
+  }
+  .footer__title {
+    width: 424px;
+    height: 34px;
+    font-size: 30px;
+    line-height: 40px;
+    margin-top: -40px;
+    margin-bottom: -3px;
+  }
+  .footer__paragraph {
+    width: 424px;
+    height: 168px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .footer__credits-container {
+    margin-top: 68px;
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /*                              saved news styles                             */
+  /* -------------------------------------------------------------------------- */
+
+  .footer__credits-container[id='saved-news__footer'] {
     margin-top: 6px;
   }
-  .footer__links-container[id="saved-news__footer"] {
+  .footer__links-container[id='saved-news__footer'] {
     margin-right: 40px;
   }
   .footer__social-icons {

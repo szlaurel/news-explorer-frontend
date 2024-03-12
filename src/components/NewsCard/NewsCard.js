@@ -28,7 +28,14 @@ function NewsCard({
 
   const [popUpValue, setPopUpValue] = useState(false);
 
-  const [isDisabled, setIsDisabled] = useState(false);
+  /* -------------------------------------------------------------------------- */
+  /*                         disable code being disabled                        */
+  /* -------------------------------------------------------------------------- */
+
+  // the disable use state is being used around in this component
+  // to make this work you just need to uncomment this and then
+  // uncomment the rest of setter function in the sign in hover
+  // const [isDisabled, setIsDisabled] = useState(false);
 
   /* -------------------------------------------------------------------------- */
   /*                              temp information                              */
@@ -103,7 +110,7 @@ function NewsCard({
   function signInHover() {
     if (userId !== true) {
       setChangeHoverValue('news-card-signin__popup');
-      setIsDisabled(true);
+      // setIsDisabled(true);
       // return;
       // return console.log("this works again");
     }
@@ -204,7 +211,7 @@ function NewsCard({
                   onClick={handleLikeClick}
                   onMouseOver={signInHover}
                   onMouseLeave={leaveHover}
-                  disabled={isDisabled}
+                  // disabled={isDisabled}
                   type="button"
                   label="likebutton"
                 />

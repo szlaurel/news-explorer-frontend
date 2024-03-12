@@ -10,19 +10,29 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.modal__title-success {
+  font-family: 'roboto-900', arial, sans-serif;
+  font-size: 24px;
+  margin-top: 0;
+}
+
 .modal__container {
   background: white;
   max-width: 358px;
   width: 100%;
   border-radius: 20px;
   padding: 34px 36px;
-  font-family: "roboto-900", arial, sans-serif;
+  font-family: 'roboto-900', arial, sans-serif;
   position: relative;
+}
+
+.modal__container_success {
+  padding: 43px 36px;
 }
 
 .modal__close {
   position: absolute;
-  background: url("../../images/closebutton.svg");
+  background: url('../../images/closebutton.svg');
   background-color: transparent;
   background-size: contain;
   bottom: calc(95% + 5%);
@@ -51,8 +61,8 @@
   padding-left: 0px;
   border-color: rgba(0, 0, 0, 1);
   border-width: 1px;
-  margin-bottom: 24px;
-  font-family: "inter-400", arial, sans-serif;
+  /* margin-bottom: 24px; */
+  font-family: 'inter-400', arial, sans-serif;
   font-weight: 400;
   font-size: 14px;
   color: black;
@@ -61,14 +71,32 @@
 
 .modal__span {
   color: rgba(47, 113, 229, 1);
-  font-family: "inter-400", arial, sans-serif;
+  font-family: 'inter-400', arial, sans-serif;
   font-weight: 400;
   font-size: 12px;
   margin-bottom: 10px;
 }
 
+.modal__span_error {
+  font-family: 'inter-400', arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: rgba(255, 0, 0, 1);
+  margin-bottom: 13px;
+  margin-top: 3px;
+}
+
+.modal__span_error-center {
+  align-self: center;
+  margin-top: 17px;
+}
+
+.modal__span_error-hidden {
+  visibility: hidden;
+}
+
 .modal__button-submit {
-  font-family: "roboto-500", arial, sans-serif;
+  font-family: 'roboto-500', arial, sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
@@ -82,6 +110,10 @@
   background-color: rgba(47, 113, 229, 1);
   margin-bottom: 16px;
   opacity: 1;
+}
+
+.modal__button-submit_hidden {
+  display: none;
 }
 
 .modal__button-submit:hover {
@@ -100,15 +132,23 @@
   gap: 5px;
 }
 
+.modal__button-container_success {
+  justify-content: flex-start;
+}
+
 .modal__alternate-span-text {
-  font-family: "inter-400", arial, sans-serif;
+  font-family: 'inter-400', arial, sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
 }
 
+.modal__alternate-span-text_hidden {
+  display: none;
+}
+
 .modal__button-alternate {
-  font-family: "inter-400", arial, sans-serif;
+  font-family: 'inter-400', arial, sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;

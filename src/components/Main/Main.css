@@ -1,5 +1,5 @@
 .main {
-  background-image: url("../../images/backgroundimage.svg");
+  background-image: url('../../images/backgroundimage.svg');
   height: 76vh;
   /* height: 80vh; */
 
@@ -19,7 +19,7 @@
 
 .main__title {
   color: white;
-  font-family: "roboto-slab-400-regular", arial, sans-serif;
+  font-family: 'roboto-slab-400-regular', arial, sans-serif;
   font-weight: 400;
   font-size: 60px;
   line-height: 64px;
@@ -35,7 +35,7 @@
 
 .main__paragraph {
   color: white;
-  font-family: "roboto-400-regular", arial, sans-serif;
+  font-family: 'roboto-400-regular', arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
@@ -61,7 +61,7 @@
   padding: 0;
   border-color: white;
   border-style: solid;
-  font-family: "roboto-400", arial, sans-serif;
+  font-family: 'roboto-400', arial, sans-serif;
   padding-left: 24px;
 }
 
@@ -75,7 +75,7 @@
   width: 168px;
   height: 64px;
   color: white;
-  font-family: "roboto-500", arial, sans-serif;
+  font-family: 'roboto-500', arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
   font-weight: 500;
@@ -120,7 +120,8 @@
 
 @media screen and (max-width: 768px) {
   .main {
-    height: 53vh;
+    /* height: 53vh; */
+    height: 62vh;
   }
 
   .main__title {
@@ -197,8 +198,9 @@
     font-size: 36px;
     font-weight: 400;
     line-height: normal;
-    /* margin-top: 30px; */
-    margin-top: 4em;
+    margin-top: 30px;
+    /* margin-top: 4em; */
+    /* margin-left: 16px; */
   }
 
   .main__paragraph {

@@ -1,5 +1,6 @@
 import './ModalWithForm.css';
 import React, { useRef, useEffect } from 'react';
+// import { useState } from 'react';
 
 function ModalWithForm({
   children,
@@ -8,15 +9,28 @@ function ModalWithForm({
   title,
   alternateButtonText,
   buttonText,
-  onSubmit,
   alternateModalOpen,
   idForEachCloseButton,
+  isEmailValid,
+  onSubmit,
+  buttonHidden,
+  // isPasswordValid,
 }) {
   const ref = useRef();
+
+  // const [checkInput, setCheckInput] = useState(false);
 
   /* -------------------------------------------------------------------------- */
   /*              click outside modal and escape button modal code              */
   /* -------------------------------------------------------------------------- */
+
+  const isButtonActive = isEmailValid ? '' : 'disabled';
+
+  const buttonHiddenSwitch = buttonHidden ? 'modal__button-submit_hidden' : '';
+
+  const buttonHideSpan = buttonHidden
+    ? 'modal__alternate-span-text_hidden'
+    : '';
 
   useEffect(() => {
     const checkIfOutsideClick = (e) => {
@@ -39,8 +53,8 @@ function ModalWithForm({
   }, [onClose]);
 
   return (
-    <div className={`modal modal_type${name}`}>
-      <div className="modal__container" ref={ref}>
+    <div className={`modal modal_type_${name}`}>
+      <div className={`modal__container modal__container_${name}`} ref={ref}>
         <button
           type="button"
           onClick={onClose}
@@ -51,11 +65,20 @@ function ModalWithForm({
         <h3 className="modal__title">{title}</h3>
         <form className="modal__form" onSubmit={onSubmit}>
           {children}
-          <button type="submit" className="modal__button-submit" disabled>
+          {/* <span className="modal__span_error">This email is not available</span> */}
+          <button
+            type="submit"
+            className={`modal__button-submit ${buttonHiddenSwitch}`}
+            disabled={isButtonActive}
+          >
             {buttonText}
           </button>
-          <div className="modal__button-container">
-            <span className="modal__alternate-span-text">or</span>
+          <div
+            className={`modal__button-container modal__button-container_${name}`}
+          >
+            <span className={`modal__alternate-span-text ${buttonHideSpan}`}>
+              or
+            </span>
             <button
               type="button"
               className="modal__button-alternate"
