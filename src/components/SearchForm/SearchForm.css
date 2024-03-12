@@ -1,0 +1,103 @@
+.search-form__main {
+  position: relative;
+}
+
+.search-form__input {
+  /* margin-top: 52px; */
+  margin-top: 88px;
+  border-radius: 55px;
+  width: 608px;
+  height: 64px;
+  padding: 0;
+  border-color: white;
+  border-style: solid;
+  font-family: 'roboto-400-regular', arial, sans-serif;
+  padding-left: 24px;
+}
+
+.search-form__submit-button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-radius: 55px;
+  border-style: solid;
+  border-color: rgba(47, 113, 229, 1);
+  width: 168px;
+  height: 64px;
+  color: white;
+  font-family: 'roboto-500', arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  background-color: rgba(47, 113, 229, 1);
+  cursor: pointer;
+  /* transition: 0.3s ease-in-out; */
+}
+
+.search-form__submit-button_active {
+  background-color: rgba(42, 101, 204, 1);
+  border-color: rgba(42, 101, 204, 1);
+}
+
+.search-form__submit-button_hover {
+  background-color: rgba(52, 126, 255, 1);
+  border-color: rgba(52, 126, 255, 1);
+
+  /* background-color: rgba(47, 113, 229, 1);
+  border-color: rgba(47, 113, 229, 1); */
+}
+
+.search-form__error {
+  display: flex;
+  color: white;
+  opacity: 1;
+  transition: ease-in 0.5s;
+  opacity: 1;
+  justify-content: center;
+}
+
+.search-form__error_inactive {
+  display: none;
+}
+
+@media screen and (max-width: 826px) {
+  .search-form__input {
+    max-width: 448px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search-form__input {
+    margin-top: 34px;
+    width: 448px;
+    height: 56px;
+  }
+
+  .search-form__submit-button {
+    width: 160px;
+    height: 56px;
+    right: -3px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .search-form__input {
+    max-width: 288px;
+  }
+  .search-form__submit-button {
+    bottom: -80px;
+    width: 288px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .search-form__input {
+    margin-top: 128px;
+    max-width: 288px;
+    max-height: 56px;
+  }
+  .search-form__submit-button {
+    max-width: 288px;
+    max-height: 56px;
+  }
+}

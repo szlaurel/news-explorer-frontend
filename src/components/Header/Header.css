@@ -1,0 +1,665 @@
+.header {
+  background-color: transparent;
+  width: 100%;
+  /* margin-bottom: 80px; */
+  /* 
+  this position absolute was commented out for a reason
+  but im uncommenting it for the time being */
+  /* position: absolute; */
+}
+
+.header[id="saved-news_header"] {
+  background-color: transparent;
+}
+
+.header__navbar-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  /* align-items: baseline; */
+  border: 0px;
+  border-bottom-width: 1px;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-style: solid;
+  padding-bottom: 13px;
+}
+
+.header__navbar-container_active {
+  display: none;
+}
+
+.header__navbar-container[id="saved-news_header"] {
+  border-color: rgba(209, 210, 214, 1);
+}
+
+.header__hamburger-button {
+  display: none;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+}
+
+.header__button-container {
+  display: flex;
+}
+
+.header__button-container[id="saved-news_header"] {
+}
+
+.header__button-container_active {
+  display: none;
+}
+
+.header__logo {
+  margin: 0;
+  color: white;
+  font-family: "roboto-slab-700", arial, sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 30px;
+  margin-left: 104px;
+}
+
+.header__logo[id="saved-news_header"] {
+  color: black;
+  margin-left: 104px;
+}
+
+.header__home-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-family: "roboto-500", arial, sans-serif;
+  cursor: pointer;
+  font-size: 18px;
+  margin-right: 54px;
+  text-decoration-line: none;
+  /* margin-top: 30px; */
+  margin-top: 31px;
+  margin-right: 76px;
+}
+
+.header__home-button[id="saved-news_header"] {
+  color: black;
+}
+
+.header__home-button_active {
+  padding: 0;
+  border: 0;
+  text-underline-offset: 30px;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  margin-right: 42px;
+}
+
+.header__saved-articles_button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-family: "roboto-500", arial, sans-serif;
+  cursor: pointer;
+  font-size: 18px;
+  margin-right: 54px;
+  /* margin-top: 30px; */
+  text-decoration: none;
+  border-style: none;
+  margin-top: 15px;
+}
+
+.header__saved-articles_button[id="saved-news_header"] {
+  color: black;
+}
+
+.header__saved-articles_button_active {
+  padding: 0;
+  border: 0;
+  text-underline-offset: 29px;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  margin-top: 32px;
+  margin-right: 63px;
+}
+.header__signin-button {
+  padding: 0;
+  border-radius: 40px;
+  border-style: solid;
+  width: 176px;
+  height: 48px;
+  border-color: white;
+  background: transparent;
+  color: white;
+  font-family: "roboto-500", arial, sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+  /* margin-right: 184px; */
+  margin-right: 104px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  /* margin-top: 20px; */
+  margin-top: 19px;
+}
+
+.header__logout-button {
+  padding: 0;
+  border-radius: 40px;
+  border-style: solid;
+  width: 112px;
+  height: 48px;
+  border-color: white;
+  background: transparent;
+  color: white;
+  font-family: "roboto-500", arial, sans-serif;
+  cursor: pointer;
+  margin-right: 83px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  margin-right: 105px;
+}
+
+.header__logout-button[id="saved-news_header"] {
+  color: black;
+  border-color: black;
+}
+
+.header__signin-button[id="saved-news_header"] {
+  color: black;
+  border-color: black;
+}
+
+/* menu styles aka hamburger menu style */
+/* just change the respective styles in the max-width for easier access */
+
+.header__menu-alternate {
+}
+
+.header__menu-home-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-family: "roboto-500", arial, sans-serif;
+  cursor: pointer;
+  margin-right: 54px;
+  text-decoration-line: none;
+  /* margin-top: 30px; */
+  margin-top: 15px;
+}
+
+.header__menu-home-button[id="saved-news_header"] {
+  color: black;
+}
+
+.header__menu-home-button_active {
+  padding: 0;
+  border: 0;
+  text-underline-offset: 29px;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
+
+.header__menu-home-button[id="saved-news_header"] {
+  color: black;
+}
+
+.header__menu-home-button_active {
+  padding: 0;
+  border: 0;
+  text-underline-offset: 29px;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
+
+.header__saved-articles_button__menu {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-family: "roboto-500", arial, sans-serif;
+  cursor: pointer;
+  margin-right: 54px;
+  /* margin-top: 30px; */
+  text-decoration: none;
+  border-style: none;
+  margin-top: 15px;
+}
+
+.header__saved-articles_button__menu[id="saved-news_header"] {
+  color: black;
+}
+
+.header__saved-articles_button__menu_active {
+  padding: 0;
+  border: 0;
+  text-underline-offset: 29px;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
+
+.header__signin-button__menu {
+  padding: 0;
+  border-radius: 40px;
+  border-style: solid;
+  width: 176px;
+  height: 48px;
+  border-color: white;
+  background: transparent;
+  color: white;
+  font-family: "roboto-500", arial, sans-serif;
+  cursor: pointer;
+  margin-right: 116px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  /* margin-top: 30px; */
+}
+
+.header__logout-button__menu {
+  padding: 0;
+  border-radius: 40px;
+  border-style: solid;
+  width: 176px;
+  height: 48px;
+  border-color: white;
+  background: transparent;
+  color: white;
+  font-family: "roboto-500", arial, sans-serif;
+  cursor: pointer;
+  margin-right: 116px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  /* margin-top: 30px; */
+}
+
+.header__logout-button__menu[id="saved-news_header"] {
+  color: black;
+  border-color: black;
+}
+
+.header__signin-button__menu[id="saved-news_header"] {
+  color: black;
+  border-color: black;
+}
+
+/* @media screen and (min-width: 827px) {
+  .header__logo[id="saved-news_header"] {
+    margin-left: 40px;
+  }
+} */
+
+@media screen and (max-width: 826px) {
+  .header__logo {
+    width: 200px;
+    height: 24.8px;
+    margin-left: 40px;
+  }
+
+  .header__signin-button {
+    margin-right: 40px;
+  }
+
+  .header__logout-button {
+    margin-right: 40px;
+  }
+
+  .header__logo[id="saved-news_header"] {
+    margin-left: 40px;
+  }
+
+  .header__button-container[id="saved-news_header"] {
+    margin-right: 0px;
+  }
+}
+
+/* this used to be max-width 694px VVV */
+
+@media screen and (max-width: 768px) {
+  .header__logo {
+    width: 200px;
+    height: 24.8px;
+    margin-top: 24px;
+    margin-left: 39px;
+    font-size: 20px;
+  }
+  .header__navbar-container {
+    padding-bottom: 12px;
+  }
+
+  .header__signin-button {
+    width: 152px;
+    height: 40px;
+    margin-top: 14px;
+  }
+
+  /* saved news header styles */
+
+  .header__navbar-container[id="saved-news_header"] {
+    padding-bottom: 11px;
+  }
+
+  .header__button-container[id="saved-news_header"] {
+    margin-bottom: 0px;
+  }
+
+  .header__home-button[id="saved-news_header"] {
+    margin-right: 56px;
+    margin-top: 25px;
+  }
+  .header__saved-articles_button[id="saved-news_header"] {
+    margin-right: 45px;
+    margin-top: 25px;
+  }
+
+  .header__saved-articles_button_active[id="saved-news_header"] {
+    text-underline-offset: 23px;
+  }
+
+  .header__logo[id="saved-news_header"] {
+    margin-left: 40px;
+    margin-top: 22px;
+  }
+
+  .header__logout-button[id="saved-news_header"] {
+    margin-top: 14px;
+    width: 100px;
+    height: 40px;
+    margin-right: 40px;
+  }
+
+  .header__home-button {
+    margin-right: 16px;
+    font-size: 16px;
+    margin-top: 25px;
+    margin-right: 28px;
+    /* line-height: 24px; */
+  }
+  .header__home-button_active {
+    text-underline-offset: 24px;
+  }
+
+  .header__saved-articles_button_active {
+    margin-right: 16px;
+    font-size: 16px;
+    /* line-height: 24px; */
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .header__logo {
+    margin-left: 0px;
+  }
+  .header__navbar-container {
+    display: flex;
+    transition: ease-in-out 0.5s;
+  }
+
+  .header__border-bottom {
+    border: 0px;
+    border-bottom-width: 1px;
+    width: 100vw;
+    border-style: solid;
+    color: rgba(255, 255, 255, 0.2);
+    position: relative;
+    top: 14px;
+  }
+
+  .header__navbar-container_active {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: baseline;
+    border: 0px;
+    border-bottom-width: 0px;
+    border-color: rgba(255, 255, 255, 0.2);
+    border-style: solid;
+    padding-bottom: 30px;
+    opacity: 1;
+    transition: ease-in-out 0.5s;
+    background-color: rgba(26, 27, 34, 1);
+    padding-left: 16px;
+  }
+
+  .header__navbar-container_active:active {
+    opacity: 0;
+  }
+
+  .header__logout-button {
+    margin-right: 20px;
+  }
+  .header__hamburger-button {
+    display: block;
+    margin-right: 16px;
+    width: 35px;
+    height: 5px;
+    /* margin: 6px 0px; */
+    position: absolute;
+    right: 0;
+    top: 15px;
+  }
+
+  .header__bar-one,
+  .header__bar-two {
+    width: 16px;
+    height: 2px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  .header__bar-one[id="saved-news_header"] {
+    background-color: black;
+  }
+  .header__bar-two[id="saved-news_header"] {
+    background-color: black;
+  }
+
+  .header__bar-one_active {
+    width: 16px;
+    height: 2px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+    transform: translate(0, 9px) rotate(-45deg);
+  }
+
+  .header__bar-two_active {
+    width: 16px;
+    height: 2px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+    transform: translate(0, 1px) rotate(45deg);
+  }
+
+  .header__button-container {
+    display: none;
+    flex-direction: column;
+    transition: ease-in-out 0.5s;
+  }
+
+  .header__button-container_active {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 22px;
+    top: 16px;
+    transition: ease-in-out 0.5s;
+  }
+
+  .header__signin-button {
+    /* width: 95vw; */
+    width: calc(95vw - 5%);
+    height: 48px;
+    margin-right: 0px;
+  }
+  .header__logout-button {
+    width: calc(95vw - 5%);
+  }
+
+  .header__logout-image[id="saved-news_header"] {
+    fill: #ffffff;
+  }
+
+  .header__saved-articles_button_active {
+    text-decoration: none;
+  }
+
+  .header__home-button[id="saved-news_header"] {
+    color: white;
+    margin-left: 16px;
+  }
+
+  .header__saved-articles_button_active[id="saved-news_header"] {
+    color: white;
+    margin-left: 16px;
+  }
+  .header__logout-button[id="saved-news_header"] {
+    color: white;
+    border-color: white;
+    width: 100vw;
+  }
+
+  .header__menu-bar {
+  }
+  .header__home-button_active {
+    text-decoration: none;
+  }
+
+  .header__logo {
+    margin-top: 16px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .header__logo {
+    width: 117px;
+    height: 24.8px;
+    margin-left: 16px;
+  }
+
+  .header__hamburger-button {
+    display: block;
+    margin-right: 16px;
+  }
+  .header__signin-button {
+    margin-right: 0;
+    width: calc(95vw - 15%);
+  }
+
+  .header__button-container {
+    display: none;
+  }
+  .header__logout-button {
+    width: 21em;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header__logo {
+    max-width: 117px;
+    height: 24px;
+    font-size: 16px;
+  }
+
+  .header__logo[id="saved-news_header"] {
+    margin-top: 16px;
+    margin-left: 16px;
+  }
+  .header__navbar-container_active {
+    padding-left: 0px;
+  }
+
+  .header__button-container_active {
+    padding: 0;
+    padding-left: 16px;
+  }
+  .header__logout-button[id="saved-news_header"] {
+    margin-top: 14px;
+    width: 90vw;
+    height: 40px;
+    margin-right: 40px;
+  }
+}
+
+/* starting from here is where i copy and pasted to the main and main.css */
+/* VVVVVVV */
+
+/* .header__main-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.header__title {
+  color: white;
+  font-family: "roboto-slab-400", arial, sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 64px;
+  width: 608px;
+  height: 128px;
+  margin-top: 80px;
+  margin-bottom: 32px;
+}
+
+.header__paragraph {
+  color: white;
+  font-family: "roboto-400", arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  margin: 0;
+} */
+
+/* need to take the header search container, the header input and the header search submit
+and put them in there own component and connect them to the header
+so that it looks cleaner 
+VVVVVVVVVVV
+*/
+/* 
+.header__search-container {
+  position: relative;
+}
+
+.header__input {
+  margin-top: 88px;
+  border-radius: 55px;
+  width: 608px;
+  height: 64px;
+  padding: 0;
+  border-color: white;
+  border-style: solid;
+  font-family: "roboto-400", arial, sans-serif;
+  padding-left: 24px;
+}
+
+.header__search-submit-button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-radius: 55px;
+  border-style: solid;
+  border-color: rgba(47, 113, 229, 1);
+  width: 168px;
+  height: 64px;
+  color: white;
+  font-family: "roboto-500", arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  background-color: rgba(47, 113, 229, 1);
+  cursor: pointer;
+} */

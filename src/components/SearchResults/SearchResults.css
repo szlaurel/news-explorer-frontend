@@ -1,0 +1,118 @@
+.search-results {
+  background-color: rgba(245, 246, 247, 1);
+  /* display: none; */
+  /* i have a feeling to make the search results disappear
+  and appear were going to have to edit the display none here */
+}
+
+.search-results__inactive {
+  display: none;
+}
+
+.search-results__title {
+  padding-top: 70px;
+  padding-bottom: 64px;
+  font-family: 'roboto-slab-400-regular', arial, sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 46px;
+  margin: 0;
+}
+
+.search-results__title-container {
+  margin-left: 102px;
+  display: flex;
+}
+.search-results__container {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family: 'roboto', arial, sans-serif;
+}
+
+.search-results__error {
+  font-family: 'roboto', arial, sans-serif;
+  margin-bottom: 5em;
+}
+
+.search-results__button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.search-results__button {
+  background-color: white;
+  border-radius: 30px;
+  /* margin-left: 600px; */
+  margin-bottom: 50px;
+  border-style: solid;
+  border-color: white;
+  padding: 20px 98px;
+  cursor: pointer;
+  transition: ease-in-out 0.5s;
+  opacity: 1;
+  font-family: 'roboto-500', arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.search-results__button_inactive {
+  display: none;
+}
+
+.search-results__button:hover {
+  background-color: rgba(232, 232, 232, 1);
+  border-color: rgba(232, 232, 232, 1);
+}
+
+@media screen and (max-width: 826px) {
+  .search-results__button {
+    margin-top: 32px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search-results {
+    margin-bottom: -10px;
+  }
+  .search-results__title-container {
+    margin-left: 20px;
+    margin-top: -6px;
+  }
+  .search-results__title {
+    font-size: 30px;
+    padding-bottom: 32px;
+    padding-top: 35px;
+    padding-left: 21px;
+  }
+
+  .search-results__button {
+    font-size: 18px;
+    padding: 16px 72px;
+    margin-left: 17px;
+    margin-top: -15px;
+    margin-bottom: 40px;
+  }
+  .search-results__container {
+    margin-top: 40px;
+    gap: 8px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .search-results {
+    /* margin-top: 120px; */
+  }
+
+  .search-results__title-container {
+    margin-left: 16px;
+  }
+
+  .search-results__title {
+    font-family: 'roboto-slab-400', arial, sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    padding-bottom: 0;
+  }
+}

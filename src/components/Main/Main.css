@@ -1,0 +1,242 @@
+.main {
+  background-image: url('../../images/backgroundimage.svg');
+  height: 76vh;
+  /* height: 80vh; */
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0;
+}
+
+.main__container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__title {
+  color: white;
+  font-family: 'roboto-slab-400-regular', arial, sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 64px;
+  width: 608px;
+  height: 128px;
+  margin-bottom: 32px;
+  margin-top: 80px;
+  /* position absolute elements comment these
+  out if your not going to use them and use 
+  the original margin value at the top */
+  /* margin-top: 161px; */
+}
+
+.main__paragraph {
+  color: white;
+  font-family: 'roboto-400-regular', arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  margin: 0;
+  margin-right: 20px;
+}
+
+/* need to take the header search container, the header input and the header search submit
+  and put them in there own component and connect them to the header
+  so that it looks cleaner 
+  VVVVVVVVVVV
+  */
+
+.main__search-container {
+  position: relative;
+}
+
+.main__input {
+  margin-top: 88px;
+  border-radius: 55px;
+  width: 608px;
+  height: 64px;
+  padding: 0;
+  border-color: white;
+  border-style: solid;
+  font-family: 'roboto-400', arial, sans-serif;
+  padding-left: 24px;
+}
+
+.main__search-submit-button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-radius: 55px;
+  border-style: solid;
+  border-color: rgba(47, 113, 229, 1);
+  width: 168px;
+  height: 64px;
+  color: white;
+  font-family: 'roboto-500', arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  background-color: rgba(47, 113, 229, 1);
+  cursor: pointer;
+}
+
+.main__newscards-list-container {
+  margin-top: 70px;
+}
+
+.main__newscards-list-title {
+  margin-left: 102px;
+}
+
+.main__footer {
+  /* margin-top: 180px; */
+  margin-top: 15em;
+}
+
+@media screen and (max-width: 1220px) {
+  .main {
+    height: 80vh;
+  }
+}
+
+@media screen and (max-width: 826px) {
+  .main {
+    height: 100vh;
+  }
+
+  .main__title {
+    max-width: 75%;
+  }
+
+  .main__paragraph {
+    max-width: 70%;
+    max-height: 48px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    /* height: 53vh; */
+    width: 768px;
+    height: 62vh;
+  }
+
+  .main__title {
+    font-size: 36px;
+    line-height: 40px;
+    width: 385px;
+    height: 80px;
+    margin-right: 60px;
+    margin-top: 38px;
+  }
+  .main__paragraph {
+    width: 452px;
+    height: 48px;
+    margin-top: -17px;
+    margin-left: 20px;
+    margin-bottom: 14px;
+  }
+}
+
+@media screen and (max-width: 694px) {
+  .main__container {
+  }
+  .main {
+    height: 100vh;
+    /* height: 65vh; */
+  }
+
+  .main__title {
+    max-width: 75%;
+  }
+
+  .main__paragraph {
+    max-width: 70%;
+    max-height: 48px;
+    font-size: 18px;
+    margin-top: 2em;
+  }
+}
+
+@media screen and (max-width: 564px) {
+  .main__container {
+  }
+  .main {
+    height: 76vh;
+  }
+
+  .main__title {
+    max-width: 75%;
+    font-size: 36px;
+    line-height: 40px;
+    height: auto;
+    /* max-width: 8em; */
+  }
+
+  .main__paragraph {
+    max-width: 70%;
+    max-height: 48px;
+    font-size: 18px;
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 379px) {
+  .main__container {
+  }
+  .main {
+    height: 90vh;
+    background-position: center;
+  }
+
+  .main__title {
+    max-width: 285px;
+    max-height: 80px;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 30px;
+    /* margin-top: 4em; */
+    /* margin-left: 16px; */
+  }
+
+  .main__paragraph {
+    max-width: 70%;
+    max-height: 48px;
+    font-size: 18px;
+  }
+
+  .main__newscards-list-container {
+    margin-top: 96px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .main {
+    height: 70vh;
+  }
+  .main__title {
+    width: 285px;
+    height: 80px;
+    font-size: 36px;
+    margin-top: 30px;
+    /* margin-left: 16px; */
+    margin-bottom: 16px;
+    margin-right: 0;
+    line-height: 40px;
+  }
+  .main__container {
+    /* flex-direction: column; */
+  }
+
+  .main__paragraph {
+    width: 288px;
+    height: 72px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
