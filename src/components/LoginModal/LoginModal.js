@@ -5,7 +5,7 @@ import ModalWithForm from '../ModalWithForm/ModalWithForm';
 function LoginModal({
   handleCloseModal,
   isOpen,
-  handleLogin,
+  // handleLogin,
   alternateModalOpen,
 }) {
   const [email, setEmail] = useState('');

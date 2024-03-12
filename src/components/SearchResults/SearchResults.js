@@ -31,7 +31,7 @@ function SearchResults({
       searchResult.urlToImage !== null && searchResult.urlToImage !== ''
   );
 
-  console.log(filterCardInformation);
+  // console.log(filterCardInformation);
 
   const showSearchResults = searchTrue
     ? 'search-results'

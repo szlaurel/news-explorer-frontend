@@ -4,7 +4,7 @@ import ModalWithForm from '../ModalWithForm/ModalWithForm';
 function RegisterModal({
   handleCloseModal,
   isOpen,
-  handleRegister,
+  // handleRegister,
   alternateModalOpen,
 }) {
   const [email, setEmail] = useState('');

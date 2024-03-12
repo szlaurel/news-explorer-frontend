@@ -6,13 +6,13 @@ import tempDogPhoto from '../../images/tempcardimage.svg';
 // need to remove all the temp values when we pass this stage and go on to authorization
 // and authentication
 
-const NewsCard = ({
+function NewsCard({
   isSaved,
   searchResults,
   onCardLike,
-  onSelectedCard,
+  // onSelectedCard,
   tempSavedCard,
-}) => {
+}) {
   // temporary user usestate to see if certain things work
   // change the signedIn state value here to check for certain
   // functionalties that only work when signed in
@@ -104,9 +104,9 @@ const NewsCard = ({
     if (userId !== true) {
       setChangeHoverValue('news-card-signin__popup');
       setIsDisabled(true);
-      return;
+      // return;
       // return console.log("this works again");
-    } else return;
+    }
   }
 
   function leaveHover() {
@@ -117,8 +117,8 @@ const NewsCard = ({
     if (userId !== true) {
       setChangeRemoveHover('news-card-image__remove-button_active');
       setPopUpValue(true);
-      return;
-    } else return;
+      // return;
+    }
   }
 
   function leaveRemoveHover() {
@@ -127,8 +127,10 @@ const NewsCard = ({
   }
 
   // onMouseOver needs to check if the user is signed in
-  // if the user is signed in the sign in to save hover doesn't appear and the class gets switched to inactive
-  // else if the user is not sigend in the sign in to save hover appears and the class changes to active
+  // if the user is signed in the sign in to save hover doesn't
+  // appear and the class gets switched to inactive
+  // else if the user is not sigend in the sign in to save hover
+  // appears and the class changes to active
 
   /* -------------------------------------------------------------------------- */
   /*                       like and dislike functionality                       */
@@ -164,13 +166,13 @@ const NewsCard = ({
               src={searchResults?.urlToImage || tempDogPhoto}
               alt={searchResults?.urlToImage || 'a picture of a dog'}
               className="news-card__image"
-              onClick={() => onSelectedCard(searchResults)}
+              // onClick={() => onSelectedCard(searchResults)}
             />
             {isSaved || tempSavedCard ? (
               <div className="news-card__image-category_container">
                 <div
                   className="news-card-image__category"
-                  onClick={() => onSelectedCard(searchResults)}
+                  // onClick={() => onSelectedCard(searchResults)}
                 >
                   {tempCategory}
                 </div>
@@ -184,10 +186,12 @@ const NewsCard = ({
                   Remove from saved
                 </div>
                 <button
+                  type="button"
+                  label="remove-button"
                   className={changeRemoveHover}
                   onMouseOver={removeButtonHover}
                   onMouseLeave={leaveRemoveHover}
-                ></button>
+                />
               </div>
             ) : (
               <div className="news-card-image__category-container">
@@ -202,8 +206,9 @@ const NewsCard = ({
                   onMouseLeave={leaveHover}
                   disabled={isDisabled}
                   type="button"
-                ></button>
-                <button className={changeHoverValue}>
+                  label="likebutton"
+                />
+                <button className={changeHoverValue} type="button">
                   Sign in to save articles
                 </button>
               </div>
@@ -221,7 +226,7 @@ const NewsCard = ({
       </div>
     </div>
   );
-};
+}
 
 export default NewsCard;
 

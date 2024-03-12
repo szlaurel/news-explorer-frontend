@@ -11,7 +11,7 @@
   padding: 0;
   border-color: white;
   border-style: solid;
-  font-family: "roboto-400-regular", arial, sans-serif;
+  font-family: 'roboto-400-regular', arial, sans-serif;
   padding-left: 24px;
 }
 
@@ -25,29 +25,27 @@
   width: 168px;
   height: 64px;
   color: white;
-  font-family: "roboto-500", arial, sans-serif;
+  font-family: 'roboto-500', arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
   font-weight: 500;
   background-color: rgba(47, 113, 229, 1);
   cursor: pointer;
-  transition: 0.3s ease-in-out;
+  /* transition: 0.3s ease-in-out; */
 }
 
-.search-form__submit-button:hover {
+.search-form__submit-button_active {
+  background-color: rgba(42, 101, 204, 1);
+  border-color: rgba(42, 101, 204, 1);
+}
+
+.search-form__submit-button_hover {
   background-color: rgba(52, 126, 255, 1);
   border-color: rgba(52, 126, 255, 1);
-}
 
-.search-form__submit-button:focus {
-  background-color: rgba(14, 26, 57, 0.2);
-  border-color: rgba(14, 26, 57, 0.2);
+  /* background-color: rgba(47, 113, 229, 1);
+  border-color: rgba(47, 113, 229, 1); */
 }
-
-/* .search-form__submit-button_active {
-  background-color: rgba(14, 26, 57, 0.2);
-  border-color: rgba(14, 26, 57, 0.2);
-} */
 
 .search-form__error {
   display: flex;

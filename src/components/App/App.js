@@ -108,9 +108,9 @@ function App() {
   /* -------------------------------------------------------------------------- */
   /*                        handle open and close modals                        */
   /* -------------------------------------------------------------------------- */
-  const handleCreateModal = () => {
-    setActiveModal('create');
-  };
+  // const handleCreateModal = () => {
+  //   setActiveModal('create');
+  // };
 
   const handleLoginModal = () => {
     setActiveModal('login');

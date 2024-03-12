@@ -4,7 +4,7 @@ import SavedNewsHeader from '../SavedNewsHeader/SavedNewsHeader';
 import NewsCardList from '../NewsCardList/NewsCardList';
 import Footer from '../Footer/Footer';
 
-function SavedNews({ onSelectedCard }) {
+function SavedNews() {
   console.log('savednews works');
 
   // for the saved news i need to be able to filter and i think map

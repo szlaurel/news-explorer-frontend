@@ -8,11 +8,11 @@ import hamburgerButton from '../../images/hamburger-button.svg';
 function Main({
   onLoginModal,
   handleSearchResult,
-  searchResults,
-  searchTrue,
+  // searchResults,
+  // searchTrue,
   setLoading,
-  cardsToShow,
-  setCardsToShow,
+  // cardsToShow,
+  // setCardsToShow,
   setShowNothingFound,
 }) {
   return (

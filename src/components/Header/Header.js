@@ -48,6 +48,7 @@ function Header({
       <button
         className="header__hamburger-button"
         onClick={handleOpenAndCloseMenu}
+        type="button"
       >
         {!isActive ? (
           <>
@@ -122,6 +123,7 @@ function Header({
                 className="header__logout-button"
                 onClick={onLoginModal}
                 id={id}
+                type="button"
               >
                 {username}
                 <img
@@ -141,7 +143,11 @@ function Header({
               >
                 Home
               </NavLink>
-              <button className="header__signin-button" onClick={onLoginModal}>
+              <button
+                className="header__signin-button"
+                onClick={onLoginModal}
+                type="button"
+              >
                 Sign in
               </button>
             </>
